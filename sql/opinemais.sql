@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 27/04/2015 às 14:49
+-- Tempo de geração: 27/04/2015 às 15:15
 -- Versão do servidor: 10.0.17-MariaDB-log
 -- Versão do PHP: 5.6.8
 
@@ -30,22 +30,18 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
   `id_opiniao` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `titulo_opiniao` varchar(50) DEFAULT NULL,
-  `descricao_opiniao` longtext
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+  `descricao_opiniao` longtext NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `opiniao`
 --
 
 INSERT INTO `opiniao` (`id_opiniao`, `id_produto`, `titulo_opiniao`, `descricao_opiniao`) VALUES
-(18, 1, 'Ivan', 'comentario 1'),
-(19, 2, 'maria', 'é bom'),
-(20, 2, 'josé ', 'não gostei'),
-(21, 1, 'Jose', 'goste'),
-(22, 1, 'Maria', 'teste2'),
-(23, 2, 'Jorge', 'mais um'),
-(24, 1, 'Josega', 'asda'),
-(25, 2, 'aff', 'adsdasd');
+(1, 1, 'Ivan', 'produto muito bom, gostei'),
+(2, 2, 'José', 'Achei mais ou menos'),
+(3, 2, 'Josefa', 'achei legal'),
+(4, 1, 'Arnold', 'Muito eficiente');
 
 -- --------------------------------------------------------
 
@@ -80,21 +76,16 @@ CREATE TABLE IF NOT EXISTS `resposta` (
   `id_opiniao` int(11) NOT NULL,
   `titulo_resposta` varchar(50) NOT NULL,
   `descricao_resposta` longtext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `resposta`
 --
 
 INSERT INTO `resposta` (`id_resposta`, `id_opiniao`, `titulo_resposta`, `descricao_resposta`) VALUES
-(20, 18, 'maria', 'asdasd'),
-(21, 18, 'asdas', 'asdads'),
-(22, 24, 'asda', 'asdasd'),
-(23, 24, 'asda', 'asdasd'),
-(24, 19, 'sda', 'asdads'),
-(25, 20, 'qe', 'qwe'),
-(26, 20, 'qe', 'qwe'),
-(27, 18, 'jose', 'amem');
+(1, 1, 'Maria', 'Eu também gostei'),
+(2, 2, 'Jorge', 'você é doido'),
+(3, 4, 'Clara', 'tem muito espaço');
 
 --
 -- Índices de tabelas apagadas
@@ -104,7 +95,8 @@ INSERT INTO `resposta` (`id_resposta`, `id_opiniao`, `titulo_resposta`, `descric
 -- Índices de tabela `opiniao`
 --
 ALTER TABLE `opiniao`
-  ADD PRIMARY KEY (`id_opiniao`);
+  ADD PRIMARY KEY (`id_opiniao`),
+  ADD KEY `id_produto` (`id_produto`);
 
 --
 -- Índices de tabela `produto`
@@ -116,7 +108,8 @@ ALTER TABLE `produto`
 -- Índices de tabela `resposta`
 --
 ALTER TABLE `resposta`
-  ADD PRIMARY KEY (`id_resposta`);
+  ADD PRIMARY KEY (`id_resposta`),
+  ADD KEY `id_opiniao` (`id_opiniao`);
 
 --
 -- AUTO_INCREMENT de tabelas apagadas
@@ -126,7 +119,7 @@ ALTER TABLE `resposta`
 -- AUTO_INCREMENT de tabela `opiniao`
 --
 ALTER TABLE `opiniao`
-  MODIFY `id_opiniao` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+  MODIFY `id_opiniao` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
@@ -136,7 +129,23 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `resposta`
 --
 ALTER TABLE `resposta`
-  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- Restrições para dumps de tabelas
+--
+
+--
+-- Restrições para tabelas `opiniao`
+--
+ALTER TABLE `opiniao`
+  ADD CONSTRAINT `opiniao_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
+
+--
+-- Restrições para tabelas `resposta`
+--
+ALTER TABLE `resposta`
+  ADD CONSTRAINT `resposta_ibfk_1` FOREIGN KEY (`id_opiniao`) REFERENCES `opiniao` (`id_opiniao`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
