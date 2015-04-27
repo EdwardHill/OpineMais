@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 //Conexão de banco de dados 
 $host = "localhost";
 $usuario = "root";
