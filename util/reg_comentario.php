@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 ob_start();
 	if(isset($_POST['botao'])){
 		$id_produto = $_POST['id_produto'];
@@ -13,6 +13,6 @@ ob_start();
 					$id_opiniao = $sql['id_opiniao'];
 				}
 				
-		header("Location: Index.php?id=$id_produto#$id_opiniao");
+		header("Location: home.php?id=$id_produto#$id_opiniao");
 	}
 ?>
