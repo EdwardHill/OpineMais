@@ -206,6 +206,7 @@ body,input,textarea,select
 					{
 						margin-left: 0;
 					}
+                                        
 
 			ul.divided
 			{
@@ -636,7 +637,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7AEBFF', end
 	
 		.homepage #header-wrapper
 		{
-			padding: 10em 0 6em 0;
+			padding: 14em 0 6em 0;
 			background-size:	128px 128px,				100% 100%,					auto;
 		}
 		
@@ -664,7 +665,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7AEBFF', end
 		z-index: 1;
 		bottom: 94px;
 		left: 21%;
-		width: 12em;
+		width: 100%;
 		margin-left: -7.5em;
 	}
 	
@@ -675,7 +676,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7AEBFF', end
 			height: 1em;
 			line-height: 8em;
 		}
-
+/*****Botões header****/
+                		ul.btheader
+			{
+				
+				padding-left: 26.5%;
+				
+			}
+			
+				
+			
+				ul.btheader li
+				{
+					display:inline-table;
+					
+					padding-left:12em;
+					font-size:13px;
+					color:#ffffff;
+                                         
+				}
+				
+					ul.btheader li:first-child
+					{
+						margin-left: 0;
+					}
+/********btheader****
 
 #logo2
 	{

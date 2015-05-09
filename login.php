@@ -61,7 +61,7 @@ and open the template in the editor.
 										<ul class="actions">
 											<li><input type="submit"   class="button3" value="Entrar" alt="Aperte Enter Para entrar"/></li>
 											<li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro">Cadastrar-se</a></li>
-                                                                                        <li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro">Conecte-se usando o Facebook</a></li>
+                                                                                        <li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro"><img src="css/images/face.png" style="width:1.5em;"><br></a></li>
 										</ul>
 						</div>
 			</form>

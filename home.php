@@ -19,7 +19,28 @@
 	<body>
             <div class="main">
        
-		<?php include("header.php")?>
+			<div id="nav2">
+				<div id="header-wrapper">
+				
+				<div id="header" class="container">
+				
+                                    <h1 id="logo"><a href="home.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
+				
+				<ul class="divided">
+                                    <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" > Ola, Visitante  </li> 
+                                   
+					</ul>
+                                    <ul class="btheader">             
+                                        <li><a href="login.php" class="button">Entre</a></li>
+                                    <li><a href="#"  class="button">Cadastre-se</a></li>
+                                    </ul>
+                                   
+					
+			</div>	
+                                   
+		</div>
+             
+	</div>
                 <?php include("leftBar.php")?>
                 <?php include("rightBar.php")?>
 
@@ -50,7 +71,7 @@
 
 	?>
 		<div class="postagem">
-			<h2><?php echo $titulo ?></h2>
+			<h3><?php echo $titulo ?></h3>
 			<h4>Descrição:</h4>
 			<p><?php echo $descricao ?></p>
 
