@@ -1,7 +1,7 @@
 <?php
 
 //Pasta onde o arquivo vai ser salvo
-$_UP['pasta'] = 'Testeup/';
+$_UP['pasta'] = '../images/upload/';
 
 // Tamanho máximo do arquivo (em Kbits)
 
