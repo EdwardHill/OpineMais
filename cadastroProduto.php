@@ -22,12 +22,16 @@
 			<h4><?php$mensagem?></h4>
 		</header>
 		<!-- Formulário aqui! -->
-		<form method="post"action="#">
+                <form method="POST" action="php/cadastrarProduto.php"enctype="multipart/form-data" >
 
 			<fieldset>
 				<legend>
 					<strong>Dados do Produto</strong>
 				</legend>
+                                 <p>
+					<label for="nome">Nome do Produto:</label> <input type="text"
+						name="nome" id="nome" size=60>
+				</p>
 				<p>
 					<label for="descrição">Descrição:</label> <input type="text"
 						name="descricao" id="descrição" size=60>
@@ -38,8 +42,8 @@
 				</p>
 				
 				<p>
-					<label for="imagem">Upload de Imagem:</label> <input type="file" name="imagem"
-						id="imagem" size=10>					
+					<label for="arquivo">Upload de Imagem:</label> <input type="file" name="arquivo"
+						id="arquivo" size=10>					
 				</p>
 				
 				<p>

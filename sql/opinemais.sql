@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.2
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Tempo de geração: 27/04/2015 às 15:15
--- Versão do servidor: 10.0.17-MariaDB-log
--- Versão do PHP: 5.6.8
+-- Host: 127.0.0.1
+-- Generation Time: 12-Maio-2015 às 21:49
+-- Versão do servidor: 5.6.16
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,131 +17,100 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Banco de dados: `opinemais`
+-- Database: `opinemais`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `opiniao`
+-- Estrutura da tabela `opiniao`
 --
 
 CREATE TABLE IF NOT EXISTS `opiniao` (
-  `id_opiniao` int(11) NOT NULL,
+  `id_opiniao` int(11) NOT NULL AUTO_INCREMENT,
   `id_produto` int(11) NOT NULL,
   `titulo_opiniao` varchar(50) DEFAULT NULL,
-  `descricao_opiniao` longtext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `descricao_opiniao` longtext NOT NULL,
+  PRIMARY KEY (`id_opiniao`),
+  KEY `id_produto` (`id_produto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
--- Fazendo dump de dados para tabela `opiniao`
+-- Extraindo dados da tabela `opiniao`
 --
 
 INSERT INTO `opiniao` (`id_opiniao`, `id_produto`, `titulo_opiniao`, `descricao_opiniao`) VALUES
 (1, 1, 'Ivan', 'produto muito bom, gostei'),
 (2, 2, 'José', 'Achei mais ou menos'),
 (3, 2, 'Josefa', 'achei legal'),
-(4, 1, 'Arnold', 'Muito eficiente');
+(4, 1, 'Arnold', 'Muito eficiente'),
+(5, 1, 'Caligula', 'nada'),
+(6, 1, 'edu', 'dofsidofis'),
+(7, 1, 'avabel', 'edfd'),
+(8, 2, 'porra bixo', 'tu pe feio'),
+(9, 1, 'uyuy', 'uyyuyuy');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produto`
+-- Estrutura da tabela `produto`
 --
 
 CREATE TABLE IF NOT EXISTS `produto` (
-  `id_produto` int(11) NOT NULL,
+  `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   `nome_produto` varchar(200) NOT NULL,
   `detalhes_produto` longtext NOT NULL,
   `marca_produto` varchar(50) NOT NULL,
-  `categoria_produto` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `categoria_produto` varchar(200) NOT NULL,
+  `imagem` varchar(60) NOT NULL,
+  PRIMARY KEY (`id_produto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Fazendo dump de dados para tabela `produto`
+-- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`id_produto`, `nome_produto`, `detalhes_produto`, `marca_produto`, `categoria_produto`) VALUES
-(1, 'Celular Motorola Moto G Colors Dual', 'Motorola Moto G (2ª Geração) Colors Preto, Dual Chip, Processador Quad Core 1.2GHz, Tela 5, Memória 8GB', 'motorola', 'celular'),
-(2, 'Smartphone Samsung Galaxy S5', 'Smartphone Samsung Galaxy S5 Desbloqueado Android 4.4.2 Tela 5.1" 16GB 4G Wi-Fi Câmera 16 MP - Preto', 'samsung', 'celular');
+INSERT INTO `produto` (`id_produto`, `nome_produto`, `detalhes_produto`, `marca_produto`, `categoria_produto`, `imagem`) VALUES
+(1, 'Celular Motorola Moto G Colors Dual', 'Motorola Moto G (2ª Geração) Colors Preto, Dual Chip, Processador Quad Core 1.2GHz, Tela 5, Memória 8GB', 'motorola', 'celular', ''),
+(2, 'Smartphone Samsung Galaxy S5', 'Smartphone Samsung Galaxy S5 Desbloqueado Android 4.4.2 Tela 5.1" 16GB 4G Wi-Fi Câmera 16 MP - Preto', 'samsung', 'celular', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `resposta`
+-- Estrutura da tabela `resposta`
 --
 
 CREATE TABLE IF NOT EXISTS `resposta` (
-  `id_resposta` int(11) NOT NULL,
+  `id_resposta` int(11) NOT NULL AUTO_INCREMENT,
   `id_opiniao` int(11) NOT NULL,
   `titulo_resposta` varchar(50) NOT NULL,
-  `descricao_resposta` longtext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `descricao_resposta` longtext NOT NULL,
+  PRIMARY KEY (`id_resposta`),
+  KEY `id_opiniao` (`id_opiniao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Fazendo dump de dados para tabela `resposta`
+-- Extraindo dados da tabela `resposta`
 --
 
 INSERT INTO `resposta` (`id_resposta`, `id_opiniao`, `titulo_resposta`, `descricao_resposta`) VALUES
 (1, 1, 'Maria', 'Eu também gostei'),
 (2, 2, 'Jorge', 'você é doido'),
-(3, 4, 'Clara', 'tem muito espaço');
+(3, 4, 'Clara', 'tem muito espaço'),
+(4, 9, 'er', 'ddd');
 
 --
--- Índices de tabelas apagadas
---
-
---
--- Índices de tabela `opiniao`
---
-ALTER TABLE `opiniao`
-  ADD PRIMARY KEY (`id_opiniao`),
-  ADD KEY `id_produto` (`id_produto`);
-
---
--- Índices de tabela `produto`
---
-ALTER TABLE `produto`
-  ADD PRIMARY KEY (`id_produto`);
-
---
--- Índices de tabela `resposta`
---
-ALTER TABLE `resposta`
-  ADD PRIMARY KEY (`id_resposta`),
-  ADD KEY `id_opiniao` (`id_opiniao`);
-
---
--- AUTO_INCREMENT de tabelas apagadas
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `opiniao`
---
-ALTER TABLE `opiniao`
-  MODIFY `id_opiniao` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT de tabela `produto`
---
-ALTER TABLE `produto`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT de tabela `resposta`
---
-ALTER TABLE `resposta`
-  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- Restrições para dumps de tabelas
---
-
---
--- Restrições para tabelas `opiniao`
+-- Limitadores para a tabela `opiniao`
 --
 ALTER TABLE `opiniao`
   ADD CONSTRAINT `opiniao_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
 
 --
--- Restrições para tabelas `resposta`
+-- Limitadores para a tabela `resposta`
 --
 ALTER TABLE `resposta`
   ADD CONSTRAINT `resposta_ibfk_1` FOREIGN KEY (`id_opiniao`) REFERENCES `opiniao` (`id_opiniao`);
