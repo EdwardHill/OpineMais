@@ -51,11 +51,11 @@
 						name="categoria" id="categoria">
 							<option selected="não selecionado" value="não selecionado">Escolha
 								a categoria</option>
-							<option value="eletroeletronicos">Eletroeletrônico</option>
-                                                        <option value="eletrodomestico">Eletrodomésticos</option>
+							<option value="Eletroeletronicos">Eletroeletrônico</option>
+                                                        <option value="Eletrodomestico">Eletrodomésticos</option>
                                                         <option value="Tv">TVs</option>
-                                                        <option value="cosmeticos">Celulares e Smartphones</option>
-							<option value="cosmeticos">Cosméticos</option>
+                                                        <option value="Celulares e SmartPhones">Celulares e Smartphones</option>
+							<option value="Cosmeticos">Cosméticos</option>
 							
 					</select>
 					</label>

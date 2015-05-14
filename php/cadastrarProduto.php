@@ -12,7 +12,7 @@ ob_start();
 include("../util/connection.php");
 include ("../php/upload.php");
 
-    $result = mysql_query("insert into produto(nome_produto,detalhes_produto,categoria_produto,marca_produto) values ('$nome','$descricao','$categoria','$marca')");
+    $result = mysql_query("insert into produto(nome_produto,detalhes_produto,categoria_produto,marca_produto,imagem_produto) values ('$nome','$descricao','$categoria','$marca','$nome_final')");
 
 
     echo '<h3>Produto Cadastrado!</h3><br />';

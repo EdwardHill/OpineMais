@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Maio-2015 às 21:49
--- Versão do servidor: 5.6.16
--- PHP Version: 5.5.11
+-- Generation Time: 14-Maio-2015 às 05:44
+-- Versão do servidor: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,28 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `opiniao` (
-  `id_opiniao` int(11) NOT NULL AUTO_INCREMENT,
+  `id_opiniao` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `titulo_opiniao` varchar(50) DEFAULT NULL,
-  `descricao_opiniao` longtext NOT NULL,
-  PRIMARY KEY (`id_opiniao`),
-  KEY `id_produto` (`id_produto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
-
---
--- Extraindo dados da tabela `opiniao`
---
-
-INSERT INTO `opiniao` (`id_opiniao`, `id_produto`, `titulo_opiniao`, `descricao_opiniao`) VALUES
-(1, 1, 'Ivan', 'produto muito bom, gostei'),
-(2, 2, 'José', 'Achei mais ou menos'),
-(3, 2, 'Josefa', 'achei legal'),
-(4, 1, 'Arnold', 'Muito eficiente'),
-(5, 1, 'Caligula', 'nada'),
-(6, 1, 'edu', 'dofsidofis'),
-(7, 1, 'avabel', 'edfd'),
-(8, 2, 'porra bixo', 'tu pe feio'),
-(9, 1, 'uyuy', 'uyyuyuy');
+  `descricao_opiniao` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -57,22 +40,24 @@ INSERT INTO `opiniao` (`id_opiniao`, `id_produto`, `titulo_opiniao`, `descricao_
 --
 
 CREATE TABLE IF NOT EXISTS `produto` (
-  `id_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produto` int(11) NOT NULL,
   `nome_produto` varchar(200) NOT NULL,
   `detalhes_produto` longtext NOT NULL,
   `marca_produto` varchar(50) NOT NULL,
   `categoria_produto` varchar(200) NOT NULL,
-  `imagem` varchar(60) NOT NULL,
-  PRIMARY KEY (`id_produto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `imagem_produto` varchar(200) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`id_produto`, `nome_produto`, `detalhes_produto`, `marca_produto`, `categoria_produto`, `imagem`) VALUES
-(1, 'Celular Motorola Moto G Colors Dual', 'Motorola Moto G (2ª Geração) Colors Preto, Dual Chip, Processador Quad Core 1.2GHz, Tela 5, Memória 8GB', 'motorola', 'celular', ''),
-(2, 'Smartphone Samsung Galaxy S5', 'Smartphone Samsung Galaxy S5 Desbloqueado Android 4.4.2 Tela 5.1" 16GB 4G Wi-Fi Câmera 16 MP - Preto', 'samsung', 'celular', '');
+INSERT INTO `produto` (`id_produto`, `nome_produto`, `detalhes_produto`, `marca_produto`, `categoria_produto`, `imagem_produto`) VALUES
+(1, 'Carlos Eduardo', 'dssd', 'ewewe', 'Tv', ''),
+(2, 'Carlos Eduardo', 'dssd', 'ewewe', 'Tv', ''),
+(3, 'Carlos Eduardo', 'dssd', 'ewewe', 'Tv', ''),
+(4, 'Motorola moto Maxx', 'Moto Maxx , 3G de RAM, 64 Gigas de memoria interna, tela QHD, camera 21 megapixels', 'Motorola', 'cosmeticos', '1431561577.jpg'),
+(5, 'dfdf', 'dfdf', 'dfdfd', 'Celulares e SmartPhones', '1431561706.jpg');
 
 -- --------------------------------------------------------
 
@@ -81,24 +66,53 @@ INSERT INTO `produto` (`id_produto`, `nome_produto`, `detalhes_produto`, `marca_
 --
 
 CREATE TABLE IF NOT EXISTS `resposta` (
-  `id_resposta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_resposta` int(11) NOT NULL,
   `id_opiniao` int(11) NOT NULL,
   `titulo_resposta` varchar(50) NOT NULL,
-  `descricao_resposta` longtext NOT NULL,
-  PRIMARY KEY (`id_resposta`),
-  KEY `id_opiniao` (`id_opiniao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `descricao_resposta` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `resposta`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `resposta` (`id_resposta`, `id_opiniao`, `titulo_resposta`, `descricao_resposta`) VALUES
-(1, 1, 'Maria', 'Eu também gostei'),
-(2, 2, 'Jorge', 'você é doido'),
-(3, 4, 'Clara', 'tem muito espaço'),
-(4, 9, 'er', 'ddd');
+--
+-- Indexes for table `opiniao`
+--
+ALTER TABLE `opiniao`
+  ADD PRIMARY KEY (`id_opiniao`), ADD KEY `id_produto` (`id_produto`);
 
+--
+-- Indexes for table `produto`
+--
+ALTER TABLE `produto`
+  ADD PRIMARY KEY (`id_produto`);
+
+--
+-- Indexes for table `resposta`
+--
+ALTER TABLE `resposta`
+  ADD PRIMARY KEY (`id_resposta`), ADD KEY `id_opiniao` (`id_opiniao`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `opiniao`
+--
+ALTER TABLE `opiniao`
+  MODIFY `id_opiniao` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `produto`
+--
+ALTER TABLE `produto`
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `resposta`
+--
+ALTER TABLE `resposta`
+  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -107,13 +121,13 @@ INSERT INTO `resposta` (`id_resposta`, `id_opiniao`, `titulo_resposta`, `descric
 -- Limitadores para a tabela `opiniao`
 --
 ALTER TABLE `opiniao`
-  ADD CONSTRAINT `opiniao_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
+ADD CONSTRAINT `opiniao_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
 
 --
 -- Limitadores para a tabela `resposta`
 --
 ALTER TABLE `resposta`
-  ADD CONSTRAINT `resposta_ibfk_1` FOREIGN KEY (`id_opiniao`) REFERENCES `opiniao` (`id_opiniao`);
+ADD CONSTRAINT `resposta_ibfk_1` FOREIGN KEY (`id_opiniao`) REFERENCES `opiniao` (`id_opiniao`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
