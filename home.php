@@ -68,10 +68,12 @@
 				$id_produto = $sql['id_produto'];
 				$titulo = $sql['nome_produto'];
 				$descricao = $sql['detalhes_produto'];
+                                $imagem = $sql['imagem_produto']; 
 
 	?>
 		<div class="postagem">
 			<h3><?php echo $titulo ?></h3>
+                         <div ><img src="images/upload/<?php echo $imagem?>" class="imagem" style="width:75%;"/></div>
 			<h4>Descrição:</h4>
 			<p><?php echo $descricao ?></p>
 
