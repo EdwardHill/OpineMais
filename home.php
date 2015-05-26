@@ -27,25 +27,34 @@
                                     <h1 id="logo"><a href="home.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
 				
 				<ul class="divided">
-                                    <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" > Ola, Visitante  </li> 
+                                    <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Ola,<?php
+                                        if(!empty($_GET['nome'])){
+                                             $nome = $_GET['nome'];
+                                             echo $nome;
+                                        }else{
+                                            echo 'Visitante';
+                                        }
+                                    ?>  </li> 
                                    
 					</ul>
                                     <ul class="btheader">             
-                                        <li><a href="login.php" class="button">Entre</a></li>
-                                    <li><a href="#"  class="button">Cadastre-se</a></li>
+                                    <li><a href="login.php" class="button">Entre</a></li>
+                                    <li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>
+                                    <li><a href="util/logout.php"  class="button">Sair</a></li>                              
                                     </ul>
-                                   
-					
+                               
+                                                    
+				
 			</div>	
                                    
 		</div>
              
 	</div>
+                 <div id="content">
                 <?php include("leftBar.php")?>
                 <?php include("rightBar.php")?>
 
-				<div id="content">
-                                            
+				
                                     <form action="#" id="formBusca"method="POST">
 
 		<div id="pesquisar">
@@ -54,13 +63,14 @@
 
                     <label for="busca"></label><input  type="search" name ="buscanome" placeholder="Digite o nome do produto desejado" size="50"/>
                     <input type="submit" class="button"   name="pesquisa" value="BUSCAR" img="css/images/search4.png">
-
+                        
 		</div>
                                     </form>
                                   <div id="geral">
 	<?php
 	session_start();
 	ob_start();
+        
 		include_once 'util/connection.php';
 		//include_once 'util/sessao.php';
 		$dados_produto = mysql_query("select * from produto");
@@ -72,6 +82,7 @@
 
 	?>
 		<div class="postagem">
+  
 			<h3><?php echo $titulo ?></h3>
                          <div ><img src="images/upload/<?php echo $imagem?>" class="imagem" style="width:75%;"/></div>
 			<h4>Descrição:</h4>

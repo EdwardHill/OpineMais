@@ -1,3 +1,3 @@
 <?php
-if (!isset($_SESSION["login"])) header("Location:Index.php");
+if (!isset($_SESSION["nome"])) header("Location:../home.php");
 ?>

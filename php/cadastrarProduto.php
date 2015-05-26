@@ -8,7 +8,6 @@ ob_start();
     $categoria = $_POST['categoria'];
     $marca = $_POST['marca'];
 
-
 include("../util/connection.php");
 include ("../php/upload.php");
 
