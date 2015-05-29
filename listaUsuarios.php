@@ -12,10 +12,10 @@
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#produtos').dataTable({
+                $('#usuarios').dataTable({
                     "ordering": false,
                     "lengthMenu": [[5, 10, 30, -1], [5, 10, 30, "Todos"]],
-                    "paging": false,
+                   
                     "language": {
                         "sUrl": "js/pt-br.txt"
                     }
@@ -37,7 +37,7 @@
 
                     <div id="header" class="container">
 
-                        <h1 id="logo"><a href="home.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
+                        <h1 id="logo"><a href="index.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
 
                         <ul class="divided">
                             <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Ola,<?php
@@ -66,40 +66,40 @@
             <div id="content">
                 <?php include("leftBar.php") ?>
                 <?php include("rightBar.php") ?>
+               
                 
-                <div id="geral">
                     <header class="major">
-                        <h3>Produtos</h3>
+                        <h3>Usuarios</h3>
                     </header>
-                    <table id="produtos" align="center" class="display" >
-
+                    <table id="usuarios" align="center" class="display" >
+                       <caption>Tabela de Clientes</caption>
                         <thead>
                             <tr>
-                                <th rowspan="1"></th>
+                                <th clospan="1" id="nome">Nome</th>
+                                                                <th clospan="1" id="nome">Email</th>
+				<th rowspan="1" id="telefo">Telefone</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            session_start();
+                           
                             ob_start();
-
                             include_once 'util/connection.php';
-                            //include_once 'util/sessao.php';
-                            $dados_produto = mysql_query("select * from produto");
-                            while ($sql = mysql_fetch_array($dados_produto)) {
-                                $id_produto = $sql['id_produto'];
-                                $titulo = $sql['nome_produto'];
-                                $descricao = $sql['detalhes_produto'];
-                                $imagem = $sql['imagem_produto'];
+                           $dados_usuarios = mysql_query("select * from usuario ");
+                           while($sql = mysql_fetch_array($dados_usuarios)){
+                                
+                               $nome = $sql['nome_usuario'];
+				$email = $sql['email_usuario'];
+                                $telefone = $sql['telefone_usuario'];                      
                                 ?>								
                                 <tr>
                                     <td headers="produto">                                         
-                                        <h3><?php echo $titulo ?></h3>
-                                        <div ><a href="comentar.php?<?php echo $id_produto?>"><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></a></div>
-                                        <h4>Descrição:</h4>
-                                        <p><?php echo $descricao ?></p>
+                                    <?php echo $nome ?>
                                     </td>
+                                   <td> <?php echo $email?></td>
+                                    <td><?php echo $telefone?></td>
 
+                                    
 
                                 </tr>
                             <?php } ?>
@@ -108,10 +108,7 @@
                     </table>
 
 
-
-
-
-                </div><!--geral-->
+              
             </div>			
 
         </div>

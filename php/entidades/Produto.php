@@ -15,6 +15,14 @@ class Produto {
     private $detalhes;
     private $imagem;
     
+    public function __construct($id_produto="",$descricao="",$detalhes="",$imagem="") {
+        $this->id_produto= $id_produto;
+        $this->descricao = $descricao;
+        $this->detalhes = $detalhes;
+        $this->imagem = $imagem;
+    }
+
+
     public function getId_produto(){
         return $this->id_produto;
     }

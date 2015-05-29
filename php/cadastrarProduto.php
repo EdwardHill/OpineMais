@@ -9,7 +9,7 @@ ob_start();
     $marca = $_POST['marca'];
 
 include("../util/connection.php");
-include ("../php/upload.php");
+include ("../util/upload.php");
 
     $result = mysql_query("insert into produto(nome_produto,detalhes_produto,categoria_produto,marca_produto,imagem_produto) values ('$nome','$descricao','$categoria','$marca','$nome_final')");
 
