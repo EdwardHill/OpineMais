@@ -18,7 +18,8 @@ class Usuario {
    private $senha;
    private $telefone;
    
-  public function __construct($id_usuario,$nome,$email,$senha,$telefone) {
+  
+  public function __construct($id_usuario="",$nome="",$email="",$senha="",$telefone="") {
       $this->id_usuario = $id_usuario;
       $this->nome = $nome;
       $this->email = $email;
