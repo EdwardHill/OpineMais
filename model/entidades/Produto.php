@@ -11,44 +11,52 @@
  */
 class Produto {
     private $id_produto;
-    private $descricao;
+    private $titulo;
     private $detalhes;
     private $imagem;
+    private $qualificacao_geral;
+    private $nota_geral;
+    private $usuario; //usuário ao qual o produto pertence
+    private $comentarios; //comentários para produto 
     
-    public function __construct($id_produto="",$descricao="",$detalhes="",$imagem="") {
+    public function __construct($id_produto="",$descricao="",$detalhes="",$imagem="",$usuario="") {
         $this->id_produto= $id_produto;
         $this->descricao = $descricao;
         $this->detalhes = $detalhes;
         $this->imagem = $imagem;
+        $this->usuario = $usuario;
     }
 
 
     public function getId_produto(){
         return $this->id_produto;
     }
+    
+    public function setId_produto($id_produto){
+        $this->id_produto = $id_produto;
+    }
+    
     public function getDescricao(){
-    return $this->descricao;
-}
+        return $this->descricao;
+    }
+    
+    public function setDescricao($descricao){
+        $this->descricao = $descricao;
+    }
     
     public function getDetalhes(){
-    return $this->detalhes;
-}
+        return $this->detalhes;
+    }
+    
+    public function setDetalhes($detalhes){
+         $this->detalhes = $detalhes;
+    }
     
     public function getImagem(){
-    return $this->imagem;
-}
+        return $this->imagem;
+    }
 
-public function setId_produto($id_produto){
-        $this->id_produto = $id_produto;
+    public function setImagem($imagem){
+        $this->imagem = $imagem;
+    }
 }
-public function setDescicao($descricao){
-        $this->descricao = $descricao;
-}
- public function setDestalhes($destalhes){
-     $this->detalhes = detalhes;
-    
- }
- public function setImagem($imagem){
-        $this->Imagem = $Imagem;
-}
-  }

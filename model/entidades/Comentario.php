@@ -12,5 +12,18 @@
  * @author Jackson
  */
 class Comentario {
-    //put your code here
+    private $id_comentario;
+    private $mensagem;
+    private $qualificacao;
+    private $nota;
+    private $produto; //produto ao qual o comentario pertence
+    
+    public function __construct($id_comentario="",$mensagem="",$classificacao="",$nota="",$produto="") {
+        $this->id_comentario = $id_comentario;
+        $this->mensagem = $mensagem;
+        $this->classificacao = $classificacao;
+        $this->nota = $nota;
+        $this->produto = ;
+        
+    }
 }
