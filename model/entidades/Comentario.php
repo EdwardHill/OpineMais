@@ -23,7 +23,7 @@ class Comentario {
         $this->mensagem = $mensagem;
         $this->classificacao = $classificacao;
         $this->nota = $nota;
-        $this->produto = ;
+        $this->produto = $produto;
         
     }
 }
