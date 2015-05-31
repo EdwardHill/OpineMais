@@ -37,4 +37,52 @@ class Comentario {
     public function setId_comentario($comentario){
         $this->id_comentario = $comentario;
     }
+    
+    public function getMensagem(){
+        return $this->mensagem;
+    }
+    
+    public function setMensagem($mensagem){
+        $this->mensagem = $mensagem;
+    }
+    
+    public function getQualificacao(){
+        return $this->qualificacao;
+    }
+    
+    public function setQualificacao($qualificacao){
+        $this->qualificacao = $qualificacao;
+    }
+    
+    public function getNota(){
+        return $this->nota;
+    }
+    
+    public function setNota($nota){
+        $this->nota = $nota;
+    }
+    
+    public function getUsuario(){
+        return $this->usuario;
+    }
+    
+    public function setUsuario($usuario){
+        $this->usuario = $usuario;
+    }
+    
+    public function getProduto(){
+        return $this->produto;
+    }
+    
+    public function setProduto($produto){
+        $this->produto = $produto;
+    }
+    
+    public function getRespostas(){
+        return $this->respostas;
+    }
+    
+    public function setRespostas($respostas){
+        $this->respostas = $respostas;
+    }
 }

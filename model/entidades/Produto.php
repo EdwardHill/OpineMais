@@ -11,7 +11,7 @@
  */
 class Produto {
     private $id_produto;
-    private $titulo;
+    private $nome_produto;
     private $detalhes;
     private $imagem;
     private $qualificacao_positiva;
@@ -20,10 +20,10 @@ class Produto {
     private $usuario; //usuário que criou o produto
     private $comentarios; //comentários para o produto 
     
-    public function __construct($id_produto="",$titulo="",$detalhes="",$imagem="",$qualificacao_positiva="",
+    public function __construct($id_produto="",$nome_produto="",$detalhes="",$imagem="",$qualificacao_positiva="",
             $qualificacao_negativa="",$nota_media="",$usuario="",$comentarios="") {
         $this->id_produto= $id_produto;
-        $this->titulo = $titulo;
+        $this->nome_produto = $nome_produto;
         $this->detalhes = $detalhes;
         $this->imagem = $imagem;
         $this->qualificacao_positiva = $qualificacao_positiva;
@@ -42,12 +42,12 @@ class Produto {
         $this->id_produto = $id_produto;
     }
     
-    public function getTitulo(){
-        return $this->titulo;
+    public function getNome_produto(){
+        return $this->nome_produto;
     }
     
-    public function setTitulo($titulo){
-        $this->titulo = $titulo;
+    public function setNome_produto($nome_produto){
+        $this->nome_produto = $nome_produto;
     }
     
     public function getDetalhes(){

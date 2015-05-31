@@ -17,5 +17,42 @@ class Resposta {
     private $usuario;
     private $comentario;
     
+    public function __construct($id_resposta="",$mensagem="",$usuario="",$comentario="") {
+        $this->id_resposta = $id_resposta;
+        $this->mensagem = $mensagem;
+        $this->usuario  = $usuario;
+        $this->comentario = $comentario;
+    }
     
+    public function getIs_resposta(){
+        return $this->id_resposta;
+    }
+    
+    public function setId_resposta($id_resposta){
+        $this->id_resposta = $id_resposta;
+    }
+    
+    public function getMensagem(){
+        return $this->mensagem;
+    }
+    
+    public function setMensagem($mensagem){
+        $this->mensagem = $mensagem;
+    }
+    
+    public function getUsuario(){
+        return $this->usuario;
+    }
+    
+    public function setUsuario($usuario){
+        $this->usuario = $usuario;
+    }
+    
+    public function getComentario(){
+        return $this->comentario;
+    }
+    
+    public function setComentario($comentario){
+        $this->comentario = $comentario;
+    }
 }
