@@ -7,35 +7,29 @@
  */
 
 /**
- * Description of Comentario
+ * Description of Resposta
  *
- * @author Jackson
+ * @author CA43002_CPD
  */
 class Comentario {
     private $id_comentario;
     private $mensagem;
-    private $qualificacao;
-    private $nota;
-    private $usuario; //Usuario que fez o comentario (1 comentario para cada produto)
-    private $produto; //produto ao qual o comentario pertence
-    private $respostas; //resposta dada por outros usuários ao seu comentario.
+    private $usuario; // Usuario que comentou a opniao
+    private $opiniao; // Opinião ao qual o comentário esta sendo feito
     
-    public function __construct($id_comentario="",$mensagem="",$qualificacao="",$nota="",$usuario="",$produto="",$respostas="") {
+    public function __construct($id_comentario="",$mensagem="",$usuario="",$opiniao="") {
         $this->id_comentario = $id_comentario;
         $this->mensagem = $mensagem;
-        $this->qualificacao = $qualificacao;
-        $this->nota = $nota;
-        $this->usuario = $usuario;
-        $this->produto = $produto;
-        $this->respostas = $respostas;
+        $this->usuario  = $usuario;
+        $this->opiniao = $opiniao;
     }
     
-    public function getId_comentario(){
+    public function getIs_comentario(){
         return $this->id_comentario;
     }
     
-    public function setId_comentario($comentario){
-        $this->id_comentario = $comentario;
+    public function setId_comentario($id_comentario){
+        $this->id_comentario = $id_comentario;
     }
     
     public function getMensagem(){
@@ -46,22 +40,6 @@ class Comentario {
         $this->mensagem = $mensagem;
     }
     
-    public function getQualificacao(){
-        return $this->qualificacao;
-    }
-    
-    public function setQualificacao($qualificacao){
-        $this->qualificacao = $qualificacao;
-    }
-    
-    public function getNota(){
-        return $this->nota;
-    }
-    
-    public function setNota($nota){
-        $this->nota = $nota;
-    }
-    
     public function getUsuario(){
         return $this->usuario;
     }
@@ -70,19 +48,11 @@ class Comentario {
         $this->usuario = $usuario;
     }
     
-    public function getProduto(){
-        return $this->produto;
+    public function getOpiniao(){
+        return $this->opiniao;
     }
     
-    public function setProduto($produto){
-        $this->produto = $produto;
-    }
-    
-    public function getRespostas(){
-        return $this->respostas;
-    }
-    
-    public function setRespostas($respostas){
-        $this->respostas = $respostas;
+    public function setOpiniao($opiniao){
+        $this->opiniao = $opiniao;
     }
 }
