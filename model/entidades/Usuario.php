@@ -17,14 +17,12 @@ class Usuario {
     private $nome;
     private $email;
     private $senha;
-    private $telefone;
 
-    public function __construct($id_usuario = "", $nome = "", $email = "", $senha = "", $telefone = "") {
+    public function __construct($id_usuario = "", $nome = "", $email = "", $senha = "") {
         $this->id_usuario = $id_usuario;
         $this->nome = $nome;
         $this->email = $email;
         $this->senha = $senha;
-        $this->telefone = $telefone;
     }
 
     public function getId_usuario() {
@@ -55,15 +53,8 @@ class Usuario {
         return $this->senha;
     }
 
-    public function setSenha($email) {
-        $this->email = $email;
-    }
-    
-    public function getTelefone() {
-        return $this->telefone;
-    }
-    public function setTelefone($email) {
-        $this->email = $email;
+    public function setSenha($senha) {
+        $this->senha = $senha;
     }
 
     public function autenticar($email, $senha) {

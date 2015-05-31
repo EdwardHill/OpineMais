@@ -12,5 +12,10 @@
  * @author CA43002_CPD
  */
 class Resposta {
-    //put your code here
+    private $id_resposta;
+    private $mensagem;
+    private $usuario;
+    private $comentario;
+    
+    
 }
