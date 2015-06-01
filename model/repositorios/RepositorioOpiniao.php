@@ -12,7 +12,7 @@
  * @author Jackson
  */
 class RepositorioOpiniao implements IRepositorio{
-    public function adcionar(\Opiniao $entidade) {
+    public function adicionar(\Opiniao $entidade) {
         
     }
 

@@ -12,7 +12,7 @@
  * @author Jackson
  */
 class RepositorioProduto implements IRepositorio{
-    public function adcionar(\Produto $entidade) {
+    public function adicionar(\Produto $entidade) {
         
     }
 

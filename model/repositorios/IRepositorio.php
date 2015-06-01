@@ -14,7 +14,7 @@
  */
 interface IRepositorio {
     
-    public function adcionar($entidade);
+    public function adicionar($entidade);
     public function editar($entidade);
     public function remover($entidade);
     public function pesquisar($entidade);

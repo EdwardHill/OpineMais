@@ -9,10 +9,9 @@
  *
  * @author Edward_Hill
  */
-include ('IRepositorio.php');
 class RepositorioUsuario implements IRepositorio{
     
-    public function adcionar(\Usuario $entidade) {
+    public function adicionar(\Usuario $entidade) {
         
       $nome = $entidade->getNome();
       $email = $entidade->getEmail();
