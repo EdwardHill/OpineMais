@@ -57,10 +57,10 @@ class Usuario {
         $this->senha = $senha;
     }
 
-    public function autenticar($email, $senha) {
-        $email = email;
-        $senha = md5($senha);
-        echo $senha;
-    }
+//    public function autenticar($email, $senha) {
+//        $email = email;
+//        $senha = md5($senha);
+//        echo $senha;
+//    }
 
 }

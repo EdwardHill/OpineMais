@@ -17,10 +17,9 @@ class RepositorioUsuario implements IRepositorio{
       $nome = $entidade->getNome();
       $email = $entidade->getEmail();
       $senha = $entidade->getSenha();
-      $telefone = $entidade->getTelefone();
       
      include("../util/connection.php");
-    $result = mysql_query("insert into usuario(nome_usuario,email_usuario,senha_usuario,telefone_usuario) values ('$nome','$email','$senha','$telefone')");
+    $result = mysql_query("insert into usuario(nome,email_usuario,senha_usuario,telefone_usuario) values ('$nome','$email','$senha','$telefone')");
     session_start();
     $_SESSION["mensagem"] = "Usuário Cadastrado!";
 	header('Location:../index.php');
@@ -49,6 +48,11 @@ class RepositorioUsuario implements IRepositorio{
         
     }
     
+    public function remover(\Usuario $entidade) {
+        
+        include("../util/connection.php");        
+        $result = mysql_query("DELETE  ON usuario  WHERE id_usuario ='" + $entidade->getId_usuario()+"'");
+    }
     
     public function editar(\Usuario $entidade) {
         
@@ -56,10 +60,9 @@ class RepositorioUsuario implements IRepositorio{
         $result = mysql_query("UPDATE usuario  SET nome_usuario ='" + $entidade->getNome()+"',email_usuario ='"+$entidade->getEmail()+"',senha_usuario = '"+ $entidade->getSenha()+"'");
         
     }
-  
-    public function remover(\Usuario $entidade) {
+
+    public function listar(\Usuario $entidade) {
         
-        include("../util/connection.php");        
-        $result = mysql_query("DELETE  ON usuario  WHERE id_usuario ='" + $entidade->getId_usuario()+"'");
     }
+
 }
