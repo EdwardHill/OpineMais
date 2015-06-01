@@ -12,5 +12,6 @@
  * @author Jackson
  */
 abstract class Qualificacao {
-    
+    const BOM = "bom";
+    const RUIM = "ruim";
 }
