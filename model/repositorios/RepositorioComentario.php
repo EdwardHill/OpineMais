@@ -13,15 +13,16 @@
  */
 class RepositorioComentario implements IRepositorio{
     
+private static $instance = null;
+        
     private function __construct(){
     }
     
     public static function getInstance(){
-        static $instance = null;
-        if (null === $instance) {
-            $instance = new static();
+        if(!isset(self::$instance)){
+            self::$instance = new self;
         }
-        return $instance;
+        return self::$instance;
     }
     
     public function adicionar(\Comentario $entidade) {
@@ -84,7 +85,7 @@ class RepositorioComentario implements IRepositorio{
     }
 
     public function listarComentariosPorOpiniao(\Opiniao $entidade){
-        $result = mysql_query("seelct * from comentario where id_opiniao=" . $entidade->getId_opiniao());
+        $result = mysql_query("select * from comentario where id_opiniao=" . $entidade->getId_opiniao());
         $arrayComentario = array();
         while( $sql = mysql_fetch_array($result)){
             $id_comentario = $sql['id_comentario'];
