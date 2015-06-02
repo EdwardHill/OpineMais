@@ -15,7 +15,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+       
         ?>
         <div class="main">
         
@@ -52,7 +52,7 @@ and open the template in the editor.
 	 		echo $_SESSION["mensagem"];
 	 	}?>
 				</header>
-			<form method="POST" action="util/verificaSessao.php">
+			<form method="POST" action="control/loginUsuario.php">
                          
 			<fieldset >
 			<legend>Dados de Login</legend>
@@ -66,7 +66,7 @@ and open the template in the editor.
 										<ul class="actions">
 											<li><input type="submit"   class="button3" value="Entrar" alt="Aperte Enter Para entrar"/></li>
                                                                                         <li><a href="cadastro.php" class="button3" alt="Aperte Enter para um novo Cadastro">Cadastrar-se</a></li>
-                                                                                        <li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro"><img src="css/images/face.png" style="width:1.5em;"><br></a></li>
+<!--                                                                                        <li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro"><img src="css/images/face.png" style="width:1.5em;"><br></a></li>-->
 										</ul>
 						</div>
 			</form>

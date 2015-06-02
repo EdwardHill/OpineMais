@@ -72,6 +72,8 @@
                     <header class="major">
                         <h3>Produtos</h3>
                     </header>
+                    <br>
+                    
                     <table id="produtos" align="center" class="display" >
 
                         <thead>
