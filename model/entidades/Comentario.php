@@ -24,7 +24,7 @@ class Comentario {
         $this->opiniao = $opiniao;
     }
     
-    public function getIs_comentario(){
+    public function getId_comentario(){
         return $this->id_comentario;
     }
     

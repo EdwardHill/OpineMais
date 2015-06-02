@@ -14,6 +14,18 @@
 include("../util/connection.php");
 
 class RepositorioOpiniao implements IRepositorio{
+    
+    private function __construct(){
+    }
+    
+    public static function getInstance(){
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new static();
+        }
+        return $instance;
+    }
+    
     public function adicionar(\Opiniao $entidade) {
         $result = mysql_query("insert into opiniao(mensagem,qualificacao,nota,id_usuario,id_produto) "
                 . "values "
