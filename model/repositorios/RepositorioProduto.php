@@ -21,7 +21,7 @@ class RepositorioProduto implements IRepositorio{
     }
 
     public function editar(\Produto $entidade) {
-        $sql = "update produto set nome_produto='".$entidade->getNome_produto()."', detalhes='".$entidade->getDetalhes()."', imagem='".$entidade->getImagem()."', qualificacao_positiva=".$entidade->getQualificacao_positiva().", qualificacao_negativa=".$entidade->getQualificacao_negativa().", nota_media=".$entidade->Nota_media().")";
+        $sql = "update produto set nome_produto='".$entidade->getNome_produto()."', detalhes='".$entidade->getDetalhes()."', imagem='".$entidade->getImagem()."', qualificacao_positiva=".$entidade->getQualificacao_positiva().", qualificacao_negativa=".$entidade->getQualificacao_negativa().", nota_media=".$entidade->Nota_media()." where id_produto=". $entidade->getId_produto().")";
         $result = mysql_query($sql);
     }
 
