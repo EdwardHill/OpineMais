@@ -11,7 +11,7 @@
  *
  * @author ivan
  */
-include ('../imports.php');
+include_once ('../imports.php');
 class Fachada {
     
     private static $instance = null;
