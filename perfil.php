@@ -21,7 +21,7 @@ and open the template in the editor.
         
         $repo = new RepositorioUsuario();
         $usu =new Usuario();
-        $usu->setId_usuario(4);
+        $usu->setId_usuario(1);
         $usu2 = $repo->pesquisar($usu);
         
         ?>
