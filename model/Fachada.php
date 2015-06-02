@@ -100,7 +100,17 @@ class Fachada {
     }
     
     public function ListarOpinioesPorProduto(\Produto $entidade){
-        return $this->controladorOpiniao->ListarOpinioesPorProduto($entidade);
+        $arrayOpinioes = array();
+        $produto = new Produto();
+        
+        $arrayOpinioes = $this->controladorOpiniao->ListarOpinioesPorProduto($entidade);
+        if($arrayOpinioes != null){
+            foreach ($opiniao as $arrayOpinioes){
+                $produto = $this->pesquisarProduto($entidade->getId_produto());
+                $produto->setOpinioes($opiniao);
+            }
+        }
+        return $arrayOpinioes;        
     }
 
 
