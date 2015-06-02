@@ -16,8 +16,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include("model/entidades/Usuario.php");
-        include ("model/repositorios/RepositorioUsuario.php");
+       include_once('imports.php');
         
         $repo = new RepositorioUsuario();
         $usu =new Usuario();
