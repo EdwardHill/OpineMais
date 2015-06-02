@@ -12,6 +12,17 @@
  * @author Jackson
  */
 class RepositorioProduto implements IRepositorio{
+    
+    function __construct(){
+    }
+    
+    public static function getInstance(){
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new static();
+        }
+        return $instance;
+    }
         
     public function adicionar(\Produto $entidade) {
         
@@ -76,7 +87,7 @@ class RepositorioProduto implements IRepositorio{
     public function remover(\Produto $entidade) {
         $sql("delete from produto where id_produto=".$entidade->getId_produto());
         $result = mysql_query($sql);
-    }   
+    }
 
 //put your code here
 }

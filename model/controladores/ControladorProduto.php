@@ -15,7 +15,7 @@ class ControladorProduto {
     private $repositorioProduto;
     
     function __construct() {
-        $this->repositorioProduto = new RepositorioProduto();
+        $this->repositorioProduto = RepositorioProduto::getInstance();
     }
            
     public function adicionarProduto(\Produto $entidade) {
