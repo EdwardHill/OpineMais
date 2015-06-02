@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Maio-2015 às 12:01
+-- Generation Time: 02-Jun-2015 às 10:02
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -68,6 +68,8 @@ CREATE TABLE IF NOT EXISTS `produto` (
 `id_produto` int(11) NOT NULL,
   `nome_produto` varchar(50) NOT NULL,
   `detalhes` varchar(500) NOT NULL,
+  `categoria` varchar(50) NOT NULL,
+  `marca` varchar(50) NOT NULL,
   `imagem` varchar(100) NOT NULL,
   `qualificacao_positiva` int(11) DEFAULT NULL,
   `qualificacao_negativa` int(11) DEFAULT NULL,
