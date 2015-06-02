@@ -25,7 +25,7 @@ class RepositorioComentario implements IRepositorio{
         
     }
 
-    public function listar(\Comentario $entidade) {
+    public function listar() {
         
     }
 

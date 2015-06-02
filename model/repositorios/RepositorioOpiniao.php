@@ -34,7 +34,7 @@ class RepositorioOpiniao implements IRepositorio{
                 . "where id_opiniao = ".$entidade->getId_opiniao());
     }
 
-    public function listar(\Opiniao $entidade) {
+    public function listar() {
         $result = mysql_query('select * from opiniao');
         while( $sql = mysql_fetch_array($result)){
             $id_opiniao = $sql['id_opiniao'];
