@@ -11,9 +11,11 @@
  *
  * @author Jackson
  */
+include("../util/connection.php");
+
 class RepositorioComentario implements IRepositorio{
     
-private static $instance = null;
+    private static $instance = null;
         
     private function __construct(){
     }
