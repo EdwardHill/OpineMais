@@ -41,8 +41,8 @@
 
                         <ul class="divided">
                             <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Ola,<?php
-                                if (!empty($_GET['nome'])) {
-                                    $nome = $_GET['nome'];
+                                if (!empty($_SESSION['nome'])) {
+                                    $nome = $_SESSION['nome'];
                                     echo $nome;
                                 } else {
                                     echo 'Visitante';
