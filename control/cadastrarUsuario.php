@@ -13,10 +13,11 @@ include_once ('../imports.php');
     $usu->setNome($nome);
     $usu->setEmail($email);
     $usu->setSenha($senha);
-    $fachada = new Fachada();
+    $fachada = Fachada::getInstance();
     $fachada->adicionarUsuario($usu);
    
-}
+    printf($nome);
+ }
 
 ?>
 
