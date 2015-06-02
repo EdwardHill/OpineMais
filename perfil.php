@@ -16,19 +16,18 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-       include_once('imports.php');
+       include('imports.php');
         
-        $repo = new RepositorioUsuario();
+       $fachada = new Fachada();
         $usu =new Usuario();
         $usu->setId_usuario(1);
-        $usu2 = $repo->pesquisar($usu);
+        $usu2 = $fachada->pesquisarUsuario($usu);
         
         ?>
         <?php include("header.php") ?>
         <?php include("leftBar.php") ?>
         <?php include("rightBar.php") ?>
         <div id="content">
-
 
             <!-- titulo do conteudo-->
             <header class="major">		
@@ -52,7 +51,7 @@ and open the template in the editor.
           
                 <ul class="actions">
 
-                    <li><a href="#" class="button">Editar Perfil</a></li>
+                    <li><a href="editarPerfil.php" class="button">Editar Perfil</a></li>
 
                 </ul>
           

@@ -1,15 +1,27 @@
 	<div id="sidebar2">
 		<div id="nav">
-				<ul class="menu">
+				<ul class="menu2">
+                                    <li></li>
 				<li>
+                                    
                                <?php
 //                               if (!empty($_SESSION['nome'])) {
 //                                   
 //                                } 
-
-                  echo '<a href="home.php" class="button3">Cadastrar Produto</a>'
+                                
+                echo '<a href="perfil.php" class="button3">Perfil</a>';
 
                                 ?>  </li> 
+                                
+                                				<li>
+                               <?php
+//                               if (!empty($_SESSION['nome'])) {
+//                                   
+//                                } 
+                                
+                echo '<a href="cadastroProduto.php" class="button2">Novo Produto</a>';
+
+                                ?>  </li>
 
                         </ul>		
 							
