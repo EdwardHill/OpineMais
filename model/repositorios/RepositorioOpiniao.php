@@ -22,8 +22,8 @@ class RepositorioOpiniao implements IRepositorio{
                 . $entidade->getNota().","
                 . $entidade->getUsuario()->getId_usuario().","
                 . $entidade->getProduto()->getId_produto().")");
-        echo $result;
-        echo 'Cadastro de Opiniao FEITO';
+//        echo $result;
+//        echo 'Cadastro de Opiniao FEITO';
     }
 
     public function editar(\Opiniao $entidade) {
