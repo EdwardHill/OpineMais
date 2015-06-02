@@ -28,6 +28,13 @@ class ControladorUsuario {
     }
 
     public function editarUsuario(\Usuario $entidade) {
+        $u = $this->repositorioUsuario->pesquisar($entidade);
+        
+        if($u->getSenha() != $entidade->getSenha()){
+            $senhaCriptografada = md5($entidade->getSenha());
+            $entidade->setSenha($senhaCriptografada);
+        }
+                
         $this->repositorioUsuario->editar($entidade);
     }
 
