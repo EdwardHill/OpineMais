@@ -24,7 +24,7 @@
 				<h2>Cadastre-se</h2>
 			</header>
 			<!-- Formulário  aqui! -->
-			<form method="POST" name="fusuario" action="php/cadastrarUsuario.php">
+			<form method="POST" name="fusuario" action="control/cadastrarUsuario.php">
 				
 				<fieldset >
 					<legend>Dados de Login</legend>
@@ -39,12 +39,9 @@
 					<label for="nome">Nome Completo</label> <input type="text"
 						placeholder="Digite seu nome completo" name="nome" id="nome"
 						size=60 require="nome">
-						<label for="telefone1">Telefone 1:</label><br> <input
-						type="text" placeholder="Digite seu telefone" name="telefone"
-						id="telefone" size=14 maxlength="14" required="telefone" onblur="javascript: ValidaTelefone(fusuario.telefone);" onKeyPress="javascript: MascaraTelefone(fusuario.telefone)"><br> 
+		 
 						
-						
-						
+										
 				</fieldset>
 
 				<div class="12u">

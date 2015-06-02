@@ -22,7 +22,7 @@
 			<h4><?php$mensagem?></h4>
 		</header>
 		<!-- Formulário aqui! -->
-                <form method="POST" action="php/cadastrarProduto.php"enctype="multipart/form-data" >
+                <form method="POST" action="control/cadastrarProduto.php"enctype="multipart/form-data" >
 
 			<fieldset>
 				<legend>

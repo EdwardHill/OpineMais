@@ -16,12 +16,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include_once "php/entidades/Usuario.php";
-        include_once "php/repositorio/RepositorioUsuario.php";
+        include("model/entidades/Usuario.php");
+        include ("model/repositorios/RepositorioUsuario.php");
         
         $repo = new RepositorioUsuario();
         $usu =new Usuario();
-        $usu->setId_usuario(90);
+        $usu->setId_usuario(4);
         $usu2 = $repo->pesquisar($usu);
         
         ?>
@@ -40,17 +40,14 @@ and open the template in the editor.
             <fieldset>
                 <legend>Dados de Login</legend>
                 <p>
-                    E-mail:<?php echo $usu2->getNome();?>  <br/>
+                    E-mail:<?php echo $usu2->getEmail();?>  <br/>
                 </p>
             </fieldset>
 
             <fieldset>		
                 <legend>Dados Pessoais</legend>
-                <p class="p">Nome:  </p>
-
-                <p class="p">Telefone: </p>
-
-
+                <p class="p">Nome:<?php echo $usu2->getNome();?>  </p>
+            
 
             </fieldset>
           

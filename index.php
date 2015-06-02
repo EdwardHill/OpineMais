@@ -63,10 +63,11 @@
                 </div>
 
             </div>
+            <?php include("leftBar.php") ?>
+            <?php include("rightBar.php") ?>
             <div id="content">
-                <?php include("leftBar.php") ?>
-                <?php include("rightBar.php") ?>
-               
+
+
                 <div id="geral">
                     <header class="major">
                         <h3>Produtos</h3>
@@ -83,7 +84,7 @@
                             session_start();
                             ob_start();
 
-                            include_once 'util/connection.php';
+                            include_once 'model/util/connection.php';
                             //include_once 'util/sessao.php';
                             $dados_produto = mysql_query("select * from produto");
                             while ($sql = mysql_fetch_array($dados_produto)) {
@@ -95,7 +96,7 @@
                                 <tr>
                                     <td headers="produto">                                         
                                         <h3><?php echo $titulo ?></h3>
-                                        <div ><a href="comentar.php?<?php echo $id_produto?>"><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></a></div>
+                                        <div ><a href="comentar.php?<?php echo $id_produto ?>"><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></a></div>
                                         <h4>Descrição:</h4>
                                         <p><?php echo $descricao ?></p>
                                     </td>
