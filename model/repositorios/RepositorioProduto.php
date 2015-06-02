@@ -25,12 +25,31 @@ class RepositorioProduto implements IRepositorio{
         $result = mysql_query($sql);
     }
 
-    public function listar(\Produto $entidade) {
+    public function listar() {
+        $sql = "select * from produto";
+        $result = mysql_query($sql);
         
+        while ($sql = mysql_fetch_array($result)){
+            $id_produto = $sql['id_produto'];
+            $nome_produto = $sql['nome_produto'];
+            $detalhes = $sql['detalhes'];
+            $imagem = $sql['imagem'];
+            $qualificacao_positiva = $sql['qualificacao_positiva'];
+            $qualificacao_negativa = $sql['qualificacao_negativa'];
+            $nota_media = $sql['nota_media'];
+            $id_usuario = $sql['id_usuario'];
+            
+            $usuario = new Usuario($id_usuario);
+            
+            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$usuario);
+            $arrayProduto = array();
+            array_push($arrayProduto, $produto);
+        }
+        return $arrayProduto;        
     }
 
     public function pesquisar(\Produto $entidade) {
-        $sql("select * from produto where id_produto='$entidade->getId_produto()'");
+        $sql = ("select * from produto where id_produto='$entidade->getId_produto()'");
         $dados = mysql_query($sql);
         while ($sql = mysql_fetch_array($dados)){
             $id_produto = $sql['id_produto'];
@@ -42,9 +61,11 @@ class RepositorioProduto implements IRepositorio{
             $nota_media = $sql['nota_media'];
             $id_usuario = $sql['id_usuario'];
             
-            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$id_usuario);
-            return $produto;
+            $usuario = new Usuario($id_usuario);
+            
+            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$usuario);
         }
+        return $produto;
     }
 
     public function remover(\Produto $entidade) {
