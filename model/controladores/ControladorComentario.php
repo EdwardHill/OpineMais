@@ -38,7 +38,9 @@ class ControladorComentario{
 
     public function removerComentario(\Comentario $entidade) {
         $this->repositorioComentario->remover($entidade);
-    }
-
-//put your code here
+    }    
+    
+    public function listarComentariosPorOpiniao(){
+        
+    }    
 }

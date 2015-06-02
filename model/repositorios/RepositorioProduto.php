@@ -64,7 +64,7 @@ class RepositorioProduto implements IRepositorio{
     }
 
     public function pesquisar(\Produto $entidade) {
-        $sql = ("select * from produto where id_produto='$entidade->getId_produto()'");
+        $sql = ("select * from produto where id_produto='". $entidade->getId_produto()."'");
         $dados = mysql_query($sql);
         while ($sql = mysql_fetch_array($dados)){
             $id_produto = $sql['id_produto'];

@@ -20,6 +20,10 @@ class ControladorUsuario {
     }
     
     public function adicionarUsuario(\Usuario $entidade) {
+        $senha = $entidade->getSenha();
+        $senhaCodificada = md5($senha);
+        $entidade->setSenha($senhaCodificada);
+        
         $this->repositorioUsuario->adicionar($entidade);
     }
 
