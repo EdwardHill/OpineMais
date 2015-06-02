@@ -17,11 +17,13 @@ class Produto {
     private $qualificacao_positiva;
     private $qualificacao_negativa;
     private $nota_media;
+    private $categoria;
+    private $marca;
     private $usuario; //usuário que criou o produto
     private $opinioes; //Opiniões sobre o produto
     
     public function __construct($id_produto="",$nome_produto="",$detalhes="",$imagem="",$qualificacao_positiva="",
-            $qualificacao_negativa="",$nota_media="",$usuario="",$opinioes="") {
+            $qualificacao_negativa="",$nota_media="",$categoria="",$marca="",$usuario="",$opinioes="") {
         $this->id_produto= $id_produto;
         $this->nome_produto = $nome_produto;
         $this->detalhes = $detalhes;
@@ -29,6 +31,8 @@ class Produto {
         $this->qualificacao_positiva = $qualificacao_positiva;
         $this->qualificacao_negativa = $qualificacao_negativa;
         $this->nota_media = $nota_media;
+        $this->categoria = $categoria;
+        $this->marca = $marca;
         $this->usuario = $usuario;
         $this->opinioes = $opinioes;
     }
@@ -104,4 +108,22 @@ class Produto {
     public function setOpinioes($opinioes){
         $this->opinioes = $opinioes;
     }
+    
+    function getCategoria() {
+        return $this->categoria;
+    }
+
+    function getMarca() {
+        return $this->marca;
+    }
+
+    function setCategoria($categoria) {
+        $this->categoria = $categoria;
+    }
+
+    function setMarca($marca) {
+        $this->marca = $marca;
+    }
+
+
 }

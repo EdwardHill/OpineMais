@@ -15,13 +15,13 @@ class RepositorioProduto implements IRepositorio{
         
     public function adicionar(\Produto $entidade) {
         
-        $sql = "insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,id_usuario) values ('".$entidade->getNome_produto()."','".$entidade->getDetalhes()."','".$entidade->getImagem()."',".$entidade->getQualificacao_positiva().",".$entidade->getQualificacao_negativa().",".$entidade->Nota_media().",".$entidade->getId_usuario().")";
+        $sql = "insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values ('".$entidade->getNome_produto()."','".$entidade->getDetalhes()."','".$entidade->getImagem()."',".$entidade->getQualificacao_positiva().",".$entidade->getQualificacao_negativa().",".$entidade->Nota_media().",".$entidade->getCategoria().",".$entidade->getMarca().",".$entidade->getId_usuario().")";
         
         $result = mysql_query($sql);
     }
 
     public function editar(\Produto $entidade) {
-        $sql = "update produto set nome_produto='".$entidade->getNome_produto()."', detalhes='".$entidade->getDetalhes()."', imagem='".$entidade->getImagem()."', qualificacao_positiva=".$entidade->getQualificacao_positiva().", qualificacao_negativa=".$entidade->getQualificacao_negativa().", nota_media=".$entidade->Nota_media()." where id_produto=". $entidade->getId_produto().")";
+        $sql = "update produto set nome_produto='".$entidade->getNome_produto()."', detalhes='".$entidade->getDetalhes()."', imagem='".$entidade->getImagem()."', qualificacao_positiva=".$entidade->getQualificacao_positiva().", qualificacao_negativa=".$entidade->getQualificacao_negativa().", nota_media=".$entidade->Nota_media().", categoria='". $entidade->getCategoria()."', marca='". $entidade->getMarca()."' where id_produto=". $entidade->getId_produto().")";
         $result = mysql_query($sql);
     }
 
@@ -37,11 +37,13 @@ class RepositorioProduto implements IRepositorio{
             $qualificacao_positiva = $sql['qualificacao_positiva'];
             $qualificacao_negativa = $sql['qualificacao_negativa'];
             $nota_media = $sql['nota_media'];
+            $categoria = $sql['categoria'];
+            $marca = $sql['marca'];
             $id_usuario = $sql['id_usuario'];
             
             $usuario = new Usuario($id_usuario);
             
-            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$usuario);
+            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$categoria,$marca,$usuario);
             $arrayProduto = array();
             array_push($arrayProduto, $produto);
         }
@@ -59,11 +61,13 @@ class RepositorioProduto implements IRepositorio{
             $qualificacao_positiva = $sql['qualificacao_positiva'];
             $qualificacao_negativa = $sql['qualificacao_negativa'];
             $nota_media = $sql['nota_media'];
+            $categoria = $sql['categoria'];
+            $marca = $sql['marca'];
             $id_usuario = $sql['id_usuario'];
             
             $usuario = new Usuario($id_usuario);
             
-            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$usuario);
+            $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$categoria,$marca,$usuario);
         }
         return $produto;
     }
