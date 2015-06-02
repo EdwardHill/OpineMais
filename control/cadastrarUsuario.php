@@ -1,6 +1,5 @@
 <?php
-include_once("../model/entidades/Usuario.php");
-include_once "../model/Fachada.php";
+include_once '../model/util/imports.php';
 
 
  if (isset($_POST['email'])) {
@@ -16,6 +15,7 @@ include_once "../model/Fachada.php";
     $usu->setSenha($senha);
     $fachada = new Fachada();
     $fachada->adicionarUsuario($usu);
+   
 }
 
 ?>
