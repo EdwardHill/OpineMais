@@ -20,7 +20,7 @@ class Fachada {
     private $controladorOpiniao;
     private $controladorComentario;
     
-    public function __construct() {
+    private function __construct() {
         $this->controladorUsuario = new ControladorUsuario();
         $this->controladorProduto = new ControladorProduto();
         $this->controladorOpiniao = new ControladorOpiniao();
