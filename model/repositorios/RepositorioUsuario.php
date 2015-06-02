@@ -11,6 +11,7 @@
  *
  * @author Edward_Hill
  */
+include("../model/util/connection.php");
 
 class RepositorioUsuario {
     
@@ -27,25 +28,22 @@ class RepositorioUsuario {
     }
 
     public function adicionar(\Usuario $entidade) {
-      include("../model/util/connection.php");
-      ob_start();
-      $result = mysql_query(" INSERT INTO usuario (nome, email, senha) values ('" . $entidade->getNome() . "','" . $entidade->getEmail() . "','" . $entidade->getSenha() . "')");
+    
+      $result = mysql_query(" insert into usuario (nome, email, senha) values "
+              . "('" . $entidade->getNome() . "','" . $entidade->getEmail() . "','" . $entidade->getSenha() . "')");
     }
 
     public function pesquisar(\Usuario $entidade) {
 
-
-        include_once 'model/util/connection.php';
-        ob_start();
-        $dados = mysql_query(" SELECT * FROM usuario  WHERE id_usuario = ".$entidade->getId_usuario()."");
+        $dados = mysql_query("select * from usuario  where id_usuario = ".$entidade->getId_usuario());
         while ($sql = mysql_fetch_array($dados)) {
             $id = $sql['id_usuario'];
             $nome = $sql['nome'];
             $email = $sql['email'];
             $senha = $sql['senha'];
             $usuario = new Usuario($id, $nome, $email, $senha);
-            return $usuario;
         }
+        return $usuario;
     }
 
     public function remover(\Usuario $entidade) {
