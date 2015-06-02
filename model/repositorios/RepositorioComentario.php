@@ -83,5 +83,21 @@ class RepositorioComentario implements IRepositorio{
         $result = mysql_query('delete from comentario where id_comentario = '.$entidade->getId_comentario());
     }
 
-//put your code here
+    public function listarComentariosPorOpiniao(\Opiniao $entidade){
+        $result = mysql_query("seelct * from comentario where id_opiniao=" . $entidade->getId_opiniao());
+        $arrayComentario = array();
+        while( $sql = mysql_fetch_array($result)){
+            $id_comentario = $sql['id_comentario'];
+            $mensagem = $sql['mensagem'];
+            $id_usuario = $sql['id_usuario'];
+            $id_opiniao = $sql['id_opiniao'];
+            
+            $usuario = new Usuario($id_usuario);
+            $opiniao = new Opiniao($id_opiniao);
+            $comentario = new Comentario($id_comentario, $mensagem, $usuario, $opiniao);
+            
+            array_push($arrayComentario, $comentario);
+        }
+        return $arrayComentario;
+    } 
 }

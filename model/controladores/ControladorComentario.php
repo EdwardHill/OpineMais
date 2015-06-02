@@ -40,7 +40,7 @@ class ControladorComentario{
         $this->repositorioComentario->remover($entidade);
     }    
     
-    public function listarComentariosPorOpiniao(){
-        
+    public function listarComentariosPorOpiniao(\Opiniao $entidade){
+        return $this->repositorioComentario->listarComentariosPorOpiniao($entidade);
     }    
 }

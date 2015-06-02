@@ -87,6 +87,25 @@ class RepositorioOpiniao implements IRepositorio{
     public function remover(\Opiniao $entidade) {
         $result = mysql_query('delete from opiniao where id_opiniao = '.$entidade->getId_opiniao());
     }
+    
+    public function ListarOpinioesPorProduto(\Produto $entidade){
+        $result = mysql_query("select * from opiniao where id_produto=" . $entidade->getId_produto());
+        $arrayOpiniao = array();
+        while( $sql = mysql_fetch_array($result)){
+            $id_opiniao = $sql['id_opiniao'];
+            $mensagem = $sql['mensagem'];
+            $qualificacao = $sql['qualificacao'];
+            $nota = $sql['nota'];
+            $id_usuario = $sql['id_usuario'];
+            $id_produto = $sql['id_produto'];
+            
+            $usuario = new Usuario($id_usuario);
+            $produto = new Produto($id_produto);
+            $opiniao = new Opiniao($id_opiniao, $mensagem, $qualificacao, $nota, $usuario, $produto);
+            
+            array_push($arrayOpiniao, $opiniao);
+        }
+        return $$arrayOpiniao;
+    }
 
-//put your code here
 }

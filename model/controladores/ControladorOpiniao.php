@@ -39,8 +39,8 @@ class ControladorOpiniao {
         $this->repositorioOpinicao->remover($entidade);
     }
     
-    public function ListarOpinioesPorProduto(){
-        
+    public function ListarOpinioesPorProduto(\Produto $entidade){
+        return $this->repositorioOpinicao->ListarOpinioesPorProduto($entidade);
     }
 
 }
