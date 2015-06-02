@@ -11,6 +11,8 @@
  *
  * @author Jackson
  */
+include("../model/util/connection.php");
+
 class RepositorioProduto implements IRepositorio{
     
     private static $instance = null;

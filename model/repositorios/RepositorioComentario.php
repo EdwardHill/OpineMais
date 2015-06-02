@@ -11,7 +11,7 @@
  *
  * @author Jackson
  */
-include("../util/connection.php");
+include("../model/util/connection.php");
 
 class RepositorioComentario implements IRepositorio{
     
