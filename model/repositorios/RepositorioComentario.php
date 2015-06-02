@@ -44,16 +44,43 @@ class RepositorioComentario implements IRepositorio{
     }
 
     public function listar() {
+        $result = mysql_query('select * from comentario');
         
+        $arrayComentario = array();
+        while( $sql = mysql_fetch_array($result)){
+            $id_comentario = $sql['id_comentario'];
+            $mensagem = $sql['mensagem'];
+            $id_usuario = $sql['id_usuario'];
+            $id_opiniao = $sql['id_opiniao'];
+            
+            $usuario = new Usuario($id_usuario);
+            $opiniao = new Opiniao($id_opiniao);
+            $comentario = new Comentario($id_comentario, $mensagem, $usuario, $opiniao);
+            
+            array_push($arrayComentario, $comentario);
+        }
+        return $arrayComentario;
         
     }
 
     public function pesquisar(\Comentario $entidade) {
+        $result = mysql_query('select * from comentario where id_comentario = '.$entidade->getId_comentario());
         
+        while( $sql = mysql_fetch_array($result)){
+            $id_comentario = $sql['id_comentario'];
+            $mensagem = $sql['mensagem'];
+            $id_usuario = $sql['id_usuario'];
+            $id_opiniao = $sql['id_opiniao'];
+            
+            $usuario = new Usuario($id_usuario);
+            $opiniao = new Opiniao($id_opiniao);
+            $comentario = new Comentario($id_comentario, $mensagem, $usuario, $opiniao);
+        }
+        return $comentario;
     }
 
     public function remover(\Comentario $entidade) {
-        
+        $result = mysql_query('delete from comentario where id_comentario = '.$entidade->getId_comentario());
     }
 
 //put your code here
