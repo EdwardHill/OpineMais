@@ -1,25 +1,27 @@
 <?php
 
-ob_start();
- if (isset($_POST['nome'])) {
+include_once ('../imports.php');
+include ('../model/util/connection.php');
 
+if (isset($_POST['nome'])) {
+    include ("../model/util/upload.php");
+    ob_start();
     $nome = $_POST['nome'];
-    $descricao =$_POST['descricao'];
+    $descricao = $_POST['descricao'];
     $categoria = $_POST['categoria'];
     $marca = $_POST['marca'];
-
-include("../model/util/connection.php");
-include ("../model/util/upload.php");
-
-    $result = mysql_query("insert into produto(nome_produto,detalhes,categoria_produto,marca_produto,imagem) values ('$nome','$descricao','$categoria','$marca','$nome_final')");
-
-
-    echo '<h3>Produto Cadastrado!</h3><br />';
-    echo 'Nome: '.$nome_final."<br />";
-
-
+    
+    $produto = new Produto();
+    $produto->setCategoria($categoria);
+    $produto->setDetalhes($descricao);
+    $produto->setImagem($nome_final);
+    $produto->setMarca($marca);
+    $produto->setNome_produto($nome);
+    $fachada = Fachada::getInstance();
+    $fachada->adicionarProduto($produto);
+   
+   
 }
-
 ?>
 
 
