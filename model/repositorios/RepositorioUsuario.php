@@ -11,23 +11,24 @@
  *
  * @author Edward_Hill
  */
-class RepositorioUsuario {
 
-    function __construct() {
+class RepositorioUsuario {
+    
+    private static $instance = null;
+            function __construct() {
         
     }
 
-    public static function getInstance() {
-        static $instance = null;
-        if (null === $instance) {
-            $instance = new static();
+   public static function getInstance(){
+        if(!isset(self::$instance)){
+            self::$instance = new self;
         }
-        return $instance;
+        return self::$instance;
     }
 
     public function adicionar(\Usuario $entidade) {
-        include("../model/util/connection.php");
-        ob_start();
+      include("../model/util/connection.php");
+      ob_start();
         $result = mysql_query(" INSERT INTO usuario (nome, email, senha) values ('" . $entidade->getNome() . "','" . $entidade->getEmail() . "','" . $entidade->getSenha() . "')");
     }
 
