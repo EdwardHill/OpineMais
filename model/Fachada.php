@@ -32,7 +32,7 @@ class Fachada {
         }
         return self::$instance;
     }
-
+    //**************************************************************************
     //METODOS DE USUARIO
     
     public function adicionarUsuario(\Usuario $entidade){
@@ -54,7 +54,8 @@ class Fachada {
     public function pesquisarUsuario(\Usuario $entidade){
         return $this->controladorUsuario->pesquisarUsuario($entidade);
     }
-
+    
+    //**************************************************************************
     //METODOS DE PRODUTO
    
     public function adicionarProduto(\Produto $entidade){
@@ -70,13 +71,31 @@ class Fachada {
     }
     
     public function listarProduto(){
-        return $this->controladorProduto->listarProduto();
+        $listaProdutos = $this->controladorProduto->listarProduto();
+        
+        foreach ($listaProdutos as $produto){
+            $opinioes = $this->listarOpinioesPorProduto($produto);
+            $usuario = $this->pesquisarUsuario($produto->getUsuario());
+            $produto->setOpinioes($opinioes);
+            $produto->setUsuario($usuario);
+        }
+        
+        return $listaProdutos;
     }
     
     public function pesquisarProduto(\Produto $entidade){
-        return $this->controladorProduto->pesquisarProduto($entidade);
+        $entidade = $this->controladorProduto->pesquisarProduto($entidade);
+        
+        $opinioes = $this->listarOpinioesPorProduto($entidade);
+        $usuario = $this->pesquisarUsuario($entidade->getUsuario());
+        
+        $entidade->setOpinioes($opinioes);
+        $entidade->setUsuario($usuario);
+        
+        return $entidade;
     }    
     
+    //**************************************************************************
     //METODOS DE OPINIAO
     
     public function adicionarOpiniao(\Opiniao $entidade){
@@ -92,28 +111,55 @@ class Fachada {
     }
     
     public function listarOpiniao(){
-        return $this->controladorOpiniao->listarOpiniao();
+        $listaOpinioes = $this->controladorOpiniao->listarOpiniao();
+        
+        foreach ($listaOpinioes as $opiniao){
+            $comentarios = $this->listarComentariosPorOpiniao($opiniao);
+            $usuario = $this->pesquisarUsuario($opiniao->getUsuario());
+            $opiniao->setComentarios($comentarios);
+            $opiniao->setUsuario($usuario);
+        }
+        
+        return $listaOpinioes;
+        
     }
     
     public function pesquiasrOpiniao(\Opiniao $entidade){
-        return $this->controladorOpiniao->pesquisarOpiniao($entidade);
+        $entidade = $this->controladorOpiniao->pesquisarOpiniao($entidade);
+        
+        $comentarios = $this->listarComentariosPorOpiniao($entidade);
+        $usuario = $this->pesquisarUsuario($entidade->getUsuario());
+        $entidade->setComentarios($comentarios);
+        $entidade->setUsuario($usuario);
+        
+        return $entidade;
     }
     
-    public function ListarOpinioesPorProduto(\Produto $entidade){
-        $arrayOpinioes = array();
-        $produto = new Produto();
+    private function listarOpinioesPorProduto(\Produto $entidade){
+        $listaOpinioes = $this->controladorOpiniao->listarOpinioesPorProduto($entidade);
         
-        $arrayOpinioes = $this->controladorOpiniao->ListarOpinioesPorProduto($entidade);
-        if($arrayOpinioes != null){
-            foreach ($opiniao as $arrayOpinioes){
-                $produto = $this->pesquisarProduto($entidade->getId_produto());
-                $produto->setOpinioes($opiniao);
-            }
+        foreach ($listaOpinioes as $opiniao){
+            $comentarios = $this->listarComentariosPorOpiniao($opiniao);
+            $usuario = $this->pesquisarUsuario($opiniao->getUsuario());
+            $opiniao->setComentarios($comentarios);
+            $opiniao->setUsuario($usuario);
         }
-        return $arrayOpinioes;        
+        
+        return $listaOpinioes;
+//        $arrayOpinioes = array();
+//        $produto = new Produto();
+//        
+//        $arrayOpinioes = $this->controladorOpiniao->ListarOpinioesPorProduto($entidade);
+//        if($arrayOpinioes != null){
+//            foreach ($opiniao as $arrayOpinioes){
+//                $produto = $this->pesquisarProduto($entidade->getId_produto());
+//                $produto->setOpinioes($opiniao);
+//            }
+//        }
+//        return $arrayOpinioes;
     }
 
-
+    //**************************************************************************
     //METODOS DE COMENTARIO
     
     public function adicionarComentario(\Comentario $entidade){
@@ -129,14 +175,33 @@ class Fachada {
     }
     
     public function listarComentario(){
-        return $this->controladorComentario->listarComentario();
+        $listaComentarios = $this->controladorComentario->listarComentario();
+        
+        foreach ($listaComentarios as $comentario){
+            $usuario = $this->pesquisarUsuario($comentario->getUsuario());
+            $comentario->setUsuario($usuario);
+        }
+        
+        return $listaComentarios;
     }
     
     public function pesquisarComentario(\Comentario $entidade){
-        return $this->controladorComentario->pesquisarComentario($entidade);
+        $entidade = $this->controladorComentario->pesquisarComentario($entidade);
+        
+        $usuario = $this->pesquisarUsuario($entidade->getUsuario());
+        $entidade->setUsuario($usuario);
+        
+        return $entidade;
     }
     
-    public function listarComentariosPorOpiniao(\Opiniao $entidade){
-        return $this->controladorComentario->listarComentariosPorOpiniao($entidade);
+    private function listarComentariosPorOpiniao(\Opiniao $entidade){
+        $listaComentarios = $this->controladorComentario->listarComentariosPorOpiniao($entidade);
+        
+        foreach ($listaComentarios as $comentario){
+            $usuario = $this->pesquisarUsuario($comentario->getUsuario());
+            $comentario->setUsuario($usuario);
+        }
+        
+        return $listaComentarios;
     }
 }
