@@ -36,6 +36,8 @@ class RepositorioOpiniao implements IRepositorio{
 
     public function listar() {
         $result = mysql_query('select * from opiniao');
+        
+        $arrayOpiniao = array();
         while( $sql = mysql_fetch_array($result)){
             $id_opiniao = $sql['id_opiniao'];
             $mensagem = $sql['mensagem'];
@@ -47,8 +49,10 @@ class RepositorioOpiniao implements IRepositorio{
             $usuario = new Usuario($id_usuario);
             $produto = new Produto($id_produto);
             $opiniao = new Opiniao($id_opiniao, $mensagem, $qualificacao, $nota, $usuario, $produto);
+            
+            array_push($arrayOpiniao, $opiniao);
         }
-        return $opiniao;
+        return $$arrayOpiniao;
     }
 
     public function pesquisar(\Opiniao $entidade) {
