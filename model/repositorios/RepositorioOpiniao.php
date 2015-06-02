@@ -11,13 +11,27 @@
  *
  * @author Jackson
  */
+include("../util/connection.php");
+
 class RepositorioOpiniao implements IRepositorio{
     public function adicionar(\Opiniao $entidade) {
-        
+        $result = mysql_query("insert into opiniao(mensagem,qualificacao,nota,id_usuario,id_produto) "
+                . "values "
+                . "('".$entidade->getMensagem()."',"
+                . "'".$entidade->getQualificacao."',"
+                . $entidade->getNota.","
+                . $entidade->getUsuario()->getId_usuario().","
+                . $entidade->getProduto()->getId_produto().")");
+        echo $result;
+        echo 'Cadastro de Opiniao FEITO';
     }
 
     public function editar(\Opiniao $entidade) {
-        
+        $result = mysql_query("update opiniao set "
+                . "mensagem = '".$entidade->getMensagem()."', "
+                . "qualificacao = '".$entidade->getQualificacao()."', "
+                . "nota = ".$entidade->getNota()
+                . "");
     }
 
     public function listar(\Opiniao $entidade) {
