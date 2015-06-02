@@ -16,12 +16,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-       include('imports.php');
-        
-       $fachada = new Fachada();
-        $usu =new Usuario();
-        $usu->setId_usuario(1);
-        $usu2 = $fachada->pesquisarUsuario($usu);
+      
         
         ?>
         <?php include("header.php") ?>
@@ -35,20 +30,21 @@ and open the template in the editor.
             </header>
             <!-- Conteudo-->
 
-           <form method="POST" name="fusuario" action="control/editarUsuario.php">				
+          <form method="POST" name="fusuario" action="control/cadastrarUsuario.php">
+				
 				<fieldset >
 					<legend>Dados de Login</legend>
 					<label for="email">E-mail:</label> <input type="email"
-						placeholder="Digite o E-mail" value="<?php echo $usuario->getEmail();?>" name="email" id="email"  required="email" size=60>
+						placeholder="Digite o E-mail" name="email" id="email"  required="email" size=60>
 
                                         <label for="senha">Senha:</label><br/> <input type="password"
-						placeholder="Digite a Senha" value="<?php echo $usuario->getSenha();?>" name="senha" maxlenght="15" id="senha" size=15 required="senha">
+						placeholder="Digite a Senha" name="senha" maxlenght="15" id="senha" size=15 required="senha">
 				</fieldset>
 				<fieldset>
 					<legend>Dados Pessoais</legend>
 					<label for="nome">Nome Completo</label> <input type="text"
 						placeholder="Digite seu nome completo" name="nome" id="nome"
-						size=60  value="<?php echo $usuario->getNome();?>"required="nome">
+						size=60 required="nome">
 		 
 						
 										
@@ -56,7 +52,7 @@ and open the template in the editor.
 
 				<div class="12u">
 					<ul class="actions">
-						<li><input type="submit"   value="Confirmar Cadastro" /></li>
+						<li><input type="submit"   value="Confirmar Edição" /></li>
 						<!-- <li><input type="reset" value="Limpar" /></li> -->
 					</ul>
 				</div>

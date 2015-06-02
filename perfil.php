@@ -16,17 +16,13 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-       include('imports.php');
-        
-       $fachada = new Fachada();
-        $usu =new Usuario();
-        $usu->setId_usuario(1);
-        $usu2 = $fachada->pesquisarUsuario($usu);
+       
         
         ?>
         <?php include("header.php") ?>
         <?php include("leftBar.php") ?>
         <?php include("rightBar.php") ?>
+        
         <div id="content">
 
             <!-- titulo do conteudo-->
@@ -38,20 +34,21 @@ and open the template in the editor.
             <fieldset>
                 <legend>Dados de Login</legend>
                 <p>
-                    E-mail:<?php echo $usu2->getEmail();?>  <br/>
+                    E-mail: <?php echo $_REQUEST['nome']?>  <br/>
+                   
                 </p>
             </fieldset>
 
             <fieldset>		
                 <legend>Dados Pessoais</legend>
-                <p class="p">Nome:<?php echo $usu2->getNome();?>  </p>
+                <p class="p"> Nome:<?php //echo $usu2->getNome();?>  </p>
             
 
             </fieldset>
           
                 <ul class="actions">
 
-                    <li><a href="editarPerfil.php" class="button">Editar Perfil</a></li>
+                    <li><a href="control/editarPerfil.php" class="button">Editar Perfil</a></li>
 
                 </ul>
           

@@ -48,15 +48,12 @@
                                     echo 'Visitante';
                                 }
                                 ?>  </li> 
-
                         </ul>
                         <ul class="btheader">             
                             <li><a href="login.php" class="button">Entre</a></li>
                             <li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>
                             <li><a href="util/logout.php"  class="button">Sair</a></li>                              
                         </ul>
-
-
 
                     </div>	
 

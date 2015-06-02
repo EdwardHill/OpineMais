@@ -9,7 +9,7 @@
 //                                   
 //                                } 
                                 
-                echo '<a href="perfil.php" class="button3">Perfil</a>';
+                echo '<a href="control/perfilUsuario.php" class="button3">Perfil</a>';
 
                                 ?>  </li> 
                                 
