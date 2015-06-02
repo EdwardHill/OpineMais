@@ -68,8 +68,8 @@ body,input,textarea,select
 			width:200px;
 		}
 		.menu{
-			width:100%;
-			background:blue;
+			width:110%;
+			///background:blue;
 		}
 		.menu ul{
 			margin:0; 
@@ -84,7 +84,7 @@ body,input,textarea,select
 		}
 		.menu ul li a{
 			display:block;
-			padding:20px;
+			padding:2px;
 			color:#fff;
 		}
 		
