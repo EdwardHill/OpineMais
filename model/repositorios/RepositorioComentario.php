@@ -13,7 +13,12 @@
  */
 class RepositorioComentario implements IRepositorio{
     public function adicionar(\Comentario $entidade) {
+        $result = mysql_query("insert into comentario(mensagem) "
+            . "values ('".$entidade->getMensagem()."')");
         
+        $id_comentario = mysql_insert_id();
+        $id_usuario = $entidade->getUsuario()->getId_usuario();
+        $id_opiniao = $entidade->getOpiniao()->getId_opiniao();
     }
 
     public function editar(\Comentario $entidade) {
