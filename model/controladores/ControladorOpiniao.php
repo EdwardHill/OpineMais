@@ -20,7 +20,7 @@ class ControladorOpiniao {
         
     }
 
-    public function listarOpiniao(\Opiniao $entidade) {
+    public function listarOpiniao() {
         
     }
 

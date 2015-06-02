@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,24 +11,31 @@
  * @author ivan
  */
 class ControladorProduto {
+    
+    private $repositorioProduto;
+    
+    function __construct() {
+        $this->repositorioProduto = new RepositorioProduto();
+    }
+           
     public function adicionarProduto(\Produto $entidade) {
-        
+        $this->repositorioProduto->adicionar($entidade);
     }
 
     public function editarProduto(\Produto $entidade) {
-        
+        $this->repositorioProduto->editar($entidade);
     }
 
-    public function listarProduto(\Produto $entidade) {
-        
+    public function listarProduto() {
+        return $this->repositorioProduto->listar();
     }
 
     public function pesquisarProduto(\Produto $entidade) {
-        
+        return $this->repositorioProduto->pesquisar($entidade);
     }
 
     public function removerProduto(\Produto $entidade) {
-        
+        $this->repositorioProduto->remover($entidade);
     }
 
 }

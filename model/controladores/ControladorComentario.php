@@ -20,7 +20,7 @@ class ControladorComentario{
         
     }
 
-    public function listarComentario(\Comentario $entidade) {
+    public function listarComentario() {
         
     }
 

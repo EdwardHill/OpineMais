@@ -20,7 +20,7 @@ class ControladorUsuario {
         
     }
 
-    public function listarUsuario(\Usuario $entidade) {
+    public function listarUsuario() {
         
     }
 
