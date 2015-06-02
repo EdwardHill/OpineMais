@@ -28,6 +28,7 @@ class RepositorioProduto implements IRepositorio{
     public function listar() {
         $sql = "select * from produto";
         $result = mysql_query($sql);
+        $arrayProduto = array();
         
         while ($sql = mysql_fetch_array($result)){
             $id_produto = $sql['id_produto'];
@@ -44,7 +45,7 @@ class RepositorioProduto implements IRepositorio{
             $usuario = new Usuario($id_usuario);
             
             $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$categoria,$marca,$usuario);
-            $arrayProduto = array();
+            
             array_push($arrayProduto, $produto);
         }
         return $arrayProduto;        
