@@ -1,7 +1,6 @@
 <?php
 include_once ('../imports.php');
 include ('../model/util/connection.php');
-
  if (isset($_POST['email'])) {
 
      ob_start();

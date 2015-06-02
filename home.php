@@ -96,7 +96,7 @@
                                 <tr>
                                     <td headers="produto">                                         
                                         <h3><?php echo $titulo ?></h3>
-                                        <div ><a href="comentarProduto.php?<?php echo $id_produto ?>"><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></a></div>
+                                        <div ><a href="comentarProduto.php?produto=<?php echo$id_produto?>"><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></a></div>
                                         <h4>Descrição:</h4>
                                         <p><?php echo $descricao ?></p>
                                     </td>
