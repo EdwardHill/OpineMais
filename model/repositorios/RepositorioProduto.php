@@ -13,15 +13,16 @@
  */
 class RepositorioProduto implements IRepositorio{
     
+    private static $instance = null;
+        
     private function __construct(){
     }
     
     public static function getInstance(){
-        static $instance = null;
-        if (null === $instance) {
-            $instance = new static();
+        if(!isset(self::$instance)){
+            self::$instance = new self;
         }
-        return $instance;
+        return self::$instance;
     }
         
     public function adicionar(\Produto $entidade) {
