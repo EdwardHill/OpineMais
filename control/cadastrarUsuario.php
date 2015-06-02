@@ -1,5 +1,5 @@
 <?php
-include_once '../model/util/imports.php';
+include_once ('../imports.php');
 
 
  if (isset($_POST['email'])) {
