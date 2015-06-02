@@ -13,24 +13,24 @@
  */
 include("../model/util/connection.php");
 
-class RepositorioProduto implements IRepositorio{
-    
+class RepositorioProduto{
+
     private static $instance = null;
-        
+
     private function __construct(){
     }
-    
+
     public static function getInstance(){
         if(!isset(self::$instance)){
             self::$instance = new self;
         }
         return self::$instance;
     }
-        
+
     public function adicionar(\Produto $entidade) {
-        
+
         $sql = "insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values ('".$entidade->getNome_produto()."','".$entidade->getDetalhes()."','".$entidade->getImagem()."',".$entidade->getQualificacao_positiva().",".$entidade->getQualificacao_negativa().",".$entidade->Nota_media().",".$entidade->getCategoria().",".$entidade->getMarca().",".$entidade->getId_usuario().")";
-        
+
         $result = mysql_query($sql);
     }
 
@@ -43,7 +43,7 @@ class RepositorioProduto implements IRepositorio{
         $sql = "select * from produto";
         $result = mysql_query($sql);
         $arrayProduto = array();
-        
+
         while ($sql = mysql_fetch_array($result)){
             $id_produto = $sql['id_produto'];
             $nome_produto = $sql['nome_produto'];
@@ -55,14 +55,14 @@ class RepositorioProduto implements IRepositorio{
             $categoria = $sql['categoria'];
             $marca = $sql['marca'];
             $id_usuario = $sql['id_usuario'];
-            
+
             $usuario = new Usuario($id_usuario);
-            
+
             $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$categoria,$marca,$usuario);
-            
+
             array_push($arrayProduto, $produto);
         }
-        return $arrayProduto;        
+        return $arrayProduto;
     }
 
     public function pesquisar(\Produto $entidade) {
@@ -79,9 +79,9 @@ class RepositorioProduto implements IRepositorio{
             $categoria = $sql['categoria'];
             $marca = $sql['marca'];
             $id_usuario = $sql['id_usuario'];
-            
+
             $usuario = new Usuario($id_usuario);
-            
+
             $produto = new Produto($id_produto,$nome_produto,$detalhes,$imagem,$qualificacao_positiva,$qualificacao_negativa,$nota_media,$categoria,$marca,$usuario);
         }
         return $produto;
