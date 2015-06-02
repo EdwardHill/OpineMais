@@ -12,5 +12,24 @@
  * @author Jackson
  */
 class ControladorUsuario {
-    //put your code here
+    public function adicionarUsuario(\Usuario $entidade) {
+        
+    }
+
+    public function editarUsuario(\Usuario $entidade) {
+        
+    }
+
+    public function listarUsuario(\Usuario $entidade) {
+        
+    }
+
+    public function pesquisarUsuario(\Usuario $entidade) {
+        
+    }
+
+    public function removerUsuario(\Usuario $entidade) {
+        
+    }
+
 }
