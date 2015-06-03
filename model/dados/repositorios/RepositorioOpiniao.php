@@ -11,14 +11,14 @@
  *
  * @author Jackson
  */
-include('../model/util/connection.php');
-include('../model/dados/IRepositorioOpiniao.php');
+//include('../model/util/connection.php');
+//include('../model/dados/IRepositorioOpiniao.php');
 
 class RepositorioOpiniao{
 
     private static $instance = null;
     public function __construct() {
-        
+
     }
 
     public static function getInstance(){

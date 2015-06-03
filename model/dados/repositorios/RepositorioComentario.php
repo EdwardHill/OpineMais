@@ -11,14 +11,14 @@
  *
  * @author Jackson
  */
-include("../model/util/connection.php");
-include('../model/dados/IRepositorioComentario.php');
+//include("../model/util/connection.php");
+//include('../model/dados/IRepositorioComentario.php');
 class RepositorioComentario implements IRepositorioComentario{
 
     private static $instance = null;
 
     public function __construct() {
-        
+
     }
 
     public static function getInstance(){
@@ -54,23 +54,23 @@ class RepositorioComentario implements IRepositorioComentario{
         while($row = mysql_fetch_array($result)){
             $id_comentario = $row['id_comentario'];
             $mensagem = $row['mensagem'];
-        
+
             $comentario = new Comentario($id_comentario, $mensagem);
 
             array_push($arrayComentario, $comentario);
         }
-        
+
         foreach ($arrayComentario as $comentario){
             $result = mysql_query('select * from comentario_opiniao_usuario where id_comentario = '
                     .$comentario->getId_comentario());
-            
+
             while($row = mysql_fetch_array($result)){
                 $id_usuario = $row['id_usuario'];
                 $id_opiniao = $row['id_opiniao'];
 
                 $usuario = new Usuario($id_usuario);
                 $opiniao = new Opiniao($id_opiniao);
-                
+
                 $comentario->setUsuario($usuario);
                 $comentario->setOpiniao($opiniao);
             }
@@ -85,20 +85,20 @@ class RepositorioComentario implements IRepositorioComentario{
         while($row = mysql_fetch_array($result)){
             $id_comentario = $row['id_comentario'];
             $mensagem = $row['mensagem'];
-            
+
             $comentario = new Comentario($id_comentario, $mensagem);
         }
         if($comentario != null){
             $result = mysql_query('select * from comentario_opiniao_usuario where id_comentario = '
                     .$comentario->getId_comentario());
-            
+
             while($row = mysql_fetch_array($result)){
                 $id_usuario = $row['id_usuario'];
                 $id_opiniao = $row['id_opiniao'];
 
                 $usuario = new Usuario($id_usuario);
                 $opiniao = new Opiniao($id_opiniao);
-                
+
                 $comentario->setUsuario($usuario);
                 $comentario->setOpiniao($opiniao);
             }
@@ -124,7 +124,7 @@ class RepositorioComentario implements IRepositorioComentario{
 
             array_push($arrayComentario, $comentario);
         }
-        
+
         foreach ($arrayComentario as $comentario){
             $result = mysql_query("select * from comentario where id_comentario=" . $comentario->getId_comentario());
             while($row = mysql_fetch_array($result)){
@@ -132,6 +132,6 @@ class RepositorioComentario implements IRepositorioComentario{
             }
         }
         return $arrayComentario;
-        
+
     }
 }
