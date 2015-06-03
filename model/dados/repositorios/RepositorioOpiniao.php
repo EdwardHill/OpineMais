@@ -17,8 +17,8 @@ include('../model/dados/IRepositorioOpiniao.php');
 class RepositorioOpiniao{
 
     private static $instance = null;
-
-    private function __construct(){
+    public function __construct() {
+        
     }
 
     public static function getInstance(){
@@ -90,7 +90,7 @@ class RepositorioOpiniao{
         $result = mysql_query('delete from opiniao where id_opiniao = '.$entidade->getId_opiniao());
     }
 
-    public function ListarOpinioesPorProduto(\Produto $entidade){
+    public function listarOpinioesPorProduto(\Produto $entidade){
         $result = mysql_query("select * from opiniao where id_produto=" . $entidade->getId_produto());
         $arrayOpiniao = array();
         while( $sql = mysql_fetch_array($result)){

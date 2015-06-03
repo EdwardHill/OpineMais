@@ -17,7 +17,8 @@ class RepositorioComentario implements IRepositorioComentario{
 
     private static $instance = null;
 
-    private function __construct(){
+    public function __construct() {
+        
     }
 
     public static function getInstance(){

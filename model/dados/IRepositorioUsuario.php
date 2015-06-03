@@ -12,6 +12,8 @@
  *puli===
  * @author Edward_Hill
  */
+require('../entidades/Usuario.php');
+
 interface IRepositorioUsuario {
     
     public function adicionarUsuario(\Usuario $usuario);

@@ -12,4 +12,11 @@
  */
 interface IRepositorioOpiniao {
     //put your code here
+    public function adicionarOpiniao(\Opiniao $opiniao);
+    public function editarOpiniao(\Opiniao $opiniao);
+    public function removerOpiniao(\Opiniao $opiniao);
+    public function pesquisarOpiniao(\Opiniao $opiniao);
+    public function listarOpiniao();
+    public function listarOpinioesPorProduto(\Produto $produto);
+    
 }

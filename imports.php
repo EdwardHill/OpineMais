@@ -15,42 +15,42 @@
 ob_start();
 
 //Util
-require 'model/util/Qualificacao.php';
-require 'model/util/connection.php';
-require 'model/util/logout.php';
-require 'model/util/reg_comentario.php';
-require 'model/util/reg_resposta.php';
-require 'model/util/sessao.php';
-require 'model/util/verificaSessao.php';
-require 'model/util/upload.php';
+//require 'model/util/Qualificacao.php';
+//require 'model/util/connection.php';
+//require 'model/util/logout.php';
+//require 'model/util/reg_comentario.php';
+//require 'model/util/reg_resposta.php';
+//require 'model/util/sessao.php';
+//require 'model/util/verificaSessao.php';
+//require 'model/util/upload.php';
 
 
 //Entidades
-require 'model/entidades/Comentario.php';
-require 'model/entidades/Opiniao.php';
-require 'model/entidades/Produto.php';
-require 'model/entidades/Usuario.php';
+require('model/entidades/Comentario.php');
+require('model/entidades/Opiniao.php');
+require('model/entidades/Produto.php');
+require('model/entidades/Usuario.php');
 
 //Interfaces de Repositorios
-require 'model/dados/IRepositorioUsuario';
-require 'model/dados/IRepositorioProduto';
-require 'model/dados/IRepositorioOpiniao';
-require 'model/dados/IRepositorioComentario';
+require('model/dados/IRepositorioUsuario.php');
+require('model/dados/IRepositorioProduto.php');
+require('model/dados/IRepositorioOpiniao.php');
+require('model/dados/IRepositorioComentario.php');
 
 //Repositorios
-require 'model/dados/repositorios/RepositorioUsuario.php';
-require 'model/dados/repositorios/RepositorioOpiniao.php';
-require 'model/dados/repositorios/RepositorioProduto.php';
-require 'model/dados/repositorios/RepositorioComentario.php';
+require('model/dados/repositorios/RepositorioUsuario.php');
+require('model/dados/repositorios/RepositorioOpiniao.php');
+require('model/dados/repositorios/RepositorioProduto.php');
+require('model/dados/repositorios/RepositorioComentario.php');
 
 //Comentarios
-require 'model/controladores/ControladorProduto.php';
-require 'model/controladores/ControladorOpiniao.php';
-require 'model/controladores/ControladorUsuario.php';
-require 'model/controladores/ControladorComentario.php';
+require('model/controladores/ControladorProduto.php');
+require('model/controladores/ControladorOpiniao.php');
+require('model/controladores/ControladorUsuario.php');
+require('model/controladores/ControladorComentario.php');
 
 //Fachada
-require 'model/Fachada.php';
+require('model/Fachada.php');
 
 
 
