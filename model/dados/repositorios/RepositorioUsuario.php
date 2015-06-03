@@ -27,40 +27,33 @@ class RepositorioUsuario {
         return self::$instance;
     }
 
-    public function adicionar(\Usuario $entidade) {
-    
+    public function adicionarUsuario(\Usuario $usuario) {
       $result = mysql_query(" insert into usuario (nome, email, senha) values "
-              . "('" . $entidade->getNome() . "','" . $entidade->getEmail() . "','" . $entidade->getSenha() . "')");
+              . "('" . $usuario->getNome() . "','" . $usuario->getEmail() . "','" . $usuario->getSenha() . "')");
     }
 
-    public function pesquisar(\Usuario $entidade) {
+    public function pesquisarUsuario(\Usuario $usuario) {
 
-        $dados = mysql_query("select * from usuario  where id_usuario = ".$entidade->getId_usuario());
+        $dados = mysql_query("select * from usuario  where id_usuario = ".$usuario->getId_usuario());
         while ($sql = mysql_fetch_array($dados)) {
-            $id = $sql['id_usuario'];
-            $nome = $sql['nome'];
-            $email = $sql['email'];
-            $senha = $sql['senha'];
-            $usuario = new Usuario($id, $nome, $email, $senha);
+            $usuario->setNome($sql['nome']);
+            $usuario->setEmail($sql['email']);
+            $usuario->setSenha($sql['senha']);
         }
         return $usuario;
     }
 
-    public function remover(\Usuario $entidade) {
-
-        include("../model/util/connection.php");
-        ob_start();
-        $result = mysql_query("DELETE  FROM usuario  WHERE id_usuario =" . $entidade->getId_usuario() . "");
+    public function removerUsuario(\Usuario $usuario) {
+        $result = mysql_query("delete from usuario where id_usuario = " . $usuario->getId_usuario());
     }
 
-    public function editar(\Usuario $entidade) {
+    public function editarUsuario(\Usuario $usuario) {
 
-        include("../model/util/connection.php");
-        ob_start();
-        $result = mysql_query("UPDATE usuario  SET nome_usuario ='" . $entidade->getNome() . "',email_usuario ='" . $entidade->getEmail() . "',senha_usuario = '" . $entidade->getSenha() . "' WHERE id_usuario = ");
+        $result = mysql_query("update usuario set nome = "
+                . "'" . $usuario->getNome() . "',email = '" . $usuario->getEmail() . "',senha = '" . $usuario->getSenha() . "' where id_usuario = ".$usuario->getId_usuario());
     }
 
-    public function listar() {
+    public function listarUsuario() {
         
     }
 

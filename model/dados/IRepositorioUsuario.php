@@ -14,11 +14,11 @@
  */
 interface IRepositorio {
     
-    public function adicionar($entidade);
-    public function editar($entidade);
-    public function remover($entidade);
-    public function pesquisar($entidade);
-    public function listar();
+    public function adicionarUusario(\Usuario $usuario);
+    public function editarUsuario(\Usuario $usuario);
+    public function removerUsuario(\Usuario $usuario);
+    public function pesquisarUsuario(\Usuario $usuario);
+    public function listarUsuario();
         
 }
 
