@@ -13,7 +13,7 @@
  */
 include("../model/util/connection.php");
 
-class RepositorioUsuario {
+class RepositorioUsuario implements IRepositorioUsuario{
     
     private static $instance = null;
             function __construct() {
@@ -34,8 +34,8 @@ class RepositorioUsuario {
 
     public function pesquisarUsuario(\Usuario $usuario) {
 
-        $dados = mysql_query("select * from usuario  where id_usuario = ".$usuario->getId_usuario());
-        while ($sql = mysql_fetch_array($dados)) {
+        $result = mysql_query("select * from usuario  where id_usuario = ".$usuario->getId_usuario());
+        while ($sql = mysql_fetch_array($result)) {
             $usuario->setNome($sql['nome']);
             $usuario->setEmail($sql['email']);
             $usuario->setSenha($sql['senha']);
@@ -48,13 +48,23 @@ class RepositorioUsuario {
     }
 
     public function editarUsuario(\Usuario $usuario) {
-
         $result = mysql_query("update usuario set nome = "
                 . "'" . $usuario->getNome() . "',email = '" . $usuario->getEmail() . "',senha = '" . $usuario->getSenha() . "' where id_usuario = ".$usuario->getId_usuario());
     }
 
     public function listarUsuario() {
-        
+        $result = mysql_query("select * from usuario");
+        $arrayUsuarios = array();
+        while ($sql = mysql_fetch_array($result)) {
+            $id_usuario = $sql['id_usuario'];
+            $nome = $sql['nome'];
+            $email = $sql['email'];
+            $senha = $sql['senha'];
+            
+            $usuario = new Usuario($id_usuario, $nome, $email, $senha);
+            array_push($arrayUsuario, $usuario);
+        }
+        return $arrayUsuario;
     }
 
 }

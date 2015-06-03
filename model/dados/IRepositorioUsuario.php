@@ -12,13 +12,12 @@
  *puli===
  * @author Edward_Hill
  */
-interface IRepositorio {
+interface IRepositorioUsuario {
     
-    public function adicionarUusario(\Usuario $usuario);
+    public function adicionarUsuario(\Usuario $usuario);
     public function editarUsuario(\Usuario $usuario);
     public function removerUsuario(\Usuario $usuario);
     public function pesquisarUsuario(\Usuario $usuario);
-    public function listarUsuario();
-        
+    public function listarUsuario();  
 }
 
