@@ -12,4 +12,10 @@
  */
 interface IRepositorioComentario {
     //put your code here
+    public function adicionarComentario(\Comentario $comentario);
+    public function editarComentario(\Comentario $comentario);
+    public function removerComentario(\Comentario $comentario);
+    public function pesquisarComentario(\Comentario $comentario);
+    public function listarComentario();
+    public function listarComentariosPorOpiniao(\Opiniao $opiniao);
 }

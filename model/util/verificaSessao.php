@@ -1,22 +1,24 @@
 <?php
 include '../model/util/connection.php';
 //include '../util/sessao.php';
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-
+//$email = $_POST['email'];
+//$senha = $_POST['senha'];
+//
 // $_SESSION['email'] = $_POST['email'];
-//
-//
-//
-//
-// 	// $result = mysql_query(" SELECT * FROM usuario WHERE email_usuario = '$email' AND senha_usuario = '$senha'");
-//   //
-//   //       while($sql = mysql_fetch_array($result)){
-//   //                           $nome = $sql['nome_usuario'];
-// 	// 			$email = $sql['email_usuario'];
-//   //                               $id = $sql['id_usuario'];
-//
-//
+    function login($email,$senha) {
+     $result = mysql_query(" SELECT * FROM usuario WHERE email_usuario = '$email' AND senha_usuario = '$senha'");
+        $usuario = null;  
+        while($sql = mysql_fetch_array($result)){
+            
+            $nome = $sql['nome'];
+            $email = $sql['email'];
+            $id = $sql['id'];
+            $usuario = new Usuario($id_usuario, $nome, $email, $senha);
+        }
+        return $usuario;
+    }
+
+
 // if($result){
 //     session_start();
 //
@@ -35,11 +37,10 @@ $senha = $_POST['senha'];
 //         unset($_SESSION["email"]);
 // 	$_SESSION["mensagem"] = "Login Inválido, Tente Novamente";
 // 	header('Location:../login.php?');
-
-
-
+//
+//
+//
 // }
-//         }
 
 
 

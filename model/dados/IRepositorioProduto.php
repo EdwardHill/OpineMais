@@ -12,4 +12,10 @@
  */
 interface IRepositorioProduto {
     //put your code here
+    public function adicionarProduto(\Produto $produto);
+    public function editarProduto(\Produto $produto);
+    public function removerProduto(\Produto $produto);
+    public function pesquisarProduto(\Produto $produto);
+    public function listarProduto();
+    
 }

@@ -13,8 +13,7 @@
  */
 include('../model/util/connection.php');
 include('../model/dados/IRepositorioUsuario.php');
-
-class RepositorioUsuario {
+class RepositorioUsuario implements IRepositorioUsuario{
     
     private static $instance = null;
             function __construct() {
@@ -32,25 +31,28 @@ class RepositorioUsuario {
       $result = mysql_query(" insert into usuario (nome, email, senha) values "
               . "('" . $usuario->getNome() . "','" . $usuario->getEmail() . "','" . $usuario->getSenha() . "')");
     }
-
+    
+    public function editarUsuario(\Usuario $usuario) {
+        $result = mysql_query("update usuario set nome = "
+                . "'" . $usuario->getNome() . "',email = '" . $usuario->getEmail() . "',senha = '" . $usuario->getSenha() . "' "
+                . "where id_usuario = ".$usuario->getId_usuario());
+    }
     public function pesquisarUsuario(\Usuario $usuario) {
-
         $result = mysql_query("select * from usuario  where id_usuario = ".$usuario->getId_usuario());
-        while ($sql = mysql_fetch_array($result)) {
-            $usuario->setNome($sql['nome']);
-            $usuario->setEmail($sql['email']);
-            $usuario->setSenha($sql['senha']);
+        $usuario = null;
+        while ($row = mysql_fetch_array($result)) {
+            $id_usuario = $sql['id_usuario'];
+            $nome = $sql['nome'];
+            $email = $sql['email'];
+            $senha = $sql['senha'];
+            
+            $usuario = new Usuario($id_usuario, $nome, $email, $senha);
         }
         return $usuario;
     }
 
     public function removerUsuario(\Usuario $usuario) {
         $result = mysql_query("delete from usuario where id_usuario = " . $usuario->getId_usuario());
-    }
-
-    public function editarUsuario(\Usuario $usuario) {
-        $result = mysql_query("update usuario set nome = "
-                . "'" . $usuario->getNome() . "',email = '" . $usuario->getEmail() . "',senha = '" . $usuario->getSenha() . "' where id_usuario = ".$usuario->getId_usuario());
     }
 
     public function listarUsuario() {

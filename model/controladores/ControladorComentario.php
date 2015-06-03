@@ -20,27 +20,27 @@ class ControladorComentario{
     }
 
 
-    public function adicionarComentario(\Comentario $entidade) {
-        $this->repositorioComentario->adicionar($entidade);
+    public function adicionarComentario(\Comentario $comentario) {
+        $this->repositorioComentario->adicionarComentario($comentario);
     }
 
-    public function editarComentario(\Comentario $entidade) {
-        $this->repositorioComentario->editar($entidade);
+    public function editarComentario(\Comentario $comentario) {
+        $this->repositorioComentario->editarComentario($comentario);
     }
 
     public function listarComentario() {
-        return $this->repositorioComentario->listar();
+        return $this->repositorioComentario->listarComentario();
     }
 
-    public function pesquisarComentario(\Comentario $entidade) {
-        return $this->repositorioComentario->pesquisar($entidade);
+    public function pesquisarComentario(\Comentario $comentario) {
+        return $this->repositorioComentario->pesquisarComentario($comentario);
     }
 
-    public function removerComentario(\Comentario $entidade) {
-        $this->repositorioComentario->remover($entidade);
+    public function removerComentario(\Comentario $comentario) {
+        $this->repositorioComentario->removerComentario($comentario);
     }    
     
-    public function listarComentariosPorOpiniao(\Opiniao $entidade){
-        return $this->repositorioComentario->listarComentariosPorOpiniao($entidade);
+    public function listarComentariosPorOpiniao(\Opiniao $opiniao){
+        return $this->repositorioComentario->listarComentariosPorOpiniao($opiniao);
     }    
 }

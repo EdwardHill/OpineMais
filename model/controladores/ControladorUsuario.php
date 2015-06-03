@@ -19,35 +19,35 @@ class ControladorUsuario {
         $this->repositorioUsuario = RepositorioUsuario::getInstance();
     }
     
-    public function adicionarUsuario(\Usuario $entidade) {
-        $senha = $entidade->getSenha();
+    public function adicionarUsuario(\Usuario $usuario) {
+        $senha = $usuario->getSenha();
         $senhaCodificada = md5($senha);
-        $entidade->setSenha($senhaCodificada);
+        $usuario->setSenha($senhaCodificada);
         
-        $this->repositorioUsuario->adicionar($entidade);
+        $this->repositorioUsuario->adicionarUsuario($usuario);
     }
 
-    public function editarUsuario(\Usuario $entidade) {
-        $u = $this->repositorioUsuario->pesquisar($entidade);
+    public function editarUsuario(\Usuario $usuario) {
+        $u = $this->pesquisarUsuario($usuario);
         
-        if($u->getSenha() != $entidade->getSenha()){
-            $senhaCriptografada = md5($entidade->getSenha());
-            $entidade->setSenha($senhaCriptografada);
+        if($u->getSenha() != $usuario->getSenha()){
+            $senhaCriptografada = md5($usuario->getSenha());
+            $usuario->setSenha($senhaCriptografada);
         }
                 
-        $this->repositorioUsuario->editar($entidade);
+        $this->repositorioUsuario->editarUsuario($usuario);
     }
 
     public function listarUsuario() {
-        return $this->repositorioUsuario->listar();
+        return $this->repositorioUsuario->listarUsuario();
     }
 
-    public function pesquisarUsuario(\Usuario $entidade) {
-        return $this->repositorioUsuario->pesquisar($entidade);
+    public function pesquisarUsuario(\Usuario $usuario) {
+        return $this->repositorioUsuario->pesquisarUsuario($usuario);
     }
 
-    public function removerUsuario(\Usuario $entidade) {
-        $this->repositorioUsuario->remover($entidade);
+    public function removerUsuario(\Usuario $usuario) {
+        $this->repositorioUsuario->removerUsuario($usuario);
     }
 
 }

@@ -18,6 +18,6 @@ interface IRepositorioUsuario {
     public function editarUsuario(\Usuario $usuario);
     public function removerUsuario(\Usuario $usuario);
     public function pesquisarUsuario(\Usuario $usuario);
-    public function listarUsuario();  
+    public function listarUsuario();
 }
 
