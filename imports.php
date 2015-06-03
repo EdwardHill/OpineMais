@@ -33,10 +33,10 @@ require 'model/entidades/Usuario.php';
 
 
 //Repositorios
-require 'model/repositorios/RepositorioUsuario.php';
-require 'model/repositorios/RepositorioOpiniao.php';
-require 'model/repositorios/RepositorioProduto.php';
-require 'model/repositorios/RepositorioComentario.php';
+require 'model/dados/repositorios/RepositorioUsuario.php';
+require 'model/dados/repositorios/RepositorioOpiniao.php';
+require 'model/dados/repositorios/RepositorioProduto.php';
+require 'model/dados/repositorios/RepositorioComentario.php';
 
 //Comentarios
 require 'model/controladores/ControladorProduto.php';
