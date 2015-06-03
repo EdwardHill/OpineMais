@@ -31,6 +31,11 @@ require 'model/entidades/Opiniao.php';
 require 'model/entidades/Produto.php';
 require 'model/entidades/Usuario.php';
 
+//Interfaces de Repositorios
+require 'model/dados/IRepositorioUsuario';
+require 'model/dados/IRepositorioProduto';
+require 'model/dados/IRepositorioOpiniao';
+require 'model/dados/IRepositorioComentario';
 
 //Repositorios
 require 'model/dados/repositorios/RepositorioUsuario.php';

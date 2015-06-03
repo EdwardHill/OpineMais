@@ -11,9 +11,10 @@
  *
  * @author Edward_Hill
  */
-include("../model/util/connection.php");
+include('../model/util/connection.php');
+include('../model/dados/IRepositorioUsuario.php');
 
-class RepositorioUsuario implements IRepositorioUsuario{
+class RepositorioUsuario {
     
     private static $instance = null;
             function __construct() {

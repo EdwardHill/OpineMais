@@ -11,8 +11,8 @@
  *
  * @author Jackson
  */
-include("../model/util/connection.php");
-include('IRepositorio.php');
+include('../model/util/connection.php');
+include('../model/dados/IRepositorioOpiniao.php');
 
 class RepositorioOpiniao{
 
