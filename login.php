@@ -9,56 +9,56 @@ and open the template in the editor.
        <meta charset="UTF-8">
 		<title>Login- Opine Mais </title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-                
+
 		    <link rel="shortcut icon" href="images/logtop.png" />
-       
+
     </head>
     <body>
         <?php
-       
+
         ?>
         <div class="main">
-        
+
 	<div id="nav2">
 				<div id="header-wrapper">
-				
+
 				<div id="header" class="container">
-				
+
 						<h1 id="logo"><a href="home.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
-				
+
 				<ul class="divided">
-                                    <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" > Ola, Visitante  </li> 
-                                   
+                                    <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" > Olá, Visitante  </li> 
+
 					</ul>
-                                    <ul class="actions2">             
+                                    <ul class="actions2">
                                     <li></li>
                                     <li></li>
                                     </ul>
-                                   
-					
-			</div>	
-                                   
+
+
+			</div>
+
 		</div>
-             
+
 	</div>
         <?php include("leftBar.php")?>
          <?php include("rightBar.php")?>
         <div class="content">
           <div id="login">
-				<header class="major">		
+				<header class="major">
 					<h3>Login</h3>
              		                             <?php if(!empty($_SESSION["mensagem"])){
-	 
+
 	 		echo $_SESSION["mensagem"];
 	 	}?>
 				</header>
 			<form method="POST" action="control/loginUsuario.php">
-                         
+
 			<fieldset >
 			<legend>Dados de Login</legend>
                         <p><label for="email">E-mail</label><br/>
 				<input type="email" placeholder="Digite o Email" name="email" id="email" size=40 required>  </p>
-				
+
 				<p><label for="senha">Senha</label><br/>
 				<input type="password" placeholder="Digite a Senha" name="senha" id="senha" size=40 required>  </p>
 			</fieldset>
@@ -73,8 +73,8 @@ and open the template in the editor.
 			</div>
         </div>
             </div>
-        
+
           <?php include("footer.php") ?>
-        
+
     </body>
 </html>

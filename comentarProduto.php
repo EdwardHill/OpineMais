@@ -26,25 +26,25 @@
                         <h1 id="logo"><a href="home.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
 
                         <ul class="divided">
-                            <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Ola,<?php
+                            <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, <?php
                                 if (!empty($_GET['nome'])) {
                                     $nome = $_GET['nome'];
                                     echo $nome;
                                 } else {
                                     echo 'Visitante';
                                 }
-                                ?>  </li> 
+                                ?>  </li>
 
                         </ul>
-                        <ul class="btheader">             
+                        <ul class="btheader">
                             <li><a href="login.php" class="button">Entre</a></li>
                             <li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>
-                            <li><a href="util/logout.php"  class="button">Sair</a></li>                              
+                            <li><a href="util/logout.php"  class="button">Sair</a></li>
                         </ul>
 
 
 
-                    </div>	
+                    </div>
 
                 </div>
 
@@ -62,9 +62,9 @@
                     session_start();
                     ob_start();
 
-                    
+
                     include ('model/util/connection.php');
-                   
+
                     $idpro= $_REQUEST['produto'];
                     $dados_produto = mysql_query("select * from produto where id_produto = $idpro");
                     while ($sql = mysql_fetch_array($dados_produto)) {
@@ -147,7 +147,7 @@
                                         <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>" />
                                         <input type="hidden" name="id_opiniao" value="<?php echo $id_opiniao; ?>" />
                                         <input type="submit" name="botao_respostas" style="display:none" />
-                                    </form>					 			
+                                    </form>
                                 </div><!--id respostas-->
                             </div><!--classe comentarios-->
                             <?php
