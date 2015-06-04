@@ -72,18 +72,14 @@ session_start();
             // echo '<br /><a href="' . $_UP['pasta'] . $nome_final . '">Clique aqui para acessar o arquivo</a>';
           } else {
             // Não foi possível fazer o upload, provavelmente a pasta está incorreta
-            echo "Não foi possível enviar o arquivo, tente novamente";
+            $mensgem = "Não foi possível enviar o arquivo, tente novamente";
           }
         }
       }
 
-      printf("NOME". $nome);
-      printf("DESCRICAO". $descricao);
-      printf("NOMEIMAGEM".$nome_imagem);
-      printf("MARCA". $marca);
-      printf("IDUSUARIO". $id_usuario);
+      $_SESSION['mensagem'] = $mensgem;
 
-      $produto = new Produto("",$nome,$descricao,$nome_imagem,"","","",$categoria,$marca,$id_usuario,"");
+      $produto = new Produto("",$nome,$descricao,$nome_imagem,0,0,0.0,$categoria,$marca,$id_usuario,"");
 
       // $produto->setCategoria($categoria);
       // $produto->setDetalhes($descricao);
@@ -95,6 +91,6 @@ session_start();
       $fachada = Fachada::getInstance();
       $fachada->adicionarProduto($produto);
 
-      //header('Location:../home.php');
+      header('Location:../home.php');
 
   ?>
