@@ -31,13 +31,13 @@ and open the template in the editor.
             <fieldset>
                 <legend>Dados de Login</legend>
                 <p>
-                    E-mail: <?php echo $_REQUEST['email']?>  <br/>
+                    <b>E-mail: </b><?php echo $_REQUEST['email']?>  <br/>
                 </p>
             </fieldset>
 
             <fieldset>
                 <legend>Dados Pessoais</legend>
-                <p class="p"> Nome:<?php echo $_REQUEST['nome']?>  </p>
+                <p class="p"><b> Nome: </b><?php echo $_REQUEST['nome']?>  </p>
             </fieldset>
 
                 <ul class="actions">

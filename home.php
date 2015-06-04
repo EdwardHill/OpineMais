@@ -47,15 +47,15 @@
                                 } else {
                                     echo 'Visitante';
                                 }
-                                ?>  </li> 
+                                ?>  </li>
                         </ul>
-                        <ul class="btheader">             
+                        <ul class="btheader">
                             <li><a href="login.php" class="button">Entre</a></li>
                             <li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>
-                            <li><a href="util/logout.php"  class="button">Sair</a></li>                              
+                            <li><a href="util/logout.php"  class="button">Sair</a></li>
                         </ul>
 
-                    </div>	
+                    </div>
 
                 </div>
 
@@ -67,10 +67,11 @@
 
                 <div id="geral">
                     <header class="major">
-                        <h3>Produtos</h3>
+                        <!-- <h3>Produtos</h3> -->
+                        <br/>
                     </header>
                     <br>
-                    
+
                     <table id="produtos" align="center" class="display" >
 
                         <thead>
@@ -80,7 +81,7 @@
                         </thead>
                         <tbody>
                             <?php
-                          
+
                             ob_start();
 
                             include_once 'model/util/connection.php';
@@ -91,9 +92,9 @@
                                 $titulo = $sql['nome_produto'];
                                 $descricao = $sql['detalhes'];
                                 $imagem = $sql['imagem'];
-                                ?>								
+                                ?>
                                 <tr>
-                                    <td headers="produto">                                         
+                                    <td headers="produto">
                                         <h3><?php echo $titulo ?></h3>
                                         <div ><a href="comentarProduto.php?produto=<?php echo$id_produto?>"><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></a></div>
                                         <h4>Descrição:</h4>
@@ -103,12 +104,12 @@
 
                                 </tr>
                             <?php } ?>
-                        </tbody>	
+                        </tbody>
 
                     </table>
 
                 </div><!--geral-->
-            </div>			
+            </div>
 
         </div>
         <?php include("footer.php") ?>

@@ -9,7 +9,7 @@
     "lengthMenu":     "Mostrando _MENU_ Registros",
     "loadingRecords": "Carregando...",
     "processing":     "Processando...",
-    "search":         "<b>Busca : </b>",
+    "search":         "",
     "zeroRecords":    "Nenhum registro encontrado",
     "paginate": {
         "first":      "Primeiro",

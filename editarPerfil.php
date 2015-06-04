@@ -20,7 +20,7 @@ and open the template in the editor.
 
           <!-- titulo do conteudo-->
           <header class="major">
-            <h2>Perfil</h2>
+            <h2>Editar Perfil</h2>
           </header>
               <!-- Conteudo-->
           <form method="POST" name="fusuario" action="control/cadastrarUsuario.php">
@@ -34,7 +34,7 @@ and open the template in the editor.
     				</fieldset>
     				<fieldset>
     					<legend>Dados Pessoais</legend>
-    					<label for="nome">Nome Completo</label> <input type="text"
+    					<label for="nome">Nome Completo: </label> <input type="text"
     						placeholder="Digite seu nome completo" value="<?php echo $_REQUEST['nome']?>" name="nome" id="nome"
     						size=60 required="nome">
     				</fieldset>
