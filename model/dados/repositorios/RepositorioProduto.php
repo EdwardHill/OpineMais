@@ -29,15 +29,29 @@ class RepositorioProduto{
     }
 
     public function adicionar(\Produto $entidade) {
-
-        $sql = "insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values ('".$entidade->getNome_produto()."','".$entidade->getDetalhes()."','".$entidade->getImagem()."',".$entidade->getQualificacao_positiva().",".$entidade->getQualificacao_negativa().",".$entidade->getNota_media().",'".$entidade->getCategoria()."','".$entidade->getMarca()."',".$entidade->getId_usuario().")";
-
-        $result = mysql_query($sql);
+        $result = mysql_query("insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values" .
+        "('".$entidade->getNome_produto()."','".
+        $entidade->getDetalhes()."','".
+        $entidade->getImagem()."',".
+        $entidade->getQualificacao_positiva().",".
+        $entidade->getQualificacao_negativa().",".
+        $entidade->getNota_media().",'".
+        $entidade->getCategoria()."','".
+        $entidade->getMarca()."',".
+        $entidade->getId_usuario().")");
     }
 
     public function editar(\Produto $entidade) {
-        $sql = "update produto set nome_produto='".$entidade->getNome_produto()."', detalhes='".$entidade->getDetalhes()."', imagem='".$entidade->getImagem()."', qualificacao_positiva=".$entidade->getQualificacao_positiva().", qualificacao_negativa=".$entidade->getQualificacao_negativa().", nota_media=".$entidade->Nota_media().", categoria='". $entidade->getCategoria()."', marca='". $entidade->getMarca()."' where id_produto=". $entidade->getId_produto().")";
-        $result = mysql_query($sql);
+        $result = mysql_query("update produto set nome_produto='".
+        $entidade->getNome_produto().
+        "', detalhes='".$entidade->getDetalhes().
+        "', imagem='".$entidade->getImagem().
+        "', qualificacao_positiva=".$entidade->getQualificacao_positiva().
+        ", qualificacao_negativa=".$entidade->getQualificacao_negativa().
+        ", nota_media=".$entidade->Nota_media().
+        ", categoria='". $entidade->getCategoria().
+        "', marca='". $entidade->getMarca().
+        "' where id_produto=". $entidade->getId_produto().")");
     }
 
     public function listar() {

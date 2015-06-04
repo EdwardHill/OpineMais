@@ -49,8 +49,7 @@
 									<p>
 										<label for="categoria">Categoria:<select
 											name="categoria" id="categoria">
-												<option selected="não selecionado" value="não selecionado">Escolha
-													a categoria</option>
+												<option selected="não selecionado" value="não selecionado">Escolha a categoria</option>
 												<option value="Eletroeletronicos">Eletroeletrônico</option>
 					              <option value="Eletrodomestico">Eletrodomésticos</option>
 					              <option value="Tv">TVs</option>

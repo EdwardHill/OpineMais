@@ -24,7 +24,7 @@ class Produto {
     private $opinioes; //Opiniões sobre o produto
 
     public function __construct($id_produto="",$nome_produto="",$detalhes="",$imagem="",$qualificacao_positiva="",
-            $qualificacao_negativa="",$nota_media="",$categoria="",$marca="",$usuario="",$opinioes="") {
+            $qualificacao_negativa="",$nota_media="",$categoria="",$marca="",$id_usuario="",$opinioes="") {
         $this->id_produto= $id_produto;
         $this->nome_produto = $nome_produto;
         $this->detalhes = $detalhes;
@@ -34,7 +34,7 @@ class Produto {
         $this->nota_media = $nota_media;
         $this->categoria = $categoria;
         $this->marca = $marca;
-        $this->usuario = $usuario;
+        $this->id_usuario = $id_usuario;
         $this->opinioes = $opinioes;
     }
 

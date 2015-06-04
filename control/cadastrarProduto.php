@@ -12,19 +12,19 @@ if (isset($_POST['nome'])) {
     $categoria = $_POST['categoria'];
     $marca = $_POST['marca'];
 
-    $nome_usuario = $_SESSION["nome_usuario"];
     $id_usuario = $_SESSION["id_usuario"];
 
-    $produto = new Produto();
-    $produto->setCategoria($categoria);
-    $produto->setDetalhes($descricao);
-    $produto->setImagem($nome_final);
-    $produto->setMarca($marca);
-    $produto->setNome_produto($nome);
-    $produto->setId_Usuario($id_usuario);
+    $produto = new Produto("",$nome,$descricao,$nome_final,"","","",$categoria,$marca,$id_usuario,"");
+
+    // $produto->setCategoria($categoria);
+    // $produto->setDetalhes($descricao);
+    // $produto->setImagem($nome_final);
+    // $produto->setMarca($marca);
+    // $produto->setNome_produto($nome);
+    // $produto->setId_Usuario($id_usuario);
+
     $fachada = Fachada::getInstance();
     $fachada->adicionarProduto($produto);
-
 
 }
 ?>
