@@ -13,18 +13,13 @@
             jQuery(function() {
                 jQuery('form.rating').rating();
             });</script>
-
     </head>
     <body>
         <div class="main">
-
             <div id="nav2">
                 <div id="header-wrapper">
-
                     <div id="header" class="container">
-
                         <h1 id="logo"><a href="home.php"><img src="css/images/opmais.png" alt= "logo OpineMais"  style="width:5.8em ;heigth:14em;"></a></h1>
-
                         <ul class="divided">
                             <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, <?php
                                 if (!empty($_GET['nome'])) {
@@ -34,20 +29,14 @@
                                     echo 'Visitante';
                                 }
                                 ?>  </li>
-
                         </ul>
                         <ul class="btheader">
                             <li><a href="login.php" class="button">Entre</a></li>
                             <li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>
                             <li><a href="util/logout.php"  class="button">Sair</a></li>
                         </ul>
-
-
-
                     </div>
-
                 </div>
-
             </div>
             <div id="content">
                 <?php include("leftBar.php") ?>
@@ -56,15 +45,12 @@
                 <div id="geral">
 
                     <header class="major">
-                        <h3>Opine</h3>
+                        <!-- <h3>Opine</h3> -->
                     </header>
                     <?php
                     session_start();
                     ob_start();
-
-
                     include ('model/util/connection.php');
-
                     $idpro= $_REQUEST['produto'];
                     $dados_produto = mysql_query("select * from produto where id_produto = $idpro");
                     while ($sql = mysql_fetch_array($dados_produto)) {
@@ -125,8 +111,6 @@
                                         echo '<div id="respostas">';
                                     }
                                     ?>
-
-
                                     <?php
                                     $dados_resposta = mysql_query("select * from resposta where id_opiniao = '$id_opiniao'");
                                     while ($linha = mysql_fetch_array($dados_resposta)) {
@@ -155,7 +139,6 @@
                         ?>
                     </div><!--comentarios-->
                 </div><!--classe postagem-->
-
                 <?php
             }
             include 'model/util/reg_comentario.php';
@@ -164,10 +147,6 @@
 
         </div><!--geral-->
     </div>
-
-
-
-
     <?php include("footer.php") ?>
 </div>
 </div>

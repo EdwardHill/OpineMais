@@ -76,7 +76,6 @@
                     <br>
 
                     <table id="produtos" align="center" class="display" >
-
                         <thead>
                             <tr>
                                 <th rowspan="1"></th>
@@ -103,17 +102,12 @@
                                         <h4>Descrição:</h4>
                                         <p><?php echo $descricao ?></p>
                                     </td>
-
-
                                 </tr>
                             <?php } ?>
                         </tbody>
-
                     </table>
-
                 </div><!--geral-->
             </div>
-
         </div>
         <?php include("footer.php") ?>
 

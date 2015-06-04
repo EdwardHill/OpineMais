@@ -81,16 +81,8 @@ session_start();
 
       $produto = new Produto("",$nome,$descricao,$nome_imagem,0,0,0.0,$categoria,$marca,$id_usuario,"");
 
-      // $produto->setCategoria($categoria);
-      // $produto->setDetalhes($descricao);
-      // $produto->setImagem($nome_final);
-      // $produto->setMarca($marca);
-      // $produto->setNome_produto($nome);
-      // $produto->setId_Usuario($id_usuario);
-
       $fachada = Fachada::getInstance();
       $fachada->adicionarProduto($produto);
 
       header('Location:../home.php');
-
   ?>
