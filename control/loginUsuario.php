@@ -1,13 +1,10 @@
 <?php
 include_once ('../imports.php');
-
+session_start();
    if (isset($_POST['email'])) {
       $email = $_POST['email'];
       $senha = $_POST['senha'];
     }
-
-    printf("Email: ".$email);
-    printf("Senha: ".$senha);
 
     $senhaCodificada = md5($senha);
 
@@ -21,13 +18,15 @@ include_once ('../imports.php');
         $usuario = new Usuario($id_usuario, $nome, $email, $senha);
     }
 
-    session_start();
-    $_SESSION["id_usuario"] = $id_usuario;
-    $_SESSION["nome_usuario"] = $nome_usuario;
-    $_SESSION["email_usuario"] = $email_usuario;
-    header('Location: ../home.php');
-
-      // return $usuario;
-    //  printf($_SESSION["nome_usuario"]);
+    if($nome_usuario != null){
+      $_SESSION["id_usuario"] = $id_usuario;
+      $_SESSION["nome_usuario"] = $nome_usuario;
+      $_SESSION["email_usuario"] = $email_usuario;
+      header('Location: ../home.php');
+    }else{
+      $mensagem = "Usuário ou Senha incorretos!";
+      $_SESSION["mensagem"] = $mensagem;
+      header('Location: ../login.php');
+    }
 
 ?>

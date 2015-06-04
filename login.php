@@ -38,21 +38,25 @@ and open the template in the editor.
           <div id="login">
 				        <header class="major">
 		             <h3>Login</h3>
-       		          <?php if(!empty($_SESSION["mensagem"])){
-	                         echo $_SESSION["mensagem"];
-                     }?>
+       		          <?php
+                     session_start();
+                     if(!empty($_SESSION['mensagem'])){
+	                         $mensagem = $_SESSION['mensagem'];
+                           echo $mensagem;
+                     }
+                     ?>
         				</header>
         			<form method="POST" action="control/loginUsuario.php">
           			<fieldset >
                   <legend>Dados de Login</legend>
                   <p><label for="email">E-mail:</label><br/>
-          	      <input type="email" placeholder="Digite o Email" name="email" id="email" size=40 required>  </p>
+          	      <input type="email" placeholder="Digite seu Email" name="email" id="email" size=40 required>  </p>
                   <p><label for="senha">Senha:</label><br/>
-          	      <input type="password" placeholder="Digite a Senha" name="senha" id="senha" size=40 required>  </p>
+          	      <input type="password" placeholder="Digite sua Senha" name="senha" id="senha" size=40 required>  </p>
           			</fieldset>
           			<div class="12u">
           				<ul class="actions">
-          					<li><input type="submit"   class="button3" value="Entrar" alt="Aperte Enter Para entrar"/></li>
+          					<li><input type="submit" class="button3" value="Entrar" alt="Aperte Enter Para entrar"/></li>
                     <li><a href="cadastro.php" class="button3" alt="Aperte Enter para um novo Cadastro">Cadastrar-se</a></li>
                     <!--<li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro"><img src="css/images/face.png" style="width:1.5em;"><br></a></li>-->
           				</ul>
