@@ -1,9 +1,8 @@
 <?php
 session_start();
-unset($_SESSION["nome"]);
-unset($_SESSION["id"]);
-unset($_SESSION["status"]);
+unset($_SESSION["nome_usuario"]);
+unset($_SESSION["id_usuario"]);
 session_unset();
 session_destroy();
-header("Location:../home.php");
+header("Location:../../home.php");
 ?>
