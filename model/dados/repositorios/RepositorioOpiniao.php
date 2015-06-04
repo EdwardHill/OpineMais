@@ -14,10 +14,11 @@
 //include('../model/util/connection.php');
 //include('../model/dados/IRepositorioOpiniao.php');
 
-class RepositorioOpiniao{
+class RepositorioOpiniao implements IRepositorioOpiniao{
 
     private static $instance = null;
-    public function __construct() {
+    
+    private function __construct() {
 
     }
 
@@ -28,37 +29,37 @@ class RepositorioOpiniao{
         return self::$instance;
     }
 
-    public function adicionar(\Opiniao $entidade) {
+    public function adicionarOpiniao(\Opiniao $opiniao) {
         $result = mysql_query("insert into opiniao(mensagem,qualificacao,nota,id_usuario,id_produto) "
                 . "values "
-                . "('".$entidade->getMensagem()."',"
-                . "'".$entidade->getQualificacao()."',"
-                . $entidade->getNota().","
-                . $entidade->getUsuario()->getId_usuario().","
-                . $entidade->getProduto()->getId_produto().")");
+                . "('".$opiniao->getMensagem()."',"
+                . "'".$opiniao->getQualificacao()."',"
+                . $opiniao->getNota().","
+                . $opiniao->getUsuario()->getId_usuario().","
+                . $opiniao->getProduto()->getId_produto().")");
 //        echo $result;
 //        echo 'Cadastro de Opiniao FEITO';
     }
 
-    public function editar(\Opiniao $entidade) {
+    public function editarOpiniao(\Opiniao $opiniao) {
         $result = mysql_query("update opiniao set "
-                . "mensagem = '".$entidade->getMensagem()."', "
-                . "qualificacao = '".$entidade->getQualificacao()."', "
-                . "nota = ".$entidade->getNota()
-                . "where id_opiniao = ".$entidade->getId_opiniao());
+                . "mensagem = '".$opiniao->getMensagem()."', "
+                . "qualificacao = '".$opiniao->getQualificacao()."', "
+                . "nota = ".$opiniao->getNota()
+                . "where id_opiniao = ".$opiniao->getId_opiniao());
     }
 
-    public function listar() {
+    public function listarOpiniao() {
         $result = mysql_query('select * from opiniao');
 
         $arrayOpiniao = array();
-        while( $sql = mysql_fetch_array($result)){
-            $id_opiniao = $sql['id_opiniao'];
-            $mensagem = $sql['mensagem'];
-            $qualificacao = $sql['qualificacao'];
-            $nota = $sql['nota'];
-            $id_usuario = $sql['id_usuario'];
-            $id_produto = $sql['id_produto'];
+        while( $row = mysql_fetch_array($result)){
+            $id_opiniao = $row['id_opiniao'];
+            $mensagem = $row['mensagem'];
+            $qualificacao = $row['qualificacao'];
+            $nota = $row['nota'];
+            $id_usuario = $row['id_usuario'];
+            $id_produto = $row['id_produto'];
 
             $usuario = new Usuario($id_usuario);
             $produto = new Produto($id_produto);
@@ -69,15 +70,16 @@ class RepositorioOpiniao{
         return $$arrayOpiniao;
     }
 
-    public function pesquisar(\Opiniao $entidade) {
-        $result = mysql_query('select * from opiniao where id_opiniao = '.$entidade->getId_opiniao());
-        while( $sql = mysql_fetch_array($result)){
-            $id_opiniao = $sql['id_opiniao'];
-            $mensagem = $sql['mensagem'];
-            $qualificacao = $sql['qualificacao'];
-            $nota = $sql['nota'];
-            $id_usuario = $sql['id_usuario'];
-            $id_produto = $sql['id_produto'];
+    public function pesquisarOpiniao(\Opiniao $opiniao) {
+        $result = mysql_query('select * from opiniao where id_opiniao = '.$opiniao->getId_opiniao());
+        $opiniao=null;
+        while( $row = mysql_fetch_array($result)){
+            $id_opiniao = $row['id_opiniao'];
+            $mensagem = $row['mensagem'];
+            $qualificacao = $row['qualificacao'];
+            $nota = $row['nota'];
+            $id_usuario = $row['id_usuario'];
+            $id_produto = $row['id_produto'];
 
             $usuario = new Usuario($id_usuario);
             $produto = new Produto($id_produto);
@@ -86,20 +88,20 @@ class RepositorioOpiniao{
         return $opiniao;
     }
 
-    public function remover(\Opiniao $entidade) {
+    public function removerOpiniao(\Opiniao $entidade) {
         $result = mysql_query('delete from opiniao where id_opiniao = '.$entidade->getId_opiniao());
     }
 
-    public function listarOpinioesPorProduto(\Produto $entidade){
-        $result = mysql_query("select * from opiniao where id_produto=" . $entidade->getId_produto());
+    public function listarOpinioesPorProduto(\Produto $produto){
+        $result = mysql_query("select * from opiniao where id_produto=" . $produto->getId_produto());
         $arrayOpiniao = array();
-        while( $sql = mysql_fetch_array($result)){
-            $id_opiniao = $sql['id_opiniao'];
-            $mensagem = $sql['mensagem'];
-            $qualificacao = $sql['qualificacao'];
-            $nota = $sql['nota'];
-            $id_usuario = $sql['id_usuario'];
-            $id_produto = $sql['id_produto'];
+        while( $row = mysql_fetch_array($result)){
+            $id_opiniao = $row['id_opiniao'];
+            $mensagem = $row['mensagem'];
+            $qualificacao = $row['qualificacao'];
+            $nota = $row['nota'];
+            $id_usuario = $row['id_usuario'];
+            $id_produto = $row['id_produto'];
 
             $usuario = new Usuario($id_usuario);
             $produto = new Produto($id_produto);

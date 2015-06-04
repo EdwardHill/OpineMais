@@ -15,16 +15,16 @@ class ControladorOpiniao {
     
     private $repositorioOpinicao;
     
-    function __construct() {
+    public function __construct() {
         $this->repositorioOpinicao = RepositorioOpiniao::getInstance();
     }
 
-    public function adicionarOpiniao(\Opiniao $entidade) {
-        $this->repositorioOpinicao->adicionar($entidade);
+    public function adicionarOpiniao(\Opiniao $opiniao) {
+        $this->repositorioOpinicao->adicionarOpiniao($opiniao);
     }
 
-    public function editarOpiniao(\Opiniao $entidade) {
-        $this->repositorioOpinicao->editar($entidade);
+    public function editarOpiniao(\Opiniao $opiniao) {
+        $this->repositorioOpinicao->editarOpiniao($opiniao);
     }
 
     public function listarOpiniao() {
@@ -32,15 +32,15 @@ class ControladorOpiniao {
     }
 
     public function pesquisarOpiniao(\Opiniao $entidade) {
-        return $this->repositorioOpinicao->pesquisar($entidade);
+        return $this->repositorioOpinicao->pesquisarOpiniao($opiniao);
     }
 
     public function removerOpiniao(\Opiniao $entidade) {
-        $this->repositorioOpinicao->remover($entidade);
+        $this->repositorioOpinicao->removerOpiniao($opiniao);
     }
     
-    public function listarOpinioesPorProduto(\Produto $entidade){
-        return $this->repositorioOpinicao->listarOpinioesPorProduto($entidade);
+    public function listarOpinioesPorProduto(\Produto $produto){
+        return $this->repositorioOpinicao->listarOpinioesPorProduto($produto);
     }
 
 }
