@@ -15,18 +15,15 @@ and open the template in the editor.
 
     </head>
     <body>
-        <?php
-       
-        
-        ?>
+
         <?php include("header.php") ?>
         <?php include("leftBar.php") ?>
         <?php include("rightBar.php") ?>
-        
+
         <div id="content">
 
             <!-- titulo do conteudo-->
-            <header class="major">		
+            <header class="major">
                 <h2>Perfil</h2>
             </header>
             <!-- Conteudo-->
@@ -34,27 +31,18 @@ and open the template in the editor.
             <fieldset>
                 <legend>Dados de Login</legend>
                 <p>
-                    E-mail: <?php echo $_REQUEST['nome']?>  <br/>
-                   
+                    E-mail: <?php echo $_REQUEST['email']?>  <br/>
                 </p>
             </fieldset>
 
-            <fieldset>		
+            <fieldset>
                 <legend>Dados Pessoais</legend>
-                <p class="p"> Nome:<?php //echo $usu2->getNome();?>  </p>
-            
-
+                <p class="p"> Nome:<?php echo $_REQUEST['nome']?>  </p>
             </fieldset>
-          
+
                 <ul class="actions">
-
                     <li><a href="control/editarPerfil.php" class="button">Editar Perfil</a></li>
-
                 </ul>
-          
         </div>
-
-
-
     </body>
 </html>
