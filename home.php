@@ -29,9 +29,12 @@
             });</script>
 
     </head>
+
     <body>
         <div class="main">
-
+          <?php
+          session_start();
+          ?>
             <div id="nav2">
                 <div id="header-wrapper">
 
@@ -41,8 +44,8 @@
 
                         <ul class="divided">
                             <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, <?php
-                                if (!empty($_SESSION['nome'])) {
-                                    $nome = $_SESSION['nome'];
+                                if (!empty($_SESSION['nome_usuario'])) {
+                                    $nome = $_SESSION['nome_usuario'];
                                     echo $nome;
                                 } else {
                                     echo 'Visitante';

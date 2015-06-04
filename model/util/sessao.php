@@ -1,3 +1,3 @@
 <?php
-if (!isset($_SESSION["nome"])) header("Location:../home.php");
+if (!isset($_SESSION["nome_usuario"])) header("Location:../home.php");
 ?>
