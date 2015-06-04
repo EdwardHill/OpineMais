@@ -31,12 +31,12 @@ $extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 if (array_search($extensao, $_UP['extensoes']) === false) {
 echo "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif";
 }
- 
+
 // Faz a verificação do tamanho do arquivo
 else if ($_UP['tamanho'] < $_FILES['arquivo']['size']) {
 echo "O arquivo enviado é muito grande, envie arquivos de até 2Mb.";
 }
- 
+
 // O arquivo passou em todas as verificações, hora de tentar movê-lo para a pasta
 else {
 // Primeiro verifica se deve trocar o nome do arquivo
@@ -44,15 +44,14 @@ if ($_UP['renomeia'] == true) {
 // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .jpg
     if(!empty ($extensao)){
         $nome_final = time().'.'.$extensao;
-       
 }
-    
+
 $nome_final = time().'.jpg';
 } else {
 // Mantém o nome original do arquivo
 $nome_final = $_FILES['arquivo']['name'];
 }
- 
+
 // Depois verifica se é possível mover o arquivo para a pasta escolhida
 if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_final)) {
 // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
@@ -61,8 +60,5 @@ echo '<br /><a href="' . $_UP['pasta'] . $nome_final . '">Clique aqui para acess
 } else {
 // Não foi possível fazer o upload, provavelmente a pasta está incorreta
 echo "Não foi possível enviar o arquivo, tente novamente";
-} 
 }
-
-
-
+}

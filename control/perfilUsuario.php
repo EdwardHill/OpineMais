@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 include('../imports.php');
 include ('../model/util/connection.php');
         $usu = new Usuario();
-        $usu->setId_usuario(6);
+        $id_usuario = $_SESSION["id_usuario"];
+        $usu->setId_usuario($id_usuario);
         $fachada = Fachada::getInstance();
         $usu2 = $fachada->pesquisarUsuario($usu);
         $nome = $usu2->getNome();
