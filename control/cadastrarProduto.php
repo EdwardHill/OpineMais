@@ -77,6 +77,12 @@ session_start();
         }
       }
 
+      printf("NOME". $nome);
+      printf("DESCRICAO". $descricao);
+      printf("NOMEIMAGEM".$nome_imagem);
+      printf("MARCA". $marca);
+      printf("IDUSUARIO". $id_usuario);
+
       $produto = new Produto("",$nome,$descricao,$nome_imagem,"","","",$categoria,$marca,$id_usuario,"");
 
       // $produto->setCategoria($categoria);
@@ -89,6 +95,6 @@ session_start();
       $fachada = Fachada::getInstance();
       $fachada->adicionarProduto($produto);
 
-      header('Location:../home.php');
+      //header('Location:../home.php');
 
   ?>

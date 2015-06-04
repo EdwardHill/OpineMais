@@ -11,31 +11,31 @@
  * @author ivan
  */
 class ControladorProduto {
-    
+
     private $repositorioProduto;
-    
+
     function __construct() {
         $this->repositorioProduto = RepositorioProduto::getInstance();
     }
-           
+
     public function adicionarProduto(\Produto $entidade) {
-        $this->repositorioProduto->adicionar($entidade);
+        $this->repositorioProduto->adicionarProduto($entidade);
     }
 
     public function editarProduto(\Produto $entidade) {
-        $this->repositorioProduto->editar($entidade);
+        $this->repositorioProduto->editarProduto($entidade);
     }
 
     public function listarProduto() {
-        return $this->repositorioProduto->listar();
+        return $this->repositorioProduto->listarProduto();
     }
 
     public function pesquisarProduto(\Produto $entidade) {
-        return $this->repositorioProduto->pesquisar($entidade);
+        return $this->repositorioProduto->pesquisarProduto($entidade);
     }
 
     public function removerProduto(\Produto $entidade) {
-        $this->repositorioProduto->remover($entidade);
+        $this->repositorioProduto->removerProduto($entidade);
     }
 
 }

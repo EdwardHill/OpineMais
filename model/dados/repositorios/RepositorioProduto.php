@@ -13,7 +13,7 @@
  */
 //include("../model/util/connection.php");
 
-class RepositorioProduto{
+class RepositorioProduto implements IRepositorioProduto{
 
     private static $instance = null;
 
@@ -28,33 +28,33 @@ class RepositorioProduto{
         return self::$instance;
     }
 
-    public function adicionar(\Produto $entidade) {
-        $result = mysql_query("insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values" .
-        "('".$entidade->getNome_produto()."','".
-        $entidade->getDetalhes()."','".
-        $entidade->getImagem()."',".
-        $entidade->getQualificacao_positiva().",".
-        $entidade->getQualificacao_negativa().",".
-        $entidade->getNota_media().",'".
-        $entidade->getCategoria()."','".
-        $entidade->getMarca()."',".
-        $entidade->getId_usuario().")");
+    public function adicionarProduto(\Produto $produto) {
+        $result = mysql_query("insert into produto (nome_produto,detalhes,categoria,marca,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,id_usuario) values" .
+        "('".$produto->getNome_produto()."','".
+        $produto->getDetalhes()."','".
+        $produto->getCategoria()."','".
+        $produto->getMarca()."','".
+        $produto->getImagem()."',".
+        $produto->getQualificacao_positiva().",".
+        $produto->getQualificacao_negativa().",".
+        $produto->getNota_media().",".
+        $produto->getId_usuario().")");
     }
 
-    public function editar(\Produto $entidade) {
+    public function editarProduto(\Produto $produto) {
         $result = mysql_query("update produto set nome_produto='".
-        $entidade->getNome_produto().
-        "', detalhes='".$entidade->getDetalhes().
-        "', imagem='".$entidade->getImagem().
-        "', qualificacao_positiva=".$entidade->getQualificacao_positiva().
-        ", qualificacao_negativa=".$entidade->getQualificacao_negativa().
-        ", nota_media=".$entidade->Nota_media().
-        ", categoria='". $entidade->getCategoria().
-        "', marca='". $entidade->getMarca().
-        "' where id_produto=". $entidade->getId_produto().")");
+        $produto->getNome_produto().
+        "', detalhes='".$produto->getDetalhes().
+        "', imagem='".$produto->getImagem().
+        "', qualificacao_positiva=".$produto->getQualificacao_positiva().
+        ", qualificacao_negativa=".$produto->getQualificacao_negativa().
+        ", nota_media=".$produto->Nota_media().
+        ", categoria='". $produto->getCategoria().
+        "', marca='". $produto->getMarca().
+        "' where id_produto=". $produto->getId_produto().")");
     }
 
-    public function listar() {
+    public function listarProduto() {
         $sql = "select * from produto";
         $result = mysql_query($sql);
         $arrayProduto = array();
@@ -80,8 +80,8 @@ class RepositorioProduto{
         return $arrayProduto;
     }
 
-    public function pesquisar(\Produto $entidade) {
-        $sql = ("select * from produto where id_produto='". $entidade->getId_produto()."'");
+    public function pesquisarProduto(\Produto $produto) {
+        $sql = ("select * from produto where id_produto='". $produto->getId_produto()."'");
         $dados = mysql_query($sql);
         while ($sql = mysql_fetch_array($dados)){
             $id_produto = $sql['id_produto'];
@@ -102,10 +102,9 @@ class RepositorioProduto{
         return $produto;
     }
 
-    public function remover(\Produto $entidade) {
-        $sql("delete from produto where id_produto=".$entidade->getId_produto());
+    public function removerProduto(\Produto $produto) {
+        $sql("delete from produto where id_produto=".$produto->getId_produto());
         $result = mysql_query($sql);
     }
 
-//put your code here
 }
