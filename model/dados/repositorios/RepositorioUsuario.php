@@ -19,7 +19,7 @@ class RepositorioUsuario implements IRepositorioUsuario{
     
     private static $instance = null;
     
-    public function __construct() {
+    private function __construct() {
         
     }
 

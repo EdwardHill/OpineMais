@@ -1,6 +1,6 @@
 <?php
 include_once ('../imports.php');
-include ('../model/util/connection.php');
+//include ('../model/util/connection.php');
  if (isset($_POST['email'])) {
 
      ob_start();
@@ -15,7 +15,8 @@ include ('../model/util/connection.php');
     $fachada = Fachada::getInstance();
     $fachada->adicionarUsuario($usu);
 
-    printf($nome);
+    printf($nome." ".$email." ".$senha);
+    
  }
 
 ?>
