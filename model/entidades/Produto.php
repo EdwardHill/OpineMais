@@ -20,8 +20,9 @@ class Produto {
     private $categoria;
     private $marca;
     private $usuario; //usuário que criou o produto
+    private $id_usuario;
     private $opinioes; //Opiniões sobre o produto
-    
+
     public function __construct($id_produto="",$nome_produto="",$detalhes="",$imagem="",$qualificacao_positiva="",
             $qualificacao_negativa="",$nota_media="",$categoria="",$marca="",$usuario="",$opinioes="") {
         $this->id_produto= $id_produto;
@@ -41,27 +42,27 @@ class Produto {
     public function getId_produto(){
         return $this->id_produto;
     }
-    
+
     public function setId_produto($id_produto){
         $this->id_produto = $id_produto;
     }
-    
+
     public function getNome_produto(){
         return $this->nome_produto;
     }
-    
+
     public function setNome_produto($nome_produto){
         $this->nome_produto = $nome_produto;
     }
-    
+
     public function getDetalhes(){
         return $this->detalhes;
     }
-    
+
     public function setDetalhes($detalhes){
          $this->detalhes = $detalhes;
     }
-    
+
     public function getImagem(){
         return $this->imagem;
     }
@@ -69,7 +70,7 @@ class Produto {
     public function setImagem($imagem){
         $this->imagem = $imagem;
     }
-    
+
     public function getQualificacao_positiva(){
         return $this->qualificacao_positiva;
     }
@@ -77,7 +78,7 @@ class Produto {
     public function setQualificacao_positiva($qualificacao_positiva){
         $this->qualificacao_positiva = $qualificacao_positiva;
     }
-    
+
     public function getQualificacao_negativa(){
         return $this->qualificacao_negativa;
     }
@@ -100,15 +101,15 @@ class Produto {
     public function setUsuario($usuario){
         $this->usuario = $usuario;
     }
-    
+
     public function getOpinioes(){
         $this->opinioes;
     }
-    
+
     public function setOpinioes($opinioes){
         $this->opinioes = $opinioes;
     }
-    
+
     function getCategoria() {
         return $this->categoria;
     }
@@ -125,5 +126,11 @@ class Produto {
         $this->marca = $marca;
     }
 
+    public function getId_usuario(){
+        return $this->id_usuario;
+    }
 
+    public function setId_usuario($id_usuario){
+        $this->id_usuario = $id_usuario;
+    }
 }

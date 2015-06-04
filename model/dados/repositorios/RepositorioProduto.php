@@ -30,7 +30,7 @@ class RepositorioProduto{
 
     public function adicionar(\Produto $entidade) {
 
-        $sql = "insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values ('".$entidade->getNome_produto()."','".$entidade->getDetalhes()."','".$entidade->getImagem()."',".$entidade->getQualificacao_positiva().",".$entidade->getQualificacao_negativa().",".$entidade->Nota_media().",".$entidade->getCategoria().",".$entidade->getMarca().",".$entidade->getId_usuario().")";
+        $sql = "insert into produto (nome_produto,detalhes,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,categoria,marca,id_usuario) values ('".$entidade->getNome_produto()."','".$entidade->getDetalhes()."','".$entidade->getImagem()."',".$entidade->getQualificacao_positiva().",".$entidade->getQualificacao_negativa().",".$entidade->getNota_media().",'".$entidade->getCategoria()."','".$entidade->getMarca()."',".$entidade->getId_usuario().")";
 
         $result = mysql_query($sql);
     }

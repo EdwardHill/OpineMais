@@ -19,6 +19,7 @@ session_start();
     }
 
     if($nome_usuario != null){
+      $_SESSION["usuario"] = $usuario;
       $_SESSION["id_usuario"] = $id_usuario;
       $_SESSION["nome_usuario"] = $nome_usuario;
       $_SESSION["email_usuario"] = $email_usuario;
