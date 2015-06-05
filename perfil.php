@@ -10,17 +10,32 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title>Perfil - Opine Mais </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
-        <link rel="shortcut icon" href="images/logtop.png" />
+       	<script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/easySlider1.7.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#slider").easySlider({
+                    auto: true,
+                    continuous: true
+                });
+            });
+        </script>
+
+        <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
 
     </head>
     <body>
-
+        <div class="main">
+             <?php
+            session_start();
+            ?>
         <?php include("header.php") ?>
+            
         <?php include("leftBar.php") ?>
+            
         <?php include("rightBar.php") ?>
 
-        <div id="content">
+       
 
             <!-- titulo do conteudo-->
             <header class="major">
@@ -43,6 +58,13 @@ and open the template in the editor.
                 <ul class="actions">
                     <li><a href="control/editarPerfil.php" class="button">Editar Perfil</a></li>
                 </ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        <br><br><br><br><br>
+           <?php include("footer.php") ?>    
         </div>
-    </body>
-</html>
+         
+

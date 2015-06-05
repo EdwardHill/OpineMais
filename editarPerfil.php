@@ -10,18 +10,22 @@ and open the template in the editor.
         <title>Editar Perfil - Opine Mais </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="shortcut icon" href="images/logtop.png" />
     </head>
     <body>
-        <?php include("header.php") ?>
+         <div class="main">
+             
+        <?php session_start();
+        include("header.php") ?>
         <?php include("leftBar.php") ?>
         <?php include("rightBar.php") ?>
-        <div id="content">
+        <div id="centro">
 
           <!-- titulo do conteudo-->
-          <header class="major">
+         
             <h2>Editar Perfil</h2>
-          </header>
+        
               <!-- Conteudo-->
           <form method="POST" name="fusuario" action="control/cadastrarUsuario.php">
 

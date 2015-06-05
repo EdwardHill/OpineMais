@@ -6,18 +6,21 @@
 		<title>Home - Opine Mais </title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
                 <link rel="stylesheet" type="text/css" href="css/estilo.css">
+                <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
 		    <link rel="shortcut icon" href="images/logtop.png" />
 
 	</head>
 	<body>
   	<div class="main">
 
-				<?php include("header.php");
-					session_start();
+        <?php 
+        session_start();
+        include("header.php");
+					
          	include("leftBar.php");
          	include("rightBar.php");?>
 
-				<div id="content">
+				
 						<header class="major">
 							<h2>Cadastro de Produtos</h2>
 							<h4><?php$mensagem?></h4>
@@ -62,11 +65,12 @@
 
 								<div class="12u">
 									<ul class="actions">
-										<li><input type="submit" value="Confirmar Cadastro" /></li>
+										<li><input type="submit" value="Confirmar" /></li>
 										<!-- <li><input type="reset" value="Limpar" /></li>-->
 									</ul>
 								</div>
 						</form>
-				  <?php include("footer.php") ?>
-		     </div>
+				  
+		 
+            <?php include("footer.php") ?>
       </div>
