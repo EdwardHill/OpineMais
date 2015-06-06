@@ -29,11 +29,14 @@
 
     <body>
         <div class="main">
-            <?php
-            session_start();
-            include("header.php");
+            <?php session_start();?>
+            <?php include("header.php");?>
+            <?php include("leftBar.php");?>
+            <?php include_once ('imports.php');?>
+            <?php 
+                $fachada = Fachada::getInstance();
+                $arrayProduto = $fachada->listarProduto();
             ?>
-           <?php include("leftBar.php");?>
              
           
             <div id="container">
