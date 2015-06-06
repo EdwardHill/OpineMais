@@ -26,7 +26,7 @@ and open the template in the editor.
     </head>
     <body>
         <div class="main">
-        
+        <?php session_start();?>
         <?php include("header.php"); ?>
             
         <?php include("leftBar.php"); ?>
@@ -36,7 +36,6 @@ and open the template in the editor.
         <?php include_once ('imports.php'); ?>
             
         <?php
-            session_start();
             $serializacaoUsuario = $_SESSION['usuario'];
             //echo $serializacaoUsuario;
             $usuario = unserialize($serializacaoUsuario);

@@ -15,14 +15,13 @@ and open the template in the editor.
     </head>
     <body>
          <div class="main">
-             
-        <?php
-        include("header.php"); ?>
+        <?php session_start();?>     
+        <?php include("header.php"); ?>
         <?php include("leftBar.php"); ?>
         <?php include("rightBar.php"); ?>
-        <?php include("imports.php"); ?>
+        <?php include_once("imports.php"); ?>
         <?php
-            session_start();
+            //session_start();
             $serializacao = $_SESSION['usuario'];
             $usuario = unserialize($serializacao);
         ?>
