@@ -47,14 +47,16 @@
                 <div id="content">
                     <div id="slider">
                         <ul>	
-                            <?php   
-                             
-                foreach($arrayProduto as $p){
-                    
-                    
+                <?php
+                    if(empty($arrayProduto)){
+                        foreach($arrayProduto as $p){
                  ?>
                             <li><div id="titulo"><h2 id="centro"> <?php echo $p->getNome();?></h2></div><a href="comentarProduto.php?produto=<?php echo$p->getId_produto(); ?>"><img src="images/upload/<?php echo $p->getImagem(); ?>"  id="centro" alt="<?php echo $p->getDetalhes();?>"/></a></li>
-                <?php };?>
+                <?php   
+                
+                        }
+                    }
+                ?>
                         </ul>
                     </div>
 

@@ -3,13 +3,17 @@
 include_once ('../imports.php');
 //include ('../model/util/connection.php');
 
-  if (isset($_POST['nome'])) {
-      //include ("../model/util/upload.php");
-      ob_start();
-      $nome = $_POST['nome'];
-      $descricao = $_POST['descricao'];
+  if (isset($_POST['nome_produto'])) {
+      
+      $nome_produto = $_POST['nome_produto'];
+      $detalhes = $_POST['descricao'];
       $categoria = $_POST['categoria'];
       $marca = $_POST['marca'];
+      
+      echo 'Nome do Produto: '.$nome_produto.'<br/>';
+      echo 'Descricao do Produto: '.$detalhes.'<br/>';
+      echo 'Categoria do Produto: '.$categoria.'<br/>';
+      echo 'Marca do Produto: '.$marca.'<br/>';
       
       session_start();
       $serializado = $_SESSION['usuario'];
@@ -78,13 +82,14 @@ include_once ('../imports.php');
           }
         }
       }
+      
+      echo 'Nome da Imagem'.$nome_imagem.'<br/>';
+      
+      //$_SESSION['mensagem'] = $mensgem;
 
-      $_SESSION['mensagem'] = $mensgem;
-
-      $produto = new Produto("",$nome,$descricao,$nome_imagem,0,0,0.0,$categoria,$marca,$id_usuario,"");
-
+      $produto = new Produto(0, $nome_produto, $detalhes, $nome_imagem, 0, 0, 0, $categoria, $marca, $id_usuario);
       $fachada = Fachada::getInstance();
       $fachada->adicionarProduto($produto);
-
+      
       header('Location:../home.php');
   ?>

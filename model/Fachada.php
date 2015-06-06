@@ -73,12 +73,16 @@ class Fachada {
     
     public function listarProduto(){
         $listaProdutos = $this->controladorProduto->listarProduto();
-        
-        foreach ($listaProdutos as $produto){
-            $opinioes = $this->listarOpinioesPorProduto($produto);
-            $usuario = $this->pesquisarUsuario($produto->getUsuario());
-            $produto->setOpinioes($opinioes);
-            $produto->setUsuario($usuario);
+        if(!empty($listaProdutos)){
+            foreach ($listaProdutos as $produto){
+                $usuario = $this->pesquisarUsuario($produto->getUsuario());
+                $produto->setUsuario($usuario);
+                
+                $opinioes = $this->listarOpinioesPorProduto($produto);
+                if(!empty($opinioes)){
+                    $produto->setOpinioes($opinioes);
+                }
+            }
         }
         
         return $listaProdutos;
