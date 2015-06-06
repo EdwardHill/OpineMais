@@ -38,7 +38,7 @@ class RepositorioProduto implements IRepositorioProduto{
         $produto->getQualificacao_positiva().",".
         $produto->getQualificacao_negativa().",".
         $produto->getNota_media().",".
-        $produto->getId_usuario().")");
+        $produto->getUsuario()->getId_usuario().")");
 
         printf ("insert into produto (nome_produto,detalhes,categoria,marca,imagem,qualificacao_positiva,qualificacao_negativa,nota_media,id_usuario) values" .
         "('".$produto->getNome_produto()."','".
@@ -49,7 +49,7 @@ class RepositorioProduto implements IRepositorioProduto{
         $produto->getQualificacao_positiva().",".
         $produto->getQualificacao_negativa().",".
         $produto->getNota_media().",".
-        $produto->getId_usuario().")");
+        $produto->getUsuario()->getId_usuario().")");
     }
 
     public function editarProduto(\Produto $produto) {

@@ -20,11 +20,10 @@ class Produto {
     private $categoria;
     private $marca;
     private $usuario; //usuário que criou o produto
-    private $id_usuario;
     private $opinioes; //Opiniões sobre o produto
 
     public function __construct($id_produto="",$nome_produto="",$detalhes="",$imagem="",$qualificacao_positiva=0,
-            $qualificacao_negativa=0,$nota_media=0.0,$categoria="",$marca="",$id_usuario="",$opinioes="") {
+            $qualificacao_negativa=0,$nota_media=0.0,$categoria="",$marca="",$usuario="",$opinioes="") {
         $this->id_produto= $id_produto;
         $this->nome_produto = $nome_produto;
         $this->detalhes = $detalhes;
@@ -34,80 +33,36 @@ class Produto {
         $this->nota_media = $nota_media;
         $this->categoria = $categoria;
         $this->marca = $marca;
-        $this->id_usuario = $id_usuario;
+        $this->usuario = $usuario;
         $this->opinioes = $opinioes;
     }
-
-
-    public function getId_produto(){
+    
+    function getId_produto() {
         return $this->id_produto;
     }
 
-    public function setId_produto($id_produto){
-        $this->id_produto = $id_produto;
-    }
-
-    public function getNome_produto(){
+    function getNome_produto() {
         return $this->nome_produto;
     }
 
-    public function setNome_produto($nome_produto){
-        $this->nome_produto = $nome_produto;
-    }
-
-    public function getDetalhes(){
+    function getDetalhes() {
         return $this->detalhes;
     }
 
-    public function setDetalhes($detalhes){
-         $this->detalhes = $detalhes;
-    }
-
-    public function getImagem(){
+    function getImagem() {
         return $this->imagem;
     }
 
-    public function setImagem($imagem){
-        $this->imagem = $imagem;
-    }
-
-    public function getQualificacao_positiva(){
+    function getQualificacao_positiva() {
         return $this->qualificacao_positiva;
     }
 
-    public function setQualificacao_positiva($qualificacao_positiva){
-        $this->qualificacao_positiva = $qualificacao_positiva;
-    }
-
-    public function getQualificacao_negativa(){
+    function getQualificacao_negativa() {
         return $this->qualificacao_negativa;
     }
 
-    public function setQualificacao_negativa($qualificacao_negativa){
-        $this->qualificacao_negativa = $qualificacao_negativa;
-    }
-    public function getNota_media(){
+    function getNota_media() {
         return $this->nota_media;
-    }
-
-    public function setNota_media($nota_media){
-        $this->nota_media = $nota_media;
-    }
-
-    public function getUsuario(){
-        return $this->usuario;
-    }
-
-    public function setUsuario($usuario){
-        $this->usuario = $usuario;
-    }
-
-    public function getOpinioes(){
-        $this->opinioes;
-    }
-
-    public function setOpinioes($opinioes){
-        $this->opinioes = $opinioes;
     }
 
     function getCategoria() {
@@ -118,6 +73,42 @@ class Produto {
         return $this->marca;
     }
 
+    function getUsuario() {
+        return $this->usuario;
+    }
+
+    function getOpinioes() {
+        return $this->opinioes;
+    }
+
+    function setId_produto($id_produto) {
+        $this->id_produto = $id_produto;
+    }
+
+    function setNome_produto($nome_produto) {
+        $this->nome_produto = $nome_produto;
+    }
+
+    function setDetalhes($detalhes) {
+        $this->detalhes = $detalhes;
+    }
+
+    function setImagem($imagem) {
+        $this->imagem = $imagem;
+    }
+
+    function setQualificacao_positiva($qualificacao_positiva) {
+        $this->qualificacao_positiva = $qualificacao_positiva;
+    }
+
+    function setQualificacao_negativa($qualificacao_negativa) {
+        $this->qualificacao_negativa = $qualificacao_negativa;
+    }
+
+    function setNota_media($nota_media) {
+        $this->nota_media = $nota_media;
+    }
+
     function setCategoria($categoria) {
         $this->categoria = $categoria;
     }
@@ -126,11 +117,14 @@ class Produto {
         $this->marca = $marca;
     }
 
-    public function getId_usuario(){
-        return $this->id_usuario;
+    function setUsuario($usuario) {
+        $this->usuario = $usuario;
     }
 
-    public function setId_usuario($id_usuario){
-        $this->id_usuario = $id_usuario;
+    function setOpinioes($opinioes) {
+        $this->opinioes = $opinioes;
     }
+
+
+    
 }

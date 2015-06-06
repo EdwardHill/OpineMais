@@ -48,11 +48,13 @@
                     <div id="slider">
                         <ul>	
                 <?php
-                    if(empty($arrayProduto)){
-                        foreach($arrayProduto as $p){
-                 ?>
-                            <li><div id="titulo"><h2 id="centro"> <?php echo $p->getNome();?></h2></div><a href="comentarProduto.php?produto=<?php echo$p->getId_produto(); ?>"><img src="images/upload/<?php echo $p->getImagem(); ?>"  id="centro" alt="<?php echo $p->getDetalhes();?>"/></a></li>
-                <?php   
+                    if(!empty($arrayProduto)){
+                        foreach($arrayProduto as $produto){
+                 
+                           echo '<li><div id="titulo"><h2 id="centro"> '
+                            .$produto->getNome_produto().'</h2></div><a href="comentarProduto.php?produto='
+                            .$produto->getId_produto().'"><img src="images/upload/'.$produto->getImagem().'"  id="centro" alt="'.$produto->getDetalhes().'"/></a></li>';
+                  
                 
                         }
                     }
