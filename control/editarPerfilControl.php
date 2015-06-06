@@ -11,14 +11,20 @@
  *
  * @author Edward_Hill
  */
- session_start();
- include('../imports.php');
-   $usu = new Usuario();
-   $id_usuario = $_SESSION["id_usuario"];
-   $usu->setId_usuario($id_usuario);
+ include_once('../imports.php');
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    
+   session_start();
+   $serealizado = $_SESSION['usuario'];
+   $usuario = unserialize($serealizado);
+   
+   $usuario->setNome($nome);
+   $usuario->setEmail($email);
    $fachada = Fachada::getInstance();
-   $usu2 = $fachada->pesquisarUsuario($usu);
-   $nome = $usu2->getNome();
-   $email = $usu2->getEmail();
+   $fachada->editarUsuario($usuario);
+   
+   $serealizado = serialize($usuario);
+   $_SESSION['usuario'] = $serealizado;
 
-   header("Location:../editarPerfil.php?nome=$nome&email=$email");
+   header('Location: ../perfil.php');
