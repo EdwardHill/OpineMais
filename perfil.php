@@ -63,7 +63,7 @@ and open the template in the editor.
             </fieldset>
 
                 <ul class="actions">
-                    <li><a href="control/editarPerfil.php" class="button">Editar Perfil</a></li>
+                    <li><a href="editarPerfil.php" class="button">Editar Perfil</a></li>
                 </ul>
             <br>
             <br>
