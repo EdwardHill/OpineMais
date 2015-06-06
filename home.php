@@ -36,6 +36,8 @@
             <?php 
                 $fachada = Fachada::getInstance();
                 $arrayProduto = $fachada->listarProduto();
+               
+                
             ?>
              
           
@@ -44,12 +46,15 @@
                 <div id="header"><h1>Produtos em Destaque</h1></div>
                 <div id="content">
                     <div id="slider">
-                        <ul>				
-                            <li><div id="titulo"><h2 id="centro"> <?php echo $titulo ?></h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/<?php echo $imagem ?>"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
-                            <li><div id="titulo"><h2 id="centro"> <?php echo $titulo ?></h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1431644334.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
-                            <li><div id="titulo"><h2 id="centro"> <?php echo $titulo ?></h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1433446092.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
-                            <li><div id="titulo"><h2 id="centro"> MAnga</h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1433446092.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
-                    <li><div id="titulo"><h2 id="centro"> MAnga</h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1433446092.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
+                        <ul>	
+                            <?php   
+                             
+                foreach($arrayProduto as $p){
+                    
+                    
+                 ?>
+                            <li><div id="titulo"><h2 id="centro"> <?php echo $p->getTitulo();?></h2></div><a href="comentarProduto.php?produto=<?php echo$p->getId_produto(); ?>"><img src="images/upload/<?php echo $p->getImagem(); ?>"  id="centro" alt="<?php echo $p->getDescricao();?>"/></a></li>
+                <?php };?>
                         </ul>
                     </div>
 

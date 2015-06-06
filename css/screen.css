@@ -67,10 +67,11 @@ body {
 		margin:0 auto;
 		position:relative;
 		text-align:left;
-		width:800px;
+		width:1000px;
                 height:280px;
 		background:#fff;		
 		margin-bottom:2em;
+                margin-right: -2em;
 		}	
 	#header{
 		height:30px;
@@ -113,8 +114,8 @@ body {
 			define width and height of list item (slide)
 			entire slider area will adjust according to the parameters provided here
 		*/ 
-		width:800px;
-		height:280px;
+		width:990px;
+		height:290px;
 		overflow:hidden; 
 		}	
 	#prevBtn, #nextBtn,
@@ -128,13 +129,13 @@ body {
 		z-index:1000;
 		}	
 	#nextBtn, #slider1next{ 
-		left:800px;
+		left:960px;
 		}														
 	#prevBtn a, #nextBtn a,
 	#slider1next a, #slider1prev a{  
 		display:block;
 		position:relative;
-		width:30px;
+		width:306px;
 		height:77px;
 		background:url(../images/btn_prev.gif) no-repeat 0 0;	
 		}	
@@ -145,7 +146,7 @@ body {
 	/* numeric controls */	
 
 	ol#controls{
-		margin:1em 0;
+		margin:1em 25em;
 		padding:0;
 		height:28px;	
 		}
@@ -164,7 +165,7 @@ body {
 		border:1px solid #ccc;
 		background:#DAF3F8;
 		color:#555;
-		padding:0 10px;
+		padding:0 15px;
 		text-decoration:none;
 		}
 	ol#controls li.current a{
@@ -176,6 +177,6 @@ body {
         
         #centro{
          display: block; margin: 0 auto; 
-        width:42%;
+        width:37%;
         }
 /* // Easy Slider */

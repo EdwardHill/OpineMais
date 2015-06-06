@@ -800,7 +800,7 @@ a.image:hover
     background: -ms-linear-gradient(180deg, #E0E0E0 0%, #EFEFEF 51%, #ffffff 99%); /* ie10+ */
     background: linear-gradient(270deg, #E0E0E0 0%, #EFEFEF 51%, #ffffff 99%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#E0E0E0',GradientType=1 ); /* ie6-9 */
-    width:14.8%;
+    width:17%;
     border-top: solid 1px #fff;
     height:100%;
 
@@ -1158,7 +1158,7 @@ p.info
 
 /*----------------------RESET--------------------*/
 
-.global-div{width:750px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:55%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+.global-div{width:925px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:57.4%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
