@@ -32,7 +32,7 @@ and open the template in the editor.
             <h2>Editar Perfil</h2>
         
               <!-- Conteudo-->
-          <form method="POST" name="fusuario" action="control/cadastrarUsuario.php">
+              <form method="POST" name="fusuario" action="control/editarPerfilControl.php">
 
     				<fieldset >
     					<legend>Dados de Login</legend>
