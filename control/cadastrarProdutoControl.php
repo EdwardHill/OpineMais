@@ -18,7 +18,6 @@ include_once ('../imports.php');
       session_start();
       $serializado = $_SESSION['usuario'];
       $usuario = unserialize($serializado);
-      $id_usuario = $usuario->getId_usuario();
 
         //Pasta onde o arquivo vai ser salvo
         $_UP['pasta'] = '../images/upload/';
@@ -87,7 +86,7 @@ include_once ('../imports.php');
       
       //$_SESSION['mensagem'] = $mensgem;
 
-      $produto = new Produto(0, $nome_produto, $detalhes, $nome_imagem, 0, 0, 0, $categoria, $marca, $id_usuario);
+      $produto = new Produto(0, $nome_produto, $detalhes, $nome_imagem, 0, 0, 0, $categoria, $marca, $usuario);
       $fachada = Fachada::getInstance();
       $fachada->adicionarProduto($produto);
       

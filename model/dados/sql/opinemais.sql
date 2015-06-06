@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Jun-2015 às 10:02
+-- Generation Time: 06-Jun-2015 às 13:21
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `comentario` (
 `id_comentario` int(11) NOT NULL,
-  `mensagem` varchar(500) NOT NULL
+  `mensagem` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `comentario_opiniao_usuario` (
 
 CREATE TABLE IF NOT EXISTS `opiniao` (
 `id_opiniao` int(11) NOT NULL,
-  `mensagem` varchar(500) NOT NULL,
-  `qualificacao` varchar(10) NOT NULL,
+  `mensagem` varchar(1000) NOT NULL,
+  `qualificacao` varchar(50) NOT NULL,
   `nota` float DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_produto` int(11) DEFAULT NULL
@@ -66,10 +66,10 @@ CREATE TABLE IF NOT EXISTS `opiniao` (
 
 CREATE TABLE IF NOT EXISTS `produto` (
 `id_produto` int(11) NOT NULL,
-  `nome_produto` varchar(50) NOT NULL,
+  `nome_produto` varchar(100) NOT NULL,
   `detalhes` varchar(500) NOT NULL,
-  `categoria` varchar(50) NOT NULL,
-  `marca` varchar(50) NOT NULL,
+  `categoria` varchar(100) NOT NULL,
+  `marca` varchar(100) NOT NULL,
   `imagem` varchar(100) NOT NULL,
   `qualificacao_positiva` int(11) DEFAULT NULL,
   `qualificacao_negativa` int(11) DEFAULT NULL,
@@ -85,10 +85,17 @@ CREATE TABLE IF NOT EXISTS `produto` (
 
 CREATE TABLE IF NOT EXISTS `usuario` (
 `id_usuario` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `senha` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `senha` varchar(300) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES
+(1, 'Jackson Daniel', 'jackson.daniel.almeida@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -147,7 +154,7 @@ MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
