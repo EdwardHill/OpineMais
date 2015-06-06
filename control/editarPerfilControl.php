@@ -24,6 +24,8 @@
    $fachada = Fachada::getInstance();
    $fachada->editarUsuario($usuario);
    
+   unset($_SESSION['usuario']);
+   
    $serealizado = serialize($usuario);
    $_SESSION['usuario'] = $serealizado;
 
