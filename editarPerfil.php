@@ -18,7 +18,7 @@ and open the template in the editor.
         <?php session_start();?>     
         <?php include("header.php"); ?>
         <?php include("leftBar.php"); ?>
-        <?php include("rightBar.php"); ?>
+        
         <?php include_once("imports.php"); ?>
         <?php
             //session_start();

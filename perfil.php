@@ -31,7 +31,7 @@ and open the template in the editor.
             
         <?php include("leftBar.php"); ?>
             
-        <?php include("rightBar.php"); ?>
+    
         
         <?php include_once ('imports.php'); ?>
             
@@ -60,9 +60,13 @@ and open the template in the editor.
                 <legend>Dados Pessoais</legend>
                 <p class="p"><b> Nome: </b><?php echo $usuario->getNome();?>  </p>
             </fieldset>
-
+                    <br>
+                    <br>
+                    
                 <ul class="actions">
                     <li><a href="editarPerfil.php" class="button">Editar Perfil</a></li>
+                     <li><a href="editarSenha.php" class="button">Editar Senha</a></li>
+                      <li><a href="desativarPerfil.php" class="button">Desativar Perfil</a></li>
                 </ul>
             <br>
             <br>
@@ -70,7 +74,8 @@ and open the template in the editor.
             <br>
             <br>
         <br><br><br><br><br>
-           <?php include("footer.php") ?>    
+            
         </div>
+    </body></html>
          
 

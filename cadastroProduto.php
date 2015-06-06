@@ -17,8 +17,8 @@
         session_start();
         include("header.php");
 					
-         	include("leftBar.php");
-         	include("rightBar.php");?>
+         	include("leftBar.php");?>
+         	
 
 				
 						<header class="major">

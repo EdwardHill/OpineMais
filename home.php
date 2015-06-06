@@ -46,7 +46,7 @@
                             <li><div id="titulo"><h2 id="centro"> <?php echo $titulo ?></h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1431644334.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
                             <li><div id="titulo"><h2 id="centro"> <?php echo $titulo ?></h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1433446092.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
                             <li><div id="titulo"><h2 id="centro"> MAnga</h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1433446092.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
-         
+                    <li><div id="titulo"><h2 id="centro"> MAnga</h2></div><a href="comentarProduto.php?produto=<?php echo$id_produto ?>"><img src="images/upload/1433446092.jpg"  id="centro" alt="<?php echo $descricao ?>"/></a></li>
                         </ul>
                     </div>
 
@@ -124,7 +124,7 @@
         	<h2>Tomb Raider</h2>
             <p>R$ 140,00</p>
         </li>
-        <li>
+<!--        <li>
             <a href="#" class="image"><img src="css/images/pq21507483.jpg"alt="Game" /></a>
         	<h2>Wanted</h2>
             <p>R$ 125,00</p>
@@ -149,7 +149,7 @@
               <a href="#" class="image"><img src="css/images/pq21440232.jpg" alt="Game" /></a>
         	<h2>Need for Speed</h2>
             <p>R$ 95,00</p>
-        </li>
+        </li>-->
       
     </ul>
         

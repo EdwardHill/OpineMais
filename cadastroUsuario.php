@@ -16,7 +16,7 @@
        
 		<?php include("header.php")?>
                 <?php include("leftBar.php")?>
-                <?php include("rightBar.php")?>
+               
 
 				<div id="content">
 			<header class="major">
@@ -40,13 +40,15 @@
                                                 size=40 required="nome"></p>	
 					
 				</fieldset>
+			<div id="centro">
+    					<ul class="menu3">
+    						<li><input type="submit"   value="Confirmar" /></li>
+    						
+    					</ul>
+    				</div>
+						
+					
 
-				<div >
-					<ul class="actions">
-						<li><input type="submit"  class=button value="Confirmar" /></li>
-						<!-- <li><input type="reset" value="Limpar" /></li> -->
-					</ul>
-				</div>
 
 			</form>
 		</div>

@@ -17,7 +17,7 @@ and open the template in the editor.
         <div class="main">
         <?php include ("header.php")?>
         <?php include("leftBar.php")?>
-         <?php include("rightBar.php")?>
+         
         <div class="content">
           <div id="login">
                         <header class="major">
@@ -43,7 +43,7 @@ and open the template in the editor.
           			<div class="12u">
           				<ul class="actions">
           					<li><input type="submit" class="button" value="Entrar" alt="Aperte Enter Para entrar"/></li>
-                    <li><a href="cadastro.php" class="button" alt="Aperte Enter para um novo Cadastro">Cadastrar-se</a></li>
+                    <li><a href="cadastroUsuario.php" class="button" alt="Aperte Enter para um novo Cadastro">Cadastrar-se</a></li>
                     <!--<li><a href="#" class="button3" alt="Aperte Enter para um novo Cadastro"><img src="css/images/face.png" style="width:1.5em;"><br></a></li>-->
           				</ul>
           			</div>

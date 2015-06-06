@@ -40,7 +40,7 @@
             </div>
             <div id="content">
                 <?php include("leftBar.php") ?>
-                <?php include("rightBar.php") ?>
+               
 
                 <div id="geral">
 
