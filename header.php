@@ -12,13 +12,12 @@
                                 <?php
                                     include_once ('imports.php');
                                     
-                                    //session_start();
+                                   // session_start();
                                     
                                     if (!empty($_SESSION['usuario'])) {
                                         $serializacao = $_SESSION['usuario'];
-                                        $usuario = unserialize($serializacao);
-                                        
-                                        echo $usuario->getNome();
+                                        $usuario = unserialize($serializacao);                                   
+                                       echo $usuario->getNome();
                                     } else {
                                         echo 'Visitante';
                                     }

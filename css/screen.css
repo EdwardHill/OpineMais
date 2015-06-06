@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 @import url("font-awesome.min.css");
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
+
 
 
 body {
@@ -50,7 +50,7 @@ body {
 		border:1px solid #bae2f0;
 		background:#e3f4f9;	
 		margin:.5em 0;
-		width:679px;
+		width:800px;
 		}	
 			
     /* image replacement */
@@ -67,7 +67,7 @@ body {
 		margin:0 auto;
 		position:relative;
 		text-align:left;
-		width:650px;
+		width:800px;
                 height:280px;
 		background:#fff;		
 		margin-bottom:2em;
@@ -77,6 +77,16 @@ body {
 		line-height:30px;
 		background:#5DC9E1;
 		color:#fff;
+		}
+                #header3{
+                padding: 20px;    
+		height:40px;
+		line-height:30px;
+		background:#5DC9E1;
+                width:80%;
+		color:#fff;
+                margin:0  auto;
+                text-align: center;
 		}
                 #titulo{
 		height:50px;
@@ -103,7 +113,7 @@ body {
 			define width and height of list item (slide)
 			entire slider area will adjust according to the parameters provided here
 		*/ 
-		width:650px;
+		width:800px;
 		height:280px;
 		overflow:hidden; 
 		}	
@@ -118,7 +128,7 @@ body {
 		z-index:1000;
 		}	
 	#nextBtn, #slider1next{ 
-		left:650px;
+		left:800px;
 		}														
 	#prevBtn a, #nextBtn a,
 	#slider1next a, #slider1prev a{  
@@ -166,6 +176,6 @@ body {
         
         #centro{
          display: block; margin: 0 auto; 
-        width:50%;
+        width:42%;
         }
 /* // Easy Slider */
