@@ -22,15 +22,17 @@ and open the template in the editor.
           <div id="login">
                         <header class="major">
 		             <h1>Login</h1>
-       		          <?php
+       		     <?php
+                     
                      session_start();
+                     
                      if(!empty($_SESSION['mensagem'])){
 	                         $mensagem = $_SESSION['mensagem'];
                            echo $mensagem;
                      }
                      ?>
         				</header>
-        			<form method="POST" action="control/loginUsuario.php">
+        			<form method="POST" action="control/loginUsuarioControl.php">
           			<fieldset >
                   <legend>Dados de Login</legend>
                   <p><label for="email">E-mail:</label><br/>

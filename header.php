@@ -1,4 +1,5 @@
 <div id="nav2">
+    
                 <div id="header-wrapper">
 
                     <div id="header2">
@@ -9,15 +10,15 @@
                             
                             <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, 
                                 <?php
+                                    include_once ('imports.php');
+                                    
                                     //session_start();
-                                    include ('imports.php');
+                                    
                                     if (!empty($_SESSION['usuario'])) {
-                                        //echo $serializacao = $_SESSION['usuario'];
-                                        //var_dump($serializacao);
-                                        //$usuario = unserialize($usuario);
-                                        //echo '<br/><br/>';
-                                        //var_dump($usuario);
-                                        //echo $usuario->getNome();
+                                        $serializacao = $_SESSION['usuario'];
+                                        $usuario = unserialize($serializacao);
+                                        
+                                        echo $usuario->getNome();
                                     } else {
                                         echo 'Visitante';
                                     }

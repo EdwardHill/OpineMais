@@ -1,4 +1,4 @@
-	<div id="sidebar2">
+    <div id="sidebar2">
 		<div id="nav">
 				<ul class="menu2">
                                     <li></li>
@@ -6,6 +6,9 @@
 				
                                     
                                <?php
+                               //if(empty($_SESSION)){
+                               //     session_start();
+                               //}
                                if (!empty($_SESSION['usuario'])) {
                                    echo '<li>';
                                    echo '<a href="control/perfilUsuario.php" class="button">Perfil</a>';

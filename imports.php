@@ -13,6 +13,7 @@
  */
 
 ob_start();
+//session_start();
 
 //Util
 //require 'model/util/Qualificacao.php';

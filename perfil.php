@@ -26,14 +26,21 @@ and open the template in the editor.
     </head>
     <body>
         <div class="main">
-             <?php
+        
+        <?php include("header.php"); ?>
+            
+        <?php include("leftBar.php"); ?>
+            
+        <?php include("rightBar.php"); ?>
+        
+        <?php include_once ('imports.php'); ?>
+            
+        <?php
             session_start();
-            ?>
-        <?php include("header.php") ?>
-            
-        <?php include("leftBar.php") ?>
-            
-        <?php include("rightBar.php") ?>
+            $serializacaoUsuario = $_SESSION['usuario'];
+            //echo $serializacaoUsuario;
+            $usuario = unserialize($serializacaoUsuario);
+        ?>
 
        
 
@@ -46,13 +53,13 @@ and open the template in the editor.
             <fieldset>
                 <legend>Dados de Login</legend>
                 <p>
-                    <b>E-mail: </b><?php echo $_REQUEST['email']?>  <br/>
+                    <b>E-mail: </b><?php echo $usuario->getEmail();?>  <br/>
                 </p>
             </fieldset>
 
             <fieldset>
                 <legend>Dados Pessoais</legend>
-                <p class="p"><b> Nome: </b><?php echo $_REQUEST['nome']?>  </p>
+                <p class="p"><b> Nome: </b><?php echo $usuario->getNome();?>  </p>
             </fieldset>
 
                 <ul class="actions">

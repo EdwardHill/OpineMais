@@ -16,12 +16,13 @@ and open the template in the editor.
     <body>
          <div class="main">
              
-        <?php session_start();
+        <?php
         include("header.php"); ?>
         <?php include("leftBar.php"); ?>
         <?php include("rightBar.php"); ?>
         <?php include("imports.php"); ?>
-        <?php  
+        <?php
+            session_start();
             $serializacao = $_SESSION['usuario'];
             $usuario = unserialize($serializacao);
         ?>

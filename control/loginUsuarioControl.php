@@ -1,6 +1,6 @@
 <?php
 include_once ('../imports.php');
-session_start();
+//session_start();
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -17,7 +17,9 @@ session_start();
         $senha = $row['senha'];
         $usuario = new Usuario($id_usuario, $nome, $email, $senha);
     }
-
+    //if(empty($_SESSION)){
+        session_start();
+    //}
     if($usuario != null){
       if(isset($_SESSION["mensagem"])){
           unset($_SESSION["mensagem"]);
