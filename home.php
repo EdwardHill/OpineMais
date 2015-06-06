@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
        	<script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/easySlider1.7.js"></script>
+        
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#slider").easySlider({
@@ -15,6 +16,8 @@
                    
                 });
             });
+            
+        
         </script>
 
         <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
