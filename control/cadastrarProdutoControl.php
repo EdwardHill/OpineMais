@@ -1,8 +1,7 @@
 <?php
 
 include_once ('../imports.php');
-include ('../model/util/connection.php');
-session_start();
+//include ('../model/util/connection.php');
 
   if (isset($_POST['nome'])) {
       //include ("../model/util/upload.php");
@@ -11,8 +10,11 @@ session_start();
       $descricao = $_POST['descricao'];
       $categoria = $_POST['categoria'];
       $marca = $_POST['marca'];
-
-      $id_usuario = $_SESSION["id_usuario"];
+      
+      session_start();
+      $serializado = $_SESSION['usuario'];
+      $usuario = unserialize($serializado);
+      $id_usuario = $usuario->getId_usuario();
 
         //Pasta onde o arquivo vai ser salvo
         $_UP['pasta'] = '../images/upload/';
