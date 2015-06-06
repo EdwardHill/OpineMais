@@ -16,9 +16,19 @@
                                 ?>  </li>
                         </ul>
                         <ul class="btheader">
-                            <li><a href="login.php" class="button">Entre</a></li>
-                            <li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>
-                            <li><a href="model/util/logout.php"  class="button">Sair</a></li>
+                            <?php 
+                            if(!empty($_SESSION)){
+                                
+                            echo '<li></li>'
+                                . '<li></li>';
+                            echo '<li><a href="model/util/logout.php"  class="button">Sair</a></li>';
+                            }else{
+                             
+                            echo '<li><a href="login.php" class="button">Entre</a></li>';
+                            echo '<li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>';
+                             echo '<li></li>'; 
+                            }     
+                           ?>
                         </ul>
 
                     </div>

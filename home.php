@@ -12,6 +12,7 @@
                 $("#slider").easySlider({
                     auto: true,
                     continuous: true
+                   
                 });
             });
         </script>
