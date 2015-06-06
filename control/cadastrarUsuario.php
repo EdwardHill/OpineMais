@@ -6,14 +6,14 @@ include_once ('../imports.php');
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $usu = new Usuario();
-    $usu->setNome($nome);
-    $usu->setEmail($email);
-    $usu->setSenha($senha);
+    
+    $usuario = new Usuario($nome, $email,$senha);
     $fachada = Fachada::getInstance();
-    $fachada->adicionarUsuario($usu);
-
-    printf($nome." ".$email." ".$senha);
+    $fachada->adicionarUsuario($usuario);
+    
+    $usuarioSerializado = serialize($usuario);
+    $_SESSION['usuario'] = $usuarioSerializado;
+    header('Location: ../home.php');
  }
 
 ?>

@@ -17,9 +17,14 @@ and open the template in the editor.
          <div class="main">
              
         <?php session_start();
-        include("header.php") ?>
-        <?php include("leftBar.php") ?>
-        <?php include("rightBar.php") ?>
+        include("header.php"); ?>
+        <?php include("leftBar.php"); ?>
+        <?php include("rightBar.php"); ?>
+        <?php include("imports.php"); ?>
+        <?php  
+            $serializacao = $_SESSION['usuario'];
+            $usuario = unserialize($serializacao);
+        ?>
         <div id="centro">
 
           <!-- titulo do conteudo-->
@@ -32,14 +37,14 @@ and open the template in the editor.
     				<fieldset >
     					<legend>Dados de Login</legend>
     					<label for="email">E-mail:</label> <input type="email"
-    						placeholder="Digite o E-mail" name="email" id="email" value="<?php echo $_REQUEST['email']?>" required="email" size=60>
+    						placeholder="Digite o E-mail" name="email" id="email" value="<?php echo $usuario->getEmail()?>" required="email" size=60>
                 <!-- <label for="senha">Senha:</label><br/> <input type="password"
     						placeholder="Digite a Senha" name="senha" maxlenght="15" id="senha" size=15 required="senha"> -->
     				</fieldset>
     				<fieldset>
     					<legend>Dados Pessoais</legend>
     					<label for="nome">Nome Completo: </label> <input type="text"
-    						placeholder="Digite seu nome completo" value="<?php echo $_REQUEST['nome']?>" name="nome" id="nome"
+    						placeholder="Digite seu nome completo" value="<?php echo $usuario->getNome()?>" name="nome" id="nome"
     						size=60 required="nome">
     				</fieldset>
 
