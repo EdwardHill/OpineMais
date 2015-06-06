@@ -44,22 +44,23 @@
 										<label for="marca">Marca:</label> <input type="text"
 										name="marca" id="marca" size=60>
 									</p>
+                                                                        <p>
+										<label for="categoria">Categoria:
+                                                                                    <select name="categoria" id="categoria">
+											<option value="Não Selecionada">Escolha a categoria</option>
+											<option value="Eletroeletronicos">Eletroeletrônico</option>
+                                                                                        <option value="Eletrodomestico">Eletrodomésticos</option>
+                                                                                        <option value="TV & Smart TV">TV & Smart TV</option>
+                                                                                        <option value="Celulares e SmartPhones">Celulares e Smartphones</option>
+                                                                                        <option value="Games & Consoles">Games & Consoles</option>
+											<!--<option value="Cosmeticos">Cosméticos</option>-->
+										</select>
+										</label>
+									</p>
 
 									<p>
 										<label for="arquivo">Upload de Imagem:</label> <input type="file" name="arquivo"
 											id="arquivo" size=10>
-									</p>
-									<p>
-										<label for="categoria">Categoria:<select
-											name="categoria" id="categoria">
-												<option selected="não selecionado" value="não selecionado">Escolha a categoria</option>
-												<option value="Eletroeletronicos">Eletroeletrônico</option>
-					              <option value="Eletrodomestico">Eletrodomésticos</option>
-					              <option value="Tv">TVs</option>
-					              <option value="Celulares e SmartPhones">Celulares e Smartphones</option>
-												<option value="Cosmeticos">Cosméticos</option>
-										</select>
-										</label>
 									</p>
 								</fieldset>
 
