@@ -7,9 +7,10 @@ include_once ('../imports.php');
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     
-    $usuario = new Usuario($nome, $email,$senha);
+    $usuario = new Usuario(0, $nome, $email, $senha);
     $fachada = Fachada::getInstance();
-    $fachada->adicionarUsuario($usuario);
+    $id_usuario = $fachada->adicionarUsuario($usuario);
+    $usuario->setId_usuario($id_usuario);
     
     $usuarioSerializado = serialize($usuario);
     $_SESSION['usuario'] = $usuarioSerializado;

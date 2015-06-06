@@ -6,7 +6,7 @@
 				
                                     
                                <?php
-                               if (!empty($_SESSION['nome_usuario'])) {
+                               if (!empty($_SESSION['usuario'])) {
                                    echo '<li>';
                                    echo '<a href="control/perfilUsuario.php" class="button">Perfil</a>';
                                    echo '</li>';

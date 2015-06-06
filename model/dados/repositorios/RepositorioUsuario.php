@@ -33,6 +33,7 @@ class RepositorioUsuario implements IRepositorioUsuario{
     public function adicionarUsuario(\Usuario $usuario) {
       $result = mysql_query(" insert into usuario (nome, email, senha) values "
               . "('" . $usuario->getNome() . "','" . $usuario->getEmail() . "','" . $usuario->getSenha() . "')");
+      return mysql_insert_id();
     }
 
     public function editarUsuario(\Usuario $usuario) {

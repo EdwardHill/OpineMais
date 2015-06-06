@@ -7,20 +7,27 @@
 
                         <ul class="divided">
                             
-                            <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, <?php
-                                if (!empty($_SESSION['nome_usuario'])) {
-                                    $nome = $_SESSION['nome_usuario'];
-                                    echo $nome;
-                                } else {
-                                    echo 'Visitante';
-                                }
+                            <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, 
+                                <?php
+                                    //session_start();
+                                    include ('imports.php');
+                                    if (!empty($_SESSION['usuario'])) {
+                                        //echo $serializacao = $_SESSION['usuario'];
+                                        //var_dump($serializacao);
+                                        //$usuario = unserialize($usuario);
+                                        //echo '<br/><br/>';
+                                        //var_dump($usuario);
+                                        //echo $usuario->getNome();
+                                    } else {
+                                        echo 'Visitante';
+                                    }
                                 ?>  </li>
                         </ul>
                         
                         <ul class="btheader">
                             
                             <?php 
-                            if(!empty($_SESSION)){
+                            if(!empty($_SESSION['usuario'])){
                                 
                             echo '<li></li>'
                                 . '<li></li>';

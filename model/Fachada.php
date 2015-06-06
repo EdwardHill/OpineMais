@@ -37,7 +37,7 @@ class Fachada {
     //METODOS DE USUARIO
     
     public function adicionarUsuario(\Usuario $entidade){
-        $this->controladorUsuario->adicionarUsuario($entidade);
+        return $this->controladorUsuario->adicionarUsuario($entidade);
     }
     
     public function editarUsuario(\Usuario $entidade){

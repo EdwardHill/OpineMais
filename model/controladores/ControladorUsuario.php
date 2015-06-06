@@ -25,7 +25,7 @@ class ControladorUsuario {
         $senhaCodificada = md5($senha);
         $usuario->setSenha($senhaCodificada);
         
-        $this->repositorioUsuario->adicionarUsuario($usuario);
+        return $this->repositorioUsuario->adicionarUsuario($usuario);
     }
 
     public function editarUsuario(\Usuario $usuario) {

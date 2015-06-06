@@ -23,7 +23,7 @@
 				<h1>Cadastre-se</h1>
 			</header>
 			<!-- Formulário  aqui! -->
-			<form method="POST" name="fusuario" action="control/cadastrarUsuario.php">
+			<form method="POST" name="fusuario" action="control/cadastrarUsuarioControl.php">
 				
 				<fieldset >
 					<legend>Dados de Login</legend>
