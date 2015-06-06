@@ -67,7 +67,7 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
 
             array_push($arrayOpiniao, $opiniao);
         }
-        return $$arrayOpiniao;
+        return $arrayOpiniao;
     }
 
     public function pesquisarOpiniao(\Opiniao $opiniao) {
@@ -109,7 +109,7 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
 
             array_push($arrayOpiniao, $opiniao);
         }
-        return $$arrayOpiniao;
+        return $arrayOpiniao;
     }
 
 }
