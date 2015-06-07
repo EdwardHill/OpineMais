@@ -50,7 +50,7 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
     }
 
     public function listarOpiniao() {
-        $result = mysql_query('select * from opiniao');
+        $result = mysql_query('select * from opiniao order by id_opiniao desc');
 
         $arrayOpiniao = array();
         while( $row = mysql_fetch_array($result)){
@@ -93,7 +93,7 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
     }
 
     public function listarOpinioesPorProduto(\Produto $produto){
-        $result = mysql_query("select * from opiniao where id_produto=" . $produto->getId_produto());
+        $result = mysql_query("select * from opiniao where id_produto=" . $produto->getId_produto()." order by id_opiniao desc");
         $arrayOpiniao = array();
         while( $row = mysql_fetch_array($result)){
             $id_opiniao = $row['id_opiniao'];

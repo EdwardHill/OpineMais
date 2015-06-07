@@ -20,7 +20,7 @@ class Opiniao {
     private $produto; //produto ao qual a opiniao foi criada
     private $comentarios; //comentarios sobre a opiniao so usuario.
     
-    public function __construct($id_opiniao="",$mensagem="",$qualificacao="",$nota="",$usuario="",$produto="",$comentarios="") {
+    public function __construct($id_opiniao="",$mensagem="",$qualificacao="",$nota=0.0,$usuario="",$produto="",$comentarios="") {
         $this->id_opiniao = $id_opiniao;
         $this->mensagem = $mensagem;
         $this->qualificacao = $qualificacao;
