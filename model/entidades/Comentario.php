@@ -17,42 +17,42 @@ class Comentario {
     private $usuario; // Usuario que comentou a opniao
     private $opiniao; // Opinião ao qual o comentário esta sendo feito
     
-    public function __construct($id_comentario="",$mensagem="",$usuario="",$opiniao="") {
+    function __construct($id_comentario=0, $mensagem="", $usuario="", $opiniao="") {
         $this->id_comentario = $id_comentario;
         $this->mensagem = $mensagem;
-        $this->usuario  = $usuario;
+        $this->usuario = $usuario;
         $this->opiniao = $opiniao;
     }
     
-    public function getId_comentario(){
+    function getId_comentario() {
         return $this->id_comentario;
     }
-    
-    public function setId_comentario($id_comentario){
-        $this->id_comentario = $id_comentario;
-    }
-    
-    public function getMensagem(){
+
+    function getMensagem() {
         return $this->mensagem;
     }
-    
-    public function setMensagem($mensagem){
-        $this->mensagem = $mensagem;
-    }
-    
-    public function getUsuario(){
+
+    function getUsuario() {
         return $this->usuario;
     }
-    
-    public function setUsuario($usuario){
-        $this->usuario = $usuario;
-    }
-    
-    public function getOpiniao(){
+
+    function getOpiniao() {
         return $this->opiniao;
     }
-    
-    public function setOpiniao($opiniao){
+
+    function setId_comentario($id_comentario) {
+        $this->id_comentario = $id_comentario;
+    }
+
+    function setMensagem($mensagem) {
+        $this->mensagem = $mensagem;
+    }
+
+    function setUsuario($usuario) {
+        $this->usuario = $usuario;
+    }
+
+    function setOpiniao($opiniao) {
         $this->opiniao = $opiniao;
     }
 }
