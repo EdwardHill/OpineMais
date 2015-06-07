@@ -1139,6 +1139,18 @@ p.info
     width:50%;
 }
 
+#imabaixa{
+   
+   position: absolute;
+   float:right;
+   padding-top: 4em;
+   margin: -12em 0 5em -6em;
+  
+	
+    width:175px;
+    
+}
+
 
 
 
