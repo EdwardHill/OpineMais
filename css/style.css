@@ -1136,19 +1136,17 @@ p.info
 
 #centro{
     display: block; margin: 0 auto; 
-    width:50%;
+     width:175px;
+    height:250px;
 }
 
 #imabaixa{
    
-   position: absolute;
-   float:right;
-   padding-top: 4em;
-   margin: -12em 0 5em -6em;
-  
-	
+ 
+   
     width:175px;
-    
+    height: 175px;
+      
 }
 
 
@@ -1170,7 +1168,7 @@ p.info
 
 /*----------------------RESET--------------------*/
 
-.global-div{width:925px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:57.4%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+.global-div{width:925px; height:auto; padding:0 18px 15px 15px; position:absolute; float:none; left:57.4%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
@@ -1178,11 +1176,11 @@ h2{font-size:1.4em; text-align:center; margin-top:10px;}
 
 ul{list-style:none; margin:10px 0 20px 40px; clear:both;}
 
-.tabela li, .duascolunas li{position:relative; float:left; margin:0 50px 20px 0;}
+.tabela li, .duascolunas li{position:relative; float:left; margin:30px 10px 10px 6px;}
 
-.tabela li img{display:block;}
+.tabela li img{display:inline-table;}
 
-.lista li{clear:both; display:block; }
+.lista li imabaixa{clear:both; display:block; width:200px;}
 
 .lista img{float:left; margin-bottom:20px;}
 
