@@ -55,7 +55,7 @@
                                 echo '<li>'
                                         . '<div id="titulo"><h2 id="centro"> '.$produtoUp->getNome_produto().' - '.$produtoUp->getMarca().'</h2></div>'
                                         . '<a href="detalharProduto.php?id_produto='.$produtoUp->getId_produto().'">'
-                                        . '<img src="images/upload/'.$produtoUp->getImagem().'"  id="centro" alt="'.$produtoUp->getCategoria().'"/></a>'
+                                        . '<img src="images/upload/'.$produtoUp->getImagem().'"  id="imacima" alt="'.$produtoUp->getCategoria().'"/></a>'
                                    . '</li>';
                             }
                         }
@@ -75,7 +75,7 @@
             <div class="global-div">
                
 <div class="links">
-   <h3 id="">Produtos disponíveis</h3>
+   <h3 id="">Itens Disponíveis:</h3>
 </div>  
 
     <ul id="jogos" class="tabela">
@@ -87,6 +87,7 @@
         ?>	
                         <li>
                             <a href="detalharProduto.php?id_produto=<?php echo $produtoDown->getId_produto();?>" class="image">
+                               
                                 <img src="images/upload/<?php echo $produtoDown->getImagem();?>" id="imabaixa"  alt="<?php echo $produtoDown->getCategoria();?>" /></a>
                                 <h4>
                                     <?php 

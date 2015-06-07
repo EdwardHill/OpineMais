@@ -26,27 +26,30 @@
 							<h4><?php$mensagem?></h4>
 						</header>
 						<!-- Formulário aqui! -->
-				      <form method="POST" action="control/cadastrarProdutoControl.php"enctype="multipart/form-data" >
+				      <form method="POST" id="cadp" action="control/cadastrarProdutoControl.php"enctype="multipart/form-data" >
 
 								<fieldset>
 									<legend>
 										<strong>Dados do Item</strong>
 									</legend>
 					                                 <p>
-										<label for="nome">Nome do Produto:</label> <input type="text"
-											name="nome_produto" id="nome" size=60>
+										<label for="nome">Nome do Produto:</label> </br><input type="text"
+                                                                                                                                  name="nome_produto" id="nome" size=25 maxlength="16">
+									</p>
+                                                                        <p>
+										<label for="marca">Marca:</label><br/> <input type="text"
+										name="marca" id="marca" size="25">
 									</p>
 									<p>
-										<label for="descrição">Descrição:</label> <input type="text"
-											name="descricao" id="descrição" size=60>
+										<label for="descrição">Descrição:</label> <br/><textarea
+                                                                                    name="descricao"  form="cadp" id="descrição" ROWS=4 COLS=60 placeholder="Insira a descrição..."></textarea>
 									</p>
-									<p>
-										<label for="marca">Marca:</label> <input type="text"
-										name="marca" id="marca" size=60>
-									</p>
+									
+                                                                        
                                                                         <p>
 										<label for="categoria">Categoria:
                                                                                     <select name="categoria" id="categoria">
+                                                                                        
 											<option value="Não Selecionada">Escolha a categoria</option>
                                                                                         <option value="PCs">PCs</option>
                                                                                         <option value="NoteBooks">NoteBooks</option>
@@ -59,7 +62,7 @@
 										</select>
 										</label>
 									</p>
-
+<br>
 									<p>
 										<label for="arquivo">Upload de Imagem:</label> <input type="file" name="arquivo"
 											id="arquivo" size=10>
