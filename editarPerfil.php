@@ -15,15 +15,18 @@ and open the template in the editor.
     </head>
     <body>
          <div class="main">
-        <?php session_start();?>     
+        <?php session_start(); ?>     
         <?php include("header.php"); ?>
         <?php include("leftBar.php"); ?>
-        
         <?php include_once("imports.php"); ?>
         <?php
             //session_start();
+        if(!empty($_SESSION['usuario'])){
             $serializacao = $_SESSION['usuario'];
             $usuario = unserialize($serializacao);
+        }else{
+            header('Location:home.php');
+        }
         ?>
         <div id="centro">
 

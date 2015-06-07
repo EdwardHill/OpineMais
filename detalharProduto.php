@@ -17,6 +17,7 @@
     <body>
 
         <div class="main">
+            <?php session_start();?>
             <?php include("header.php"); ?>
             <?php include("leftBar.php"); ?>
             <?php include_once ('imports.php'); ?>
@@ -29,9 +30,6 @@
                     <!-- <h3>Opine</h3> -->
                 </header>
                 <?php
-                session_start();
-                ob_start();
-                include ('model/util/connection.php');
                 $idpro = $_REQUEST['produto'];
                 $dados_produto = mysql_query("select * from produto where id_produto = $idpro");
                 while ($sql = mysql_fetch_array($dados_produto)) {
