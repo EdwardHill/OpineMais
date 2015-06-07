@@ -67,31 +67,16 @@
                     </div>
 
                 </div>
-               
+ 
             </div>
             <br>
             <br>
            
             <div class="global-div">
                
-<ul class="links">
-        
-        <li> 
-                <a href="#" title="lista"> 
-                <img src="css/images/lista.gif" width="14" height="13" alt="Lista" />Lista
-            </a>
-        </li>
-        <li> 
-        	<a href="#" title="duascolunas">
-	            <img src="css/images/duascolunas.gif" width="14" height="13" alt="Colunas" />Duas colunas
-            </a>
-        </li>
-        <li>  
-        	<a href="#" title="tabela">
-            	<img src="css/images/tabela.gif" width="14" height="13" alt="Tabela" />Tabela
-            </a>
-        </li>
-</ul>  
+<div class="links">
+   <h3 id="">Produtos disponíveis</h3>
+</div>  
 
     <ul id="jogos" class="tabela">
 	<?php 
@@ -103,13 +88,13 @@
                         <li>
                             <a href="detalharProduto.php?id_produto=<?php echo $produtoDown->getId_produto();?>" class="image">
                                 <img src="images/upload/<?php echo $produtoDown->getImagem();?>" id="imabaixa"  alt="<?php echo $produtoDown->getCategoria();?>" /></a>
-                                <h2>
+                                <h4>
                                     <?php 
                                         echo $produtoDown->getNome_produto();
                                         echo " - ".$produtoDown->getMarca();
                                     ?>
-                                </h2>
-                            <p>Categoria: <?php echo $produtoDown->getCategoria();?></p>
+                                </h4>
+                            <h5>Categoria: <?php echo $produtoDown->getCategoria();?></h5>
                         </li>
         <?php 
                     }
