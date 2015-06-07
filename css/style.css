@@ -1153,7 +1153,7 @@ p.info
 #imacima{
     position:relative;
    display: block; margin: 0 auto; 
-     width:275px;
+     width:265px;
     height:220px;
 }
 
@@ -1177,7 +1177,7 @@ p.info
 
 /*----------------------RESET--------------------*/
 
-.global-div{width:925px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:57.4%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+.global-div{width:910px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:58.2%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
