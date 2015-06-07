@@ -48,43 +48,61 @@ class RepositorioComentario implements IRepositorioComentario{
     }
 
     public function listarComentario() {
-        $result = mysql_query('select c.*,cou.* from comentario c,comentario_opiniao_usuario cou where c.id_comentario = cou.id_comentario');
+        $result = mysql_query('select * from comentario');
 
         $arrayComentario = array();
         while($row = mysql_fetch_array($result)){
-            $id_comentario = $row['c.id_comentario'];
-            $mensagem = $row['c.mensagem'];
-            $id_usuario = $row['cou.id_usuario'];
-            $id_opiniao = $row['cou.id_opiniao'];
-            
-            $usuario = new Usuario($id_usuario);
-            $opiniao = new Opiniao($id_opiniao);
+            $id_comentario = $row['id_comentario'];
+            $mensagem = $row['mensagem'];
 
-            $comentario = new Comentario($id_comentario, $mensagem, $usuario, $opiniao);
+            $comentario = new Comentario($id_comentario, $mensagem);
 
             array_push($arrayComentario, $comentario);
+        }
+
+        foreach ($arrayComentario as $comentario){
+            $result = mysql_query('select * from comentario_opiniao_usuario where id_comentario = '
+                    .$comentario->getId_comentario());
+
+            while($row = mysql_fetch_array($result)){
+                $id_usuario = $row['id_usuario'];
+                $id_opiniao = $row['id_opiniao'];
+
+                $usuario = new Usuario($id_usuario);
+                $opiniao = new Opiniao($id_opiniao);
+
+                $comentario->setUsuario($usuario);
+                $comentario->setOpiniao($opiniao);
+            }
         }
         return $arrayComentario;
 
     }
 
     public function pesquisarComentario(\Comentario $comentario) {
-        $result = mysql_query('select c.*,cou.* from '
-                . 'comentario c,comentario_opiniao_usuario cou '
-                . 'where c.id_comentario = '.$comentario->getId_comentario().' cou.id_comentario = '.$comentario->getId_comentario());
+        $result = mysql_query('select * from comentario where id_comentario = '.$comentario->getId_comentario());
         $comentario = null;
         while($row = mysql_fetch_array($result)){
-            $id_comentario = $row['c.id_comentario'];
-            $mensagem = $row['c.mensagem'];
-            $id_usuario = $row['cou.id_usuario'];
-            $id_opiniao = $row['cou.id_opiniao'];
-            
-            $usuario = new Usuario($id_usuario);
-            $opiniao = new Opiniao($id_opiniao);
+            $id_comentario = $row['id_comentario'];
+            $mensagem = $row['mensagem'];
 
-            $comentario = new Comentario($id_comentario, $mensagem, $usuario, $opiniao);
+            $comentario = new Comentario($id_comentario, $mensagem);
         }
-        
+        if($comentario != null){
+            $result = mysql_query('select * from comentario_opiniao_usuario where id_comentario = '
+                    .$comentario->getId_comentario());
+
+            while($row = mysql_fetch_array($result)){
+                $id_usuario = $row['id_usuario'];
+                $id_opiniao = $row['id_opiniao'];
+
+                $usuario = new Usuario($id_usuario);
+                $opiniao = new Opiniao($id_opiniao);
+
+                $comentario->setUsuario($usuario);
+                $comentario->setOpiniao($opiniao);
+            }
+        }
         return $comentario;
     }
 
@@ -93,24 +111,26 @@ class RepositorioComentario implements IRepositorioComentario{
     }
 
     public function listarComentariosPorOpiniao(\Opiniao $opiniao){
-        $result = mysql_query('select c.*,cou.* from '
-                . 'comentario c,comentario_opiniao_usuario cou '
-                . 'where c.id_comentario = cou.id_comentario and '
-                . 'cou.id_opiniao = '.$opiniao->getId_opiniao());
+        $result = mysql_query("select * from comentario_opiniao_usuario where id_opiniao=" . $opiniao->getId_opiniao());
         $arrayComentario = array();
         while($row = mysql_fetch_array($result)){
-            $id_comentario = $row['c.id_comentario'];
-            $mensagem = $row['c.mensagem'];
-            $id_usuario = $row['cou.id_usuario'];
-            $id_opiniao = $row['cou.id_opiniao'];
-            
+            $id_comentario = $row['id_comentario'];
+            $id_usuario = $row['id_usuario'];
+            $id_opiniao = $row['id_opiniao'];
+
             $usuario = new Usuario($id_usuario);
             $opiniao = new Opiniao($id_opiniao);
-            $comentario = new Comentario($id_comentario, $mensagem, $usuario, $opiniao);
+            $comentario = new Comentario($id_comentario,"",$usuario, $opiniao);
 
             array_push($arrayComentario, $comentario);
         }
-        
+
+        foreach ($arrayComentario as $comentario){
+            $result = mysql_query("select * from comentario where id_comentario=" . $comentario->getId_comentario());
+            while($row = mysql_fetch_array($result)){
+                $comentario->setMensagem($row['mensagem']);
+            }
+        }
         return $arrayComentario;
 
     }
