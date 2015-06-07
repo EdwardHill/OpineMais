@@ -22,7 +22,7 @@
 
 				
 						<header class="major">
-							<h2>Cadastro de Produtos</h2>
+							<h2>Adicionar Item</h2>
 							<h4><?php$mensagem?></h4>
 						</header>
 						<!-- Formulário aqui! -->
@@ -30,7 +30,7 @@
 
 								<fieldset>
 									<legend>
-										<strong>Dados do Produto</strong>
+										<strong>Dados do Item</strong>
 									</legend>
 					                                 <p>
 										<label for="nome">Nome do Produto:</label> <input type="text"
@@ -48,11 +48,13 @@
 										<label for="categoria">Categoria:
                                                                                     <select name="categoria" id="categoria">
 											<option value="Não Selecionada">Escolha a categoria</option>
-											<option value="Eletroeletronicos">Eletroeletrônico</option>
-                                                                                        <option value="Eletrodomestico">Eletrodomésticos</option>
-                                                                                        <option value="TV & Smart TV">TV & Smart TV</option>
-                                                                                        <option value="Celulares e SmartPhones">Celulares e Smartphones</option>
+                                                                                        <option value="PCs">PCs</option>
+                                                                                        <option value="NoteBooks">NoteBooks</option>
+                                                                                        <option value="TVs & SmartTVs">TVs & SmartTVs</option>
+                                                                                        <option value="Celulares e SmartPhones">Celulares e SmartPhones</option>
                                                                                         <option value="Games & Consoles">Games & Consoles</option>
+                                                                                        <option value="Eletrodomesticos">Eletrodomesticos</option>
+                                                                                        <option value="Eletroeletronicos">Eletroeletronicos</option>
 											<!--<option value="Cosmeticos">Cosméticos</option>-->
 										</select>
 										</label>

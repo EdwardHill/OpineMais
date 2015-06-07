@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Jun-2015 às 13:21
+-- Generation Time: 07-Jun-2015 às 11:55
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -75,7 +75,25 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `qualificacao_negativa` int(11) DEFAULT NULL,
   `nota_media` float DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`id_produto`, `nome_produto`, `detalhes`, `categoria`, `marca`, `imagem`, `qualificacao_positiva`, `qualificacao_negativa`, `nota_media`, `id_usuario`) VALUES
+(1, 'Play Station 3', 'Play Station 3 é bacana pra comprar ainda??', 'Eletrodomestico', 'Sony', '1433608537.jpg', 0, 0, 0, 1),
+(2, 'SmartTV 3D 64', 'Quero saber se vale a pena comprar a SmartTV modelo 342432dsfsd ', 'TV & Smart TV', 'Samsung', '1433629042.jpg', 0, 0, 0, 1),
+(3, 'Note Book  TZ4433', 'Quero comprar o NoteBook AZUS TZ4433 mais não sei se ele é bom. opinem por favor', 'NoteBooks', 'AZUS', '1433686511.jpg', 0, 0, 0, 1),
+(4, 'Game UFC Combate', 'Ola pessoal, Opinem sobre o game UFC Combate.', 'Games & Consoles', 'SPORTS', '1433686971.jpg', 0, 0, 0, 1),
+(5, 'Geladeira G555', 'Quero compra essa geraleira, mais não sei se ela é boa. algum poderia dar sua opinião.', 'Eletrodomesticos', 'Brastemp', '1433687329.jpg', 0, 0, 0, 1),
+(6, 'Moto X', 'Quero comprar o Moto x, mas não sei se ele é bom. opinem por favor', 'Celulares e SmartPhones', 'Motorola', '1433687458.jpg', 0, 0, 0, 1),
+(7, 'Barbeador  r532', 'Opinem sobre esse barbeador, quero compra-lo mais não sei se ele é bom', 'Eletroeletronicos', 'Philips', '1433687801.jpg', 0, 0, 0, 1),
+(8, 'Xbox One', 'O Xbox one é melhor que o play 4, quero comprar mais não sei se é bom', 'Games & Consoles', 'Microsoft', '1433688127.jpg', 0, 0, 0, 1),
+(9, 'Motal Combate x', 'Quem já jogou opine por favor', 'Games & Consoles', 'WB Games', '1433688235.jpg', 0, 0, 0, 1),
+(10, 'Game FIFA', 'Quem jogou o novo FIFA, por favor opine', 'Games & Consoles', 'SPORTS', '1433688416.jpg', 0, 0, 0, 1),
+(11, 'Galaxy S6', 'Quem já usou, por favor opinem', 'Celulares e SmartPhones', 'Samsung', '1433688485.jpg', 0, 0, 0, 1),
+(12, 'Play Station 4', 'Quem já comprou, por favor opinem', 'Games & Consoles', 'Sony', '1433688746.jpg', 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -88,14 +106,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nome` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `senha` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES
-(1, 'Jackson Daniel', 'jackson.daniel.almeida@gmail.com', '202cb962ac59075b964b07152d234b70');
+(1, 'Jackson Daniel', 'jackson.daniel.almeida@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(2, 'Ivan Valentim', 'ivanvalentimsantos@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(3, 'Eduardo Andrade', 'edurock55@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -149,12 +169,12 @@ MODIFY `id_opiniao` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
