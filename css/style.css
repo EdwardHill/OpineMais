@@ -31,15 +31,15 @@ body,input,textarea,select
 
 h2
 {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 1.25em;
 
 }
 
 h3
 {
-    font-size: 2.5em;
-    line-height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1em;
 }
 /********Reponsive*/
 .main{
@@ -689,7 +689,9 @@ input[type="number"] {
 ul.btheader
 {
 
-    padding-left: 26.5%;
+    padding-left: 20.5%;
+    margin:0;
+    position: relative;
 
 }
 
@@ -1172,13 +1174,15 @@ p.info
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
-h2{font-size:1.4em; text-align:center; margin-top:10px;}
-
+h2 {font-size:1.4em; text-align:center; margin-top:10px; text-shadow:0px 0px 5px #eaeaea;}
+h3 { text-align:left; margin-top:0px;}
+h4{color:#fff; background:#0099cc;}
+h5{font-size:9pt; }
 ul{list-style:none; margin:10px 0 20px 40px; clear:both;}
 
-.tabela li, .duascolunas li{position:relative; float:left; margin:30px 10px 10px 6px;}
+.tabela li, .duascolunas li{position:relative;float:left; display: block; margin:30px 10px 10px 3px;}
 
-.tabela li img{display:inline-table;}
+.tabela li img{display:inline-table; padding:10.5px;}
 
 .lista li imabaixa{clear:both; display:block; width:200px;}
 
@@ -1192,22 +1196,21 @@ ul{list-style:none; margin:10px 0 20px 40px; clear:both;}
 
 .duascolunas li{width:300px; text-align:center;}
 
-.links{position:relative; float:right; width:auto; height:15px; margin:0px -10px 20px 0; background-color:#eaeaea; padding:10px; border:1px solid #ccc; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
-
-.links li{float:right; margin-right:5px;}
-
-.links p{ float:left; font-weight:bold; color:#333; font-size:1.2em; margin-right:10px;}
-
-.links img{vertical-align:middle; margin-right:2px;}
-
-.links a:hover{font-weight:bold;}
+.links{position:relative; float:left; width:100%; height:15px; margin:0px -10px 20px -10px; background-color:#eaeaea; padding:10px; border:1px solid #ccc; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
 
 
 input[type=search] { 
     color:#0099cc;  
-    text-align: center;
+    text-align:left;
+   
     cursor: pointer;
+    border: 2px orange double;
     display: block; 
+    font-style: italic; font-weight:initial; 
+      
+       padding-left: 16px;
+
+
 
 
 }

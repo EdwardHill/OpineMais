@@ -8,12 +8,13 @@ body {
 		background:#fff url(../images/bg_body.gif) repeat-x;
 		font:80% Trebuchet MS, Arial, Helvetica, Sans-Serif;
 		color:#333;
-		line-height:180%;
+		line-height:190%;
 		margin:0;
 		padding:0;
 		text-align:center;
               
 		font-size: 11pt;
+             
                 
 	}
         
@@ -72,6 +73,8 @@ body {
 		background:#fff;		
 		margin-bottom:2em;
                 margin-right: -2em;
+                
+                
 		}	
 	#header{
 		height:30px;
@@ -98,6 +101,7 @@ body {
 		}
 	#content{
 		position:relative;
+                
 		}			
 
 /* Easy Slider */
@@ -116,7 +120,8 @@ body {
 		*/ 
 		width:990px;
 		height:290px;
-		overflow:hidden; 
+		overflow:hidden;
+                
 		}	
 	#prevBtn, #nextBtn,
 	#slider1next, #slider1prev{ 
