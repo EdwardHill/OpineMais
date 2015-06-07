@@ -1150,6 +1150,13 @@ p.info
     height: 175px;
       
 }
+#imacima{
+    position:relative;
+   display: block; margin: 0 auto; 
+     width:275px;
+    height:220px;
+}
+
 
 
 
