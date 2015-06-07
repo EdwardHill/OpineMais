@@ -20,8 +20,24 @@
             <?php session_start();?>
             <?php include("header.php"); ?>
             <?php include("leftBar.php"); ?>
-            <?php include_once ('imports.php'); ?>
+            <?php include_once('imports.php'); ?>
+            <?php 
+                $id_produto = $_REQUEST['id_produto'];
 
+                $produto = new Produto();
+                $produto->setId_produto($id_produto);
+
+                $fachada = Fachada::getInstance();
+                $produto = $fachada->pesquisarProduto($produto);
+                
+                if(empty($produto)){
+                    header('Location:home.php');
+                }
+                if(!empty($_SESSION['usuario'])){
+                    $serializacao = $_SESSION['usuario'];
+                    $usuario = unserialize($serializacao);
+                }
+            ?>
 
 
             <div id="geral">
@@ -29,27 +45,18 @@
                 <header class="major">
                     <!-- <h3>Opine</h3> -->
                 </header>
-                <?php
-                $idpro = $_REQUEST['produto'];
-                $dados_produto = mysql_query("select * from produto where id_produto = $idpro");
-                while ($sql = mysql_fetch_array($dados_produto)) {
-                    $id_produto = $sql['id_produto'];
-                    $titulo = $sql['nome_produto'];
-                    $descricao = $sql['detalhes'];
-                    $imagem = $sql['imagem'];
-                    ?>
                     <div class="postagem">
 
-                        <h3><?php echo $titulo ?></h3>
-                        <div ><img src="images/upload/<?php echo $imagem ?>" class="imagem" style="width:75%;"/></div>
+                        <h3><?php echo $produto->getNome_produto(); ?></h3>
+                        <div ><img src="images/upload/<?php echo $produto->getImagem(); ?>" class="imagem" style="width:75%;"/></div>
                         <h4>Descrição:</h4>
-                        <p><?php echo $descricao ?></p>
+                        <p><?php echo $produto->getDetalhes(); ?></p>
 
-                        <span class="abre_coment">Comentários</span>
+                        <span class="abre_coment">Opiniões</span>
 
                         <?php
-                        if (!empty($_GET['id'])) {
-                            if ($_GET['id'] == $id_produto) {
+                        if (!empty($_SESSION['usuario'])) {
+                            if ($usuario->getId_usuario() == $produto->getId_produto()) {
                                 echo '<div id="comentarios" style="display:block">';
                             } else {
                                 echo '<div id="comentarios">';
@@ -119,7 +126,6 @@
                 </div><!--comentarios-->
             </div><!--classe postagem-->
             <?php
-        }
         include 'model/util/reg_comentario.php';
         include 'model/util/reg_resposta.php';
         ?>

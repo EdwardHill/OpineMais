@@ -70,17 +70,17 @@ class RepositorioProduto implements IRepositorioProduto{
         $result = mysql_query($sql);
         $arrayProduto = array();
 
-        while ($sql = mysql_fetch_array($result)){
-            $id_produto = $sql['id_produto'];
-            $nome_produto = $sql['nome_produto'];
-            $detalhes = $sql['detalhes'];
-            $imagem = $sql['imagem'];
-            $qualificacao_positiva = $sql['qualificacao_positiva'];
-            $qualificacao_negativa = $sql['qualificacao_negativa'];
-            $nota_media = $sql['nota_media'];
-            $categoria = $sql['categoria'];
-            $marca = $sql['marca'];
-            $id_usuario = $sql['id_usuario'];
+        while ($row = mysql_fetch_array($result)){
+            $id_produto = $row['id_produto'];
+            $nome_produto = $row['nome_produto'];
+            $detalhes = $row['detalhes'];
+            $imagem = $row['imagem'];
+            $qualificacao_positiva = $row['qualificacao_positiva'];
+            $qualificacao_negativa = $row['qualificacao_negativa'];
+            $nota_media = $row['nota_media'];
+            $categoria = $row['categoria'];
+            $marca = $row['marca'];
+            $id_usuario = $row['id_usuario'];
 
             $usuario = new Usuario($id_usuario);
 
@@ -92,19 +92,19 @@ class RepositorioProduto implements IRepositorioProduto{
     }
 
     public function pesquisarProduto(\Produto $produto) {
-        $sql = ("select * from produto where id_produto='". $produto->getId_produto()."'");
+        $sql = ("select * from produto where id_produto = ". $produto->getId_produto());
         $dados = mysql_query($sql);
-        while ($sql = mysql_fetch_array($dados)){
-            $id_produto = $sql['id_produto'];
-            $nome_produto = $sql['nome_produto'];
-            $detalhes = $sql['detalhes'];
-            $imagem = $sql['imagem'];
-            $qualificacao_positiva = $sql['qualificacao_positiva'];
-            $qualificacao_negativa = $sql['qualificacao_negativa'];
-            $nota_media = $sql['nota_media'];
-            $categoria = $sql['categoria'];
-            $marca = $sql['marca'];
-            $id_usuario = $sql['id_usuario'];
+        while ($row = mysql_fetch_array($dados)){
+            $id_produto = $row['id_produto'];
+            $nome_produto = $row['nome_produto'];
+            $detalhes = $row['detalhes'];
+            $imagem = $row['imagem'];
+            $qualificacao_positiva = $row['qualificacao_positiva'];
+            $qualificacao_negativa = $row['qualificacao_negativa'];
+            $nota_media = $row['nota_media'];
+            $categoria = $row['categoria'];
+            $marca = $row['marca'];
+            $id_usuario = $row['id_usuario'];
 
             $usuario = new Usuario($id_usuario);
 

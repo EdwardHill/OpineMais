@@ -35,9 +35,7 @@
             <?php include_once ('imports.php');?>
             <?php 
                 $fachada = Fachada::getInstance();
-                $arrayProduto = $fachada->listarProduto();
-               
-                
+                $arrayProduto = $fachada->listarProduto();  
             ?>
              
           
@@ -52,7 +50,7 @@
                         foreach($arrayProduto as $produto){
                  
                            echo '<li><div id="titulo"><h2 id="centro"> '
-                            .$produto->getNome_produto().'</h2></div><a href="comentarProduto.php?produto='
+                            .$produto->getNome_produto().'</h2></div><a href="detalharProduto.php?id_produto='
                             .$produto->getId_produto().'"><img src="images/upload/'.$produto->getImagem().'"  id="centro" alt="'.$produto->getDetalhes().'"/></a></li>';
                   
                 
