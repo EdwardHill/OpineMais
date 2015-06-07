@@ -34,7 +34,7 @@
 									</legend>
 					                                 <p>
 										<label for="nome">Nome do Produto:</label> </br><input type="text"
-                                                                                                                                  name="nome_produto" id="nome" size=25 maxlength="22">
+                                                                                                                                  name="nome_produto" id="nome" size=25 maxlength="16">
 									</p>
                                                                         <p>
 										<label for="marca">Marca:</label><br/> <input type="text"
