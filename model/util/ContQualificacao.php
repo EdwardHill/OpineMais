@@ -11,29 +11,35 @@
  *
  * @author Jackson
  */
+
  class ContQualificacao {
     //put your code here
-    private $positivo=0;
-    private $negativo=0;
-    public function __construct($opiniões) {
-        if(!empty($opiniões)){
-            foreach ($opiniões as $opiniao){
+    private $positivo;
+    private $negativo;
+    
+    public function __construct($opinioes) {
+        $this->contador($opinioes);
+    }
+    public function getPositivo() {
+        return $this->positivo;
+    }
+
+    public function getNegativo() {
+        return $this->negativo;
+    }
+    
+    private function contador($opinioes){
+        $this->positivo=0;
+        $this->negativo=0;
+        if(!empty($opinioes)){
+            foreach ($opinioes as $opiniao){
                 if(Qualificacao::BOM == $opiniao->getQualificacao()){
-                    $positivo++;
-                }
-                if(Qualificacao::RUIM == $opiniao->getQualificacao()){
-                    $negativo++;
+                    $this->positivo++;
+                }else{
+                    $this->negativo++;
                 }
             }
         }
     }
-    function getPositivo() {
-        return $this->positivo;
-    }
-
-    function getNegativo() {
-        return $this->negativo;
-    }
-
 
 }
