@@ -1143,24 +1143,32 @@ p.info
 }
 
 #imabaixa{
+    
    
  
    
-    width:175px;
+    width:165px;
     height: 175px;
       
 }
 #imacima{
     position:relative;
    display: block; margin: 0 auto; 
-     width:265px;
-    height:220px;
+
+    
+    height:95%;
+}
+#imacoment{
+    position:relative;
+   display: block; margin: 0 auto; 
+
+    
+    width:45%;
 }
 
 
 
 
-
 /*----------------------RESET--------------------*/
 
 
@@ -1177,7 +1185,7 @@ p.info
 
 /*----------------------RESET--------------------*/
 
-.global-div{width:910px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:58.2%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+.global-div{width:920px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:57.7%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
@@ -1191,7 +1199,7 @@ ul{list-style:none; margin:10px 0 20px 4px; clear:both;}
 
 .tabela li img{display:inline-table; padding:3.5px;}
 
-.lista li imabaixa{clear:both; display:block; width:200px;}
+.lista li imabaixa{clear:both; display:block; width:300px;}
 
 .lista img{float:left; margin-bottom:20px;}
 
