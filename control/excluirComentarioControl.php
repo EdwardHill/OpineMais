@@ -15,4 +15,4 @@ $comentario = new Comentario($id_comentario);
 $fachada = Fachada::getInstance();
 $fachada->removerComentario($comentario);
 
-header('Location: detalharProduto.php?id_produto='.$id_produto);
+header('Location: ../detalharProduto.php?id_produto='.$id_produto);

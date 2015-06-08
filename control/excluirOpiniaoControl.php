@@ -15,4 +15,4 @@ $opiniao = new Opiniao($id_opiniao);
 $fachada = Fachada::getInstance();
 $fachada->removerOpiniao($opiniao);
 
-header('Location: detalharProduto.php?id_produto='.$id_produto);
+header('Location: ../detalharProduto.php?id_produto='.$id_produto);

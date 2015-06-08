@@ -11,7 +11,7 @@
                                //}
                                if (!empty($_SESSION['usuario'])) {
                                    echo '<li>';
-                                   echo '<a href="control/perfilUsuario.php" class="button">Perfil</a>';
+                                   echo '<a href="perfil.php" class="button">Perfil</a>';
                                    echo '</li>';
                                    echo '<li>';
                                    echo '<a href="cadastroProduto.php" class="button">Novo Produto</a>';

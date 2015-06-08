@@ -16,4 +16,4 @@ $fachada->removerUsuario($usuario);
 
 unset($_SESSION['usuario']);
 
-header('Location: home.php');
+header('Location: ../home.php');

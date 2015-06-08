@@ -14,4 +14,4 @@ $produto = new Produto($id_produto);
 $fachada = Fachada::getInstance();
 $fachada->removerProduto($produto);
 
-header('Location: home.php');
+header('Location: ../home.php');
