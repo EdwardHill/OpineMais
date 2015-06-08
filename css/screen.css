@@ -68,7 +68,7 @@ body {
 		margin:0 auto;
 		position:relative;
 		text-align:left;
-		width:1000px;
+		width:973px;
                 height:280px;
 		background:#fff;		
 		margin-bottom:2em;
@@ -118,7 +118,7 @@ body {
 			define width and height of list item (slide)
 			entire slider area will adjust according to the parameters provided here
 		*/ 
-		width:990px;
+		width:1000px;
 		height:290px;
 		overflow:hidden;
                 
@@ -151,16 +151,17 @@ body {
 	/* numeric controls */	
 
 	ol#controls{
-		margin:1em 25em;
-		padding:0;
-		height:28px;	
+            position:relative;
+		margin:1em 22em 3em  39%;
+		padding:10px;
+		height:17px;	
 		}
 	ol#controls li{
 		margin:0 10px 0 0; 
 		padding:0;
 		float:left;
 		list-style:none;
-		height:28px;
+		height:29px;
 		line-height:28px;
 		}
 	ol#controls li a{
