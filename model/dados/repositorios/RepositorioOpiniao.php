@@ -88,8 +88,8 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
         return $opiniao;
     }
 
-    public function removerOpiniao(\Opiniao $entidade) {
-        $result = mysql_query('delete from opiniao where id_opiniao = '.$entidade->getId_opiniao());
+    public function removerOpiniao(\Opiniao $opiniao) {
+        $result = mysql_query('delete from opiniao where id_opiniao = '.$opiniao->getId_opiniao());
     }
 
     public function listarOpinioesPorProduto(\Produto $produto){

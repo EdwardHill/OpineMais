@@ -31,11 +31,11 @@ class ControladorOpiniao {
         return $this->repositorioOpinicao->listar();
     }
 
-    public function pesquisarOpiniao(\Opiniao $entidade) {
+    public function pesquisarOpiniao(\Opiniao $opiniao) {
         return $this->repositorioOpinicao->pesquisarOpiniao($opiniao);
     }
 
-    public function removerOpiniao(\Opiniao $entidade) {
+    public function removerOpiniao(\Opiniao $opiniao) {
         $this->repositorioOpinicao->removerOpiniao($opiniao);
     }
     
