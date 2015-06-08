@@ -127,7 +127,8 @@
                                                     echo  '<div align="right"><a href="editarOpiniao.php?id_opiniao='.$opiniao->getId_opiniao().'">'
                                                         . 'Editar <img src="images/icon_editar.png" id="opiniao" alt="editar"/></a>'
                                                         . ' '
-                                                        . '<a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao().'">'
+                                                        . '<a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao()
+                                                        .'&id_produto='.$produto.getId_produto().'>'
                                                         . 'Editar <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
                                                 }
                                             }
@@ -151,7 +152,8 @@
                                                                 echo  '<div align="right"><a href="editarComentario.php?id_comentario='.$comentario->getId_comentario().'">'
                                                                     . 'Editar <img src="images/icon_editar.png" id="comentario" alt="editar"/></a>'
                                                                     . ' '
-                                                                    . '<a href="control/excluirComentarioControl.php?id_comentario='.$comentario->getId_comentario().'">'
+                                                                    . '<a href="control/excluirComentarioControl.php?id_comentario='.$comentario->getId_comentario()
+                                                                    .'&id_produto='.$produto.getId_produto().'>'
                                                                     . 'Editar <img src="images/icon_excluir.png"  id="comentario" alt="excluir"/></a></div>';
                                                             }
                                                         }
