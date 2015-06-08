@@ -7,13 +7,14 @@
 }
 
 .postagem{
-	padding: 10px;
+	
         border:solid 1px #0099cc;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 12px;
 	background: #E7E7E7;
 	text-align: justify;
 	margin-bottom: 5px;
+        padding-left: 20px;
 }
 
 .postagem p{
@@ -30,7 +31,7 @@
 }
 
 #comentarios{
-	background: #D4D3C2
+	background: #E4E3E2
             ;
 	margin-top: 15px;
 	padding: 10px;
@@ -38,7 +39,7 @@
 }
 
 .comentarios{
-	background: #999;
+	//background: #999;
 	padding: 10px;
 	margin-bottom: 10px;
 	
@@ -91,6 +92,14 @@ background-color: #ffffff;
 border: 2px solid #dbdbdb;
 }
 
+
+#enviar{
+    position: relative;
+    float: none;
+    padding: 5px;
+    padding-left: 78%;
+    
+}
 
 /***********************************TABELA DE PRODUTOS****************************************/
 

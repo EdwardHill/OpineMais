@@ -95,9 +95,9 @@
                                         <input type="text" name="mensagem" size="50" value="Digite sua opinião" class="campo"/>
                                         
                                         
-                                        <div align="right"><input type="submit" value="Enviar"></div>
+                                        <div id="enviar"><input type="submit" value="Enviar"></div>
                                     </form>
-
+<br>
                                 <div class="comentarios" id="<?php echo $id_opiniao; ?>">
                         <?php
                                 }else{
@@ -171,7 +171,7 @@
                                             <h4>Comente a opinião:</h4>
                                             <input type="text" name="mensagem" value="Digite seu comentario sobre a opinião" class="campo" size="50"/>
 
-                                             <div align="right"><input type="submit" value="Enviar"></div>
+                                             <div id="enviar"><input type="submit" value="Enviar"></div>
                                         </form>
                                     </div><!--id comentario-->
                         
