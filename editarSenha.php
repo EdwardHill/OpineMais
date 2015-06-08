@@ -41,7 +41,13 @@ and open the template in the editor.
 			
 			<fieldset>
 				<legend>Edição de Senha</legend>
-
+                                <p style="text-align: center; color: red;">
+                                    <?php 
+                                        if(!empty($_GET['mensagem'])){
+                                            echo $_GET['mensagem'];
+                                        }
+                                    ?>
+                                </p>
 				<p>
 					<label for="senhaAtual">Senha Atual</label><br><input type="password"
 						placeholder="Digite a Senha Atual" name="senhaAtual" id="senhaAtual" size=30 required="senhaAtual">

@@ -50,6 +50,13 @@ and open the template in the editor.
 
             <fieldset>
                 <legend>Dados de Login</legend>
+                <p style="text-align: center; color: green;">
+                    <?php 
+                        if(!empty($_GET['mensagem'])){
+                            echo $_GET['mensagem'];
+                        }
+                    ?>
+                </p>
                 <p>
                     <b>E-mail: </b><?php echo $usuario->getEmail();?>  <br/>
                 </p>
