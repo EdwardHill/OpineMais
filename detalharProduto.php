@@ -67,7 +67,7 @@
                                         . 'Editar <img src="images/icon_editar.png"  id="postagem" alt="editar"/></a>'
                                         . ' '
                                         . '<a href="control/excluirProdutoControl.php?id_produto='.$produto->getId_produto().'">'
-                                        . 'Editar <img src="images/icon_excluir.png"  id="postagem" alt="excluir"/></a></div>';
+                                        . 'Excluir <img src="images/icon_excluir.png"  id="postagem" alt="excluir"/></a></div>';
                                 }
                             }
                         ?>
@@ -126,7 +126,11 @@
                                         <?php 
                                             if(!empty($_SESSION['usuario'])){
                                                 if($usuario->getId_usuario() == $opiniao->getUsuario()->getId_usuario()){
-                                                    echo  '<div align="right"><a href="editarOpiniao.php?id_opiniao='.$opiniao->getId_opiniao().'">Editar <img src="images/icon_editar.png" id="opiniao" alt="editar"/></a><a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao().'&id_produto='.$produto->getId_produto().'>Excluir <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
+                                                    echo  '<div align="right"><a href="editarOpiniao.php?id_opiniao='.$opiniao->getId_opiniao().'">'
+                                                            . 'Editar <img src="images/icon_editar.png"  id="opiniao" alt="editar"/></a>'
+                                                            . ' '
+                                                            . '<a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao().'">'
+                                                            . 'Exluir <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
                                                 }
                                             }
                                         ?>
@@ -146,12 +150,13 @@
                                                     <?php 
                                                         if(!empty($_SESSION['usuario'])){
                                                             if($usuario->getId_usuario() == $comentario->getUsuario()->getId_usuario()){
-                                                                echo  '<div align="right"><a href="editarComentario.php?id_comentario='.$comentario->getId_comentario().'">'
-                                                                    . 'Editar <img src="images/icon_editar.png" id="comentario" alt="editar"/></a>'
-                                                                    . ' '
-                                                                    . '<a href="control/excluirComentarioControl.php?id_comentario='.$comentario->getId_comentario()
-                                                                    .'&id_produto='.$produto->getId_produto().'>'
-                                                                    . 'Editar <img src="images/icon_excluir.png"  id="comentario" alt="excluir"/></a></div>';
+                                                                echo  '<div align="right"><a href="editarComentario.php?'
+                                                                        . 'id_produto='.$produto->getId_produto().'&id_comentario='.$comentario->getId_comentario().'">'
+                                                                        . 'Editar <img src="images/icon_editar.png"  id="comentario" alt="editar"/></a>'
+                                                                        . ' '
+                                                                        . '<a href="control/excluirComentarioControl.php?'
+                                                                        . 'id_produto='.$produto->getId_produto().'&id_comentario='.$comentario->getId_comentario().'">'
+                                                                        . 'Exluir <img src="images/icon_excluir.png"  id="comentario" alt="excluir"/></a></div>';
                                                             }
                                                         }
                                                     ?>
