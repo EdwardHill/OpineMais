@@ -37,6 +37,13 @@
                     $serializacao = $_SESSION['usuario'];
                     $usuario = unserialize($serializacao);
                 }
+                if(!empty($produto->getOpinioes()) && !empty($_SESSION['usuario'])){
+                    foreach ($produto->getOpinioes() as $opiniaoTeste){
+                        if($opiniaoTeste->getUsuario()->getId_usuario() == $usuario->getId_usuario()){
+                            $jaOpinou = $usuario;
+                        }
+                    }
+                }
             ?>
 
 
@@ -71,24 +78,31 @@
                         <div id="opiniao">
                         <?php 
                             if(!empty($_SESSION['usuario'])){
+                                if(empty($jaOpinou)){
                         ?>  
-                            <h4>Opine sobre o produto</h4>
-                                
-                                <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
-                                    <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
-                                    
-                                    <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
-                                    <input type="radio" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
-                                    <img src="images/ruim.png"  id="opiniao" alt="ruim"/><?php echo Qualificacao::RUIM;?>
-                                    <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
-                                    <br/>   
-                                    <input type="text" name="mensagem" size="50" value="Digite sua opinião" class="campo"/>
-                                    <div align="right"><input type="submit" value="Enviar"></div>
-                                        <!--<input type="submit" name="botao" style="display:none" />-->
-                                </form>
-                            
-                            <div class="comentarios" id="<?php echo $id_opiniao; ?>">
+                                <h4>Opine sobre o produto</h4>
+
+                                    <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
+                                        <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
+
+                                        <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
+                                        <input type="radio" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
+                                        <img src="images/ruim.png"  id="opiniao" alt="ruim"/><?php echo Qualificacao::RUIM;?>
+                                        <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
+                                        <br/>   
+                                        <input type="text" name="mensagem" size="50" value="Digite sua opinião" class="campo"/>
+                                        
+                                        <input type="submit" name="enviar" style="display:none" />
+                                        <!--<div align="right"><input type="submit" value="Enviar"></div>-->
+                                    </form>
+
+                                <div class="comentarios" id="<?php echo $id_opiniao; ?>">
                         <?php
+                                }else{
+                                    echo '<h3 align="center">Você já opinou sobre o produto</h3>';
+                                }
+                            }else{
+                                echo '<h3 align="center">Você precisa fazer login para opinar sobre o produto</h3>';
                             }
                             
                             if(!empty($produto->getOpinioes())){
@@ -99,14 +113,26 @@
                         ?>
 
                             
-                                    <strong>
-                                        <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
-                                        <?php 
-                                            echo $opiniao->getUsuario()->getNome()
-                                                    .'<br/>Qualificacao: '.$opiniao->getQualificacao(); 
-                                        ?>
+                                        <strong>
+                                            <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
+                                            <?php 
+                                                echo $opiniao->getUsuario()->getNome()
+                                                        .'<br/>Qualificacao: '.$opiniao->getQualificacao(); 
+                                            ?>
+                                        </strong>
                                         <p><?php echo $opiniao->getMensagem(); ?></p>
-                                    </strong>
+                                        <?php 
+                                            if(!empty($_SESSION['usuario'])){
+                                                if($usuario->getId_usuario() == $opiniao->getUsuario()->getId_usuario()){
+                                                    echo  '<div align="right"><a href="editarOpiniao.php?id_opiniao='.$opiniao->getId_opiniao().'">'
+                                                        . 'Editar <img src="images/icon_editar.png" id="opiniao" alt="editar"/></a>'
+                                                        . ' '
+                                                        . '<a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao().'">'
+                                                        . 'Editar <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
+                                                }
+                                            }
+                                        ?>
+                                    
 
 
                                     <div id="comentario">
@@ -119,6 +145,17 @@
                                                     <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
                                                     <strong><?php echo $comentario->getUsuario()->getNome(); ?></strong>
                                                     <p><?php echo $comentario->getMensagem(); ?></p>
+                                                    <?php 
+                                                        if(!empty($_SESSION['usuario'])){
+                                                            if($usuario->getId_usuario() == $comentario->getUsuario()->getId_usuario()){
+                                                                echo  '<div align="right"><a href="editarComentario.php?id_comentario='.$comentario->getId_comentario().'">'
+                                                                    . 'Editar <img src="images/icon_editar.png" id="comentario" alt="editar"/></a>'
+                                                                    . ' '
+                                                                    . '<a href="control/excluirComentarioControl.php?id_comentario='.$comentario->getId_comentario().'">'
+                                                                    . 'Editar <img src="images/icon_excluir.png"  id="comentario" alt="excluir"/></a></div>';
+                                                            }
+                                                        }
+                                                    ?>
                                                 </div>
                                     <?php 
                                             }
