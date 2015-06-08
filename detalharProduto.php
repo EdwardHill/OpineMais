@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <link rel="shortcut icon" href="images/logtop.png" />
-
+ <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/funcao.js"></script>
         <script type="text/javascript">
@@ -46,16 +46,15 @@
                 }
             ?>
 
-
             <div id="geral">
 
-                <header class="major">
-                    <!-- <h3>Opine</h3> -->
+                <header id="major">
+                    <div id="header"><h2><?php echo $produto->getNome_produto(); ?></h2></div>
                 </header>
+   <div><img id="imacoment" src="images/upload/<?php echo $produto->getImagem(); ?>" class="imagem" style="width:75%;"/></div>
+<br>
                     <div class="postagem">
-
-                        <h3><?php echo $produto->getNome_produto(); ?></h3>
-                        <div><img src="images/upload/<?php echo $produto->getImagem(); ?>" class="imagem" style="width:75%;"/></div>
+   
                         <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
                         <b><?php echo $produto->getUsuario()->getNome(); ?></b>
                         <?php 
@@ -82,7 +81,7 @@
                         ?>  
                                 <h4>Opine sobre o produto</h4>
 
-                                    <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
+                                    <form action="control/cadastrarOpiniaoControl.php" method="post" id="opiniao">
                                         <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
 
                                         <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
@@ -91,9 +90,9 @@
                                         <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
                                         <br/>   
                                         <input type="text" name="mensagem" size="50" value="Digite sua opinião" class="campo"/>
-                                        
-                                        <input type="submit" name="enviar" style="display:none" />
-                                        <!--<div align="right"><input type="submit" value="Enviar"></div>-->
+<!--                                        <textarea   name="mensagem"  form="opiniao"  ROWS=4 COLS=60 placeholder="Insira sua opinião"></textarea>-->
+                                       
+                                        <div align="right"><input type="submit" value="Enviar"></div>
                                     </form>
 
                                 <div class="comentarios" id="<?php echo $id_opiniao; ?>">
@@ -128,7 +127,7 @@
                                                         . 'Editar <img src="images/icon_editar.png" id="opiniao" alt="editar"/></a>'
                                                         . ' '
                                                         . '<a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao()
-                                                        .'&id_produto='.$produto.getId_produto().'>'
+                                                        .'&id_produto='.$produto->getId_produto().'>'
                                                         . 'Editar <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
                                                 }
                                             }
@@ -153,7 +152,7 @@
                                                                     . 'Editar <img src="images/icon_editar.png" id="comentario" alt="editar"/></a>'
                                                                     . ' '
                                                                     . '<a href="control/excluirComentarioControl.php?id_comentario='.$comentario->getId_comentario()
-                                                                    .'&id_produto='.$produto.getId_produto().'>'
+                                                                    .'&id_produto='.$produto->getId_produto().'>'
                                                                     . 'Editar <img src="images/icon_excluir.png"  id="comentario" alt="excluir"/></a></div>';
                                                             }
                                                         }
@@ -174,7 +173,7 @@
                                             <h4>Comente a opinião:</h4>
                                             <input type="text" name="mensagem" value="Digite seu comentario sobre a opinião" class="campo" size="50"/>
 
-                                            <input type="submit" name="botao_respostas" style="display:none" />
+                                           <div align="right"><input type="submit" value="Enviar"></div>
                                         </form>
                                     </div><!--id comentario-->
                         

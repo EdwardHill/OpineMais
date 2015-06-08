@@ -1,6 +1,9 @@
 #geral{
 	width:600px;
 	margin:0 auto;
+        position:relative;
+        float:left;
+        padding-left:30%; 
 }
 
 .postagem{
@@ -89,7 +92,10 @@ border: 2px solid #dbdbdb;
 
 
 /***********************************TABELA DE PRODUTOS****************************************/
-
+#major{
+    padding:20px;
+    margin:5px;
+}
 /*
  * Table styles
  */

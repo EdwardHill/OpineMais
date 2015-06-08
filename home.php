@@ -69,9 +69,7 @@
                 </div>
  
             </div>
-            <br>
-            <br>
-           
+  
             <div class="global-div">
                
 <div class="links">

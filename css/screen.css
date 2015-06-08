@@ -50,7 +50,7 @@ body {
 		padding:10px;
 		border:1px solid #bae2f0;
 		background:#e3f4f9;	
-		margin:.5em 0;
+		margin:5em 0;
 		width:800px;
 		}	
 			
@@ -60,7 +60,7 @@ body {
             padding:0;
             display:block;
             overflow:hidden;
-            text-indent:-8000px;
+            text-indent:-9000px;
             }
     /* // image replacement */
 			
@@ -68,12 +68,15 @@ body {
 		margin:0 auto;
 		position:relative;
 		text-align:left;
-		width:973px;
-                height:280px;
-		background:#fff;		
-		margin-bottom:2em;
+		width:996px;
+                height:295px;
+		background:#fff;
+                padding-bottom: 1em;
+		margin-bottom:1px;
                 margin-right: -2em;
-                
+               
+               
+    
                 
 		}	
 	#header{
@@ -119,7 +122,7 @@ body {
 			entire slider area will adjust according to the parameters provided here
 		*/ 
 		width:1000px;
-		height:290px;
+		height:270px;
 		overflow:hidden;
                 
 		}	
@@ -152,7 +155,7 @@ body {
 
 	ol#controls{
             position:relative;
-		margin:1em 22em 3em  39%;
+		margin:1em 15em 3em  37%;
 		padding:10px;
 		height:17px;	
 		}
