@@ -92,7 +92,7 @@ class RepositorioProduto implements IRepositorioProduto{
     }
 
     public function pesquisarProduto(\Produto $produto) {
-        $sql = ("select * from produto where id_produto = ". $produto->getId_produto());
+        $sql = "select * from produto where id_produto = ". $produto->getId_produto();
         $dados = mysql_query($sql);
         while ($row = mysql_fetch_array($dados)){
             $id_produto = $row['id_produto'];
@@ -114,7 +114,7 @@ class RepositorioProduto implements IRepositorioProduto{
     }
 
     public function removerProduto(\Produto $produto) {
-        $sql("delete from produto where id_produto=".$produto->getId_produto());
+        $sql = 'delete from produto where id_produto='.$produto->getId_produto();
         $result = mysql_query($sql);
     }
 
