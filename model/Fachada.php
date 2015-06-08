@@ -81,6 +81,10 @@ class Fachada {
                 $opinioes = $this->listarOpinioesPorProduto($produto);
                 if(!empty($opinioes)){
                     $produto->setOpinioes($opinioes);
+                    $contQualificacao = new ContQualificacao($opinioes);
+                    
+                    $produto->setQualificacao_positiva($contQualificacao->getPositivo());
+                    $produto->setQualificacao_negativa($contQualificacao->getNegativo());
                 }
             }
         }
@@ -97,6 +101,11 @@ class Fachada {
             $opinioes = $this->listarOpinioesPorProduto($entidade);
             if(!empty($opinioes)){
                 $entidade->setOpinioes($opinioes);
+                
+                $contQualificacao = new ContQualificacao($opinioes);
+                    
+                $entidade->setQualificacao_positiva($contQualificacao->getPositivo());
+                $entidade->setQualificacao_negativa($contQualificacao->getNegativo());
             }
         }
         return $entidade;
