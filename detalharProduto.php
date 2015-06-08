@@ -45,16 +45,20 @@
                     }
                 }
             ?>
-
+           
+                    <header id="major">
+                   <h2><?php echo $produto->getNome_produto(); ?></h2>
+                     <img  id="imacoment" src="images/upload/<?php echo $produto->getImagem(); ?>" class="imagem" />
+                   
+                    </header>
+                
             <div id="geral">
 
-                <header id="major">
-                    <div id="header"><h2><?php echo $produto->getNome_produto(); ?></h2></div>
-                </header>
-   <div><img id="imacoment" src="images/upload/<?php echo $produto->getImagem(); ?>" class="imagem" style="width:75%;"/></div>
-<br>
+              
                     <div class="postagem">
    
+  
+<br>
                         <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
                         <b><?php echo $produto->getUsuario()->getNome(); ?></b>
                         <?php 
@@ -81,7 +85,7 @@
                         ?>  
                                 <h4>Opine sobre o produto</h4>
 
-                                    <form action="control/cadastrarOpiniaoControl.php" method="post" id="opiniao">
+                                    <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
                                         <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
 
                                         <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
@@ -135,7 +139,7 @@
                                     
 
 
-                                    <div id="comentario">
+                                    <div id="comentarios">
                                     <?php
                                         if(!empty($opiniao->getComentarios())){
                                             foreach ($opiniao->getComentarios() as $comentario){

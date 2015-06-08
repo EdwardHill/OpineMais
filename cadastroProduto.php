@@ -20,7 +20,7 @@
          	include("leftBar.php");?>
          	
 
-				
+				<div id="content2">
 						<header class="major">
 							<h2>Adicionar Item</h2>
 							<h4><?php$mensagem?></h4>
@@ -76,7 +76,7 @@
 									</ul>
 								</div>
 						</form>
-				  
+                                </div>
 		 
             <?php include("footer.php") ?>
       </div>

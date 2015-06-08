@@ -18,9 +18,9 @@
                 <?php include("leftBar.php")?>
                
 
-				<div id="content">
+				<div id="content2">
 			<header class="major">
-				<h1>Cadastre-se</h1>
+				<h2>Cadastre-se</h2>
 			</header>
 			<!-- Formulário  aqui! -->
 			<form method="POST" name="fusuario" action="control/cadastrarUsuarioControl.php">

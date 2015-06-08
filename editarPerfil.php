@@ -28,7 +28,7 @@ and open the template in the editor.
             header('Location:home.php');
         }
         ?>
-        <div id="centro">
+        <div id="content2">
 
           <!-- titulo do conteudo-->
          
