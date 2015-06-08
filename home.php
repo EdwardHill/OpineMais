@@ -94,8 +94,16 @@
                                     ?>
                                 </h4>
                             <h5>Categoria: <?php echo $produtoDown->getCategoria();?></h5>
-                            <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo $produtoDown->getQualificacao_positiva();?> 
-                            <img src="images/ruim.png"  id="opiniao" alt="ruim"/><?php echo $produtoDown->getQualificacao_negativa(); ?>
+                            <img src="images/bom.png"  id="opiniao" alt="bom"/>
+                                <?php 
+                                    echo Qualificacao::BOM;
+                                    echo '( '.$produtoDown->getQualificacao_positiva().' )';
+                                ?> 
+                            <img src="images/ruim.png"  id="opiniao" alt="ruim"/>
+                                <?php 
+                                    echo Qualificacao::RUIM;
+                                    echo '( '.$produtoDown->getQualificacao_negativa().' )'; 
+                                ?>
                                        
                         </li>
         <?php 
