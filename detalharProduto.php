@@ -47,8 +47,8 @@
             ?>
 
            
-               
-           
+          
+
             <div id="geral">
  <div id="header">
                  <h2><?php echo $produto->getNome_produto(); ?></h2>
@@ -87,8 +87,8 @@
                                     <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
                                         <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
 
-                                        <img src="images/bom.png"   id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
-                                        <input type="radio" form="opiniao" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
+                                        <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
+                                        <input type="radio" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
                                         <img src="images/ruim.png"  id="opiniao" alt="ruim"/><?php echo Qualificacao::RUIM;?>
                                         <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
                                         <br/>   
@@ -126,12 +126,7 @@
                                         <?php 
                                             if(!empty($_SESSION['usuario'])){
                                                 if($usuario->getId_usuario() == $opiniao->getUsuario()->getId_usuario()){
-                                                    echo  '<div align="right"><a href="editarOpiniao.php?id_opiniao='.$opiniao->getId_opiniao().'">'
-                                                        . 'Editar <img src="images/icon_editar.png" id="opiniao" alt="editar"/></a>'
-                                                        . ' '
-                                                        . '<a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao()
-                                                        .'&id_produto='.$produto->getId_produto().'>'
-                                                        . 'Editar <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
+                                                    echo  '<div align="right"><a href="editarOpiniao.php?id_opiniao='.$opiniao->getId_opiniao().'">Editar <img src="images/icon_editar.png" id="opiniao" alt="editar"/></a><a href="control/excluirOpiniaoControl.php?id_opiniao='.$opiniao->getId_opiniao().'&id_produto='.$produto->getId_produto().'>Excluir <img src="images/icon_excluir.png"  id="opiniao" alt="excluir"/></a></div>';
                                                 }
                                             }
                                         ?>
