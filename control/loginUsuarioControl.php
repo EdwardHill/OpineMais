@@ -29,8 +29,8 @@ include_once ('../imports.php');
       header('Location: ../home.php');
     }else{
       $mensagem = "Usuário ou Senha incorretos!";
-      $_SESSION["mensagem"] = $mensagem;
-      header('Location: ../login.php');
+      $_GET["mensagem"] = $mensagem;
+      header('Location: ../login.php?mensagem='.$mensagem);
     }
 
 ?>
