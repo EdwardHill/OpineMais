@@ -5,8 +5,8 @@
         <title>Comentar Produto - Opine Mais </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="shortcut icon" href="images/logtop.png" />
- <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/funcao.js"></script>
         <script type="text/javascript">
@@ -45,20 +45,19 @@
                     }
                 }
             ?>
-           
-                    <header id="major">
-                   <h2><?php echo $produto->getNome_produto(); ?></h2>
-                     <img  id="imacoment" src="images/upload/<?php echo $produto->getImagem(); ?>" class="imagem" />
-                   
-                    </header>
-                
-            <div id="geral">
 
-              
+           
+               
+           
+            <div id="geral">
+ <div id="header">
+                 <h2><?php echo $produto->getNome_produto(); ?></h2>
+                </div>
+               
                     <div class="postagem">
-   
-  
-<br>
+                <img src="images/upload/<?php echo $produto->getImagem(); ?>" id="imacoment" class="imagem" />
+
+                       
                         <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
                         <b><?php echo $produto->getUsuario()->getNome(); ?></b>
                         <?php 
@@ -88,14 +87,14 @@
                                     <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
                                         <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
 
-                                        <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
-                                        <input type="radio" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
+                                        <img src="images/bom.png"   id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
+                                        <input type="radio" form="opiniao" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
                                         <img src="images/ruim.png"  id="opiniao" alt="ruim"/><?php echo Qualificacao::RUIM;?>
                                         <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
                                         <br/>   
                                         <input type="text" name="mensagem" size="50" value="Digite sua opinião" class="campo"/>
-<!--                                        <textarea   name="mensagem"  form="opiniao"  ROWS=4 COLS=60 placeholder="Insira sua opinião"></textarea>-->
-                                       
+                                        
+                                        
                                         <div align="right"><input type="submit" value="Enviar"></div>
                                     </form>
 
@@ -139,7 +138,7 @@
                                     
 
 
-                                    <div id="comentarios">
+                                    <div id="comentario">
                                     <?php
                                         if(!empty($opiniao->getComentarios())){
                                             foreach ($opiniao->getComentarios() as $comentario){
@@ -177,7 +176,7 @@
                                             <h4>Comente a opinião:</h4>
                                             <input type="text" name="mensagem" value="Digite seu comentario sobre a opinião" class="campo" size="50"/>
 
-                                           <div align="right"><input type="submit" value="Enviar"></div>
+                                             <div align="right"><input type="submit" value="Enviar"></div>
                                         </form>
                                     </div><!--id comentario-->
                         
