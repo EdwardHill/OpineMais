@@ -17,9 +17,10 @@
     <body>
 
         <div class="main">
+            
             <?php session_start();?>
             <?php include("header.php"); ?>
-            <?php include("leftBar.php"); ?>
+           
             <?php include_once('imports.php'); ?>
             <?php 
                 $id_produto = $_REQUEST['id_produto'];
@@ -46,16 +47,28 @@
                 }
             ?>
 
-           
-          
-
+                       <div id="header4">
+                 <h1 id="detalhes"><?php echo $produto->getNome_produto(); ?></h1>
+                    <img src="images/upload/<?php echo $produto->getImagem(); ?>" id="imacoment" class="imagem" />
+                         <div id="info">
+                           
+                        
+                       <h1>Detalhes</h1>
+                        
+                      <p> <strong>Fabricante: </strong><?php echo $produto->getMarca();?></p>
+                      <p> <strong>Descrição: </strong><?php echo $produto->getDetalhes();?></p>
+            </div>
+            
+                  
+                        </div>  
+            
+                   
             <div id="geral">
- <div id="header">
-                 <h2><?php echo $produto->getNome_produto(); ?></h2>
-                </div>
-               
+ 
+ 
                     <div class="postagem">
-                <img src="images/upload/<?php echo $produto->getImagem(); ?>" id="imacoment" class="imagem" />
+                        
+               
 
                        
                         <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />

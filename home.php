@@ -30,14 +30,15 @@
     <body>
         <div class="main">
             <?php session_start();?>
-            <?php include("header.php");?>
-            <?php include("leftBar.php");?>
+            <?php include("header.php");
+            
+            ?>
             <?php include_once ('imports.php');?>
             <?php 
                 $fachada = Fachada::getInstance();
                 $arrayProduto = $fachada->listarProduto();  
             ?>
-             
+             <div id="recuo">
           
             <div id="container">
 
@@ -119,6 +120,7 @@
     </ul>
         
 </div>
+        </div>
         </div>
     </body>
 </html>

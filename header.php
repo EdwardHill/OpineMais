@@ -37,8 +37,8 @@
                 <?php
                 if (!empty($_SESSION['usuario'])) {
 
-                    echo '<li></li>'
-                    . '<li></li>';
+                    echo '<li><a href="perfil.php" class="button">Perfil</a></li>'
+                    . '<li><a href="cadastroProduto.php" class="button">Novo Iten</a></li>';
   
                     echo '<li ><a href="model/util/logout.php"  class="button">Sair</a></li>';
                 } else {

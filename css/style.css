@@ -121,6 +121,7 @@ header2.major
 }
 
 
+
 /* List */
 
 ul
@@ -202,8 +203,8 @@ ul.divided li:first-child{
     list-style:none;
 
     color:whitesmoke;
-    margin-left: 20%;
-    bottom:6px;
+    margin-left: 18.5%;
+    bottom:4px;
 
 }
 
@@ -594,7 +595,8 @@ input[type="number"] {
     padding: 1.5em 0.5em 2em 0.8em;
 
 }
-//ESTILO BUSCA
+//REcuo Home
+
 
 
 
@@ -625,11 +627,11 @@ input[type="number"] {
 
     background-color:		#c0c0c0;
 
-    background-size:		100% 610%;
+    background-size:		100% 410%;
 
 
     background-image:		url('images/overlay.png'), linear-gradient( 75deg, #C1E4AB 25%,  #00A300 75%);
-    background-size:		128px 128px,				100% 610%,					auto;
+    background-size:		128px 128px,				100% 410%,					auto;
     background-repeat:		repeat,						no-repeat,					no-repeat;
     /*gradient*/
 
@@ -1159,11 +1161,11 @@ p.info
     height:95%;
 }
 #imacoment{
-    position:relative;
-   display: block; margin: 0 auto; 
-
-    
-    width:300px;
+    position:absolute;
+    margin:4% 0 0 -10px;
+    float:none;
+     width:400px;
+    height:380px;
 }
 
 
@@ -1185,14 +1187,16 @@ p.info
 
 /*----------------------RESET--------------------*/
 
-.global-div{width:920px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:57.7%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+.global-div{width:1150px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:42.7%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
 h2 {font-size:1.4em; text-align:center; margin-top:10px; text-shadow:0px 0px 5px #eaeaea;}
+
+#detalhes{font-size:1.4em; position:relative;float:left; margin-top:10px; text-shadow:0px 0px 5px #eaeaea;}
 h3 { text-align:left; margin-top:0px;}
 h4{color:#fff; background:#0099cc;}
-h5{font-size:10pt; }
+h5{font-size:10pt; float:left;}
 ul{list-style:none; margin:10px 0 20px 4px; clear:both;}
 
 .tabela li, .duascolunas li{position:relative;float:left; display: block; margin:30px 10px 10px 3px;}
