@@ -20,12 +20,14 @@ and open the template in the editor.
         <?php session_start();?>     
         <?php include("header.php"); ?>
         <?php include("leftBar.php"); ?>
-        
         <?php include_once("imports.php"); ?>
         <?php
-            //session_start();
-            $serializacao = $_SESSION['usuario'];
-            $usuario = unserialize($serializacao);
+            if(!empty($_SESSION['usuario'])){
+                $serializacao = $_SESSION['usuario'];
+                $usuario = unserialize($serializacao);
+            }else{
+                header('Location: home.php');
+            }
         ?>
         
 
@@ -35,7 +37,7 @@ and open the template in the editor.
         
               <!-- Conteudo-->
              <form method="post" name="f1"
-                   action="editarSenhaControl.php">
+                   action="control/editarSenhaControl.php">
 			
 			<fieldset>
 				<legend>Edição de Senha</legend>

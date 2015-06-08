@@ -36,7 +36,7 @@ and open the template in the editor.
                 $serializacao = $_SESSION['usuario'];
                 $usuario = unserialize($serializacao);
             }else{
-                header('Location:home.php');
+                header('Location: home.php');
             }
         ?>
 
@@ -65,7 +65,7 @@ and open the template in the editor.
                 <ul class="actions">
                     <li><a href="editarPerfil.php" class="button">Editar Perfil</a></li>
                      <li><a href="editarSenha.php" class="button">Editar Senha</a></li>
-                      <li><a href="desativarPerfil.php" class="button">Desativar Perfil</a></li>
+                     <li><a href="control/excluirUsuarioControl.php" class="button">Desativar Perfil</a></li>
                 </ul>
             <br>
             <br>

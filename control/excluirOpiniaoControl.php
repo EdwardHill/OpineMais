@@ -8,10 +8,11 @@
 include_once('../imports.php');
 
 $id_produto = $_GET['id_produto'];
+$id_opiniao = $_GET['id_opiniao'];
 
-$produto = new Produto($id_produto);
+$opiniao = new Opiniao($id_opiniao);
 
 $fachada = Fachada::getInstance();
-$fachada->removerProduto($produto);
+$fachada->removerOpiniao($opiniao);
 
-header('Location: home.php');
+header('Location: detalharProduto.php?id_produto='.$id_produto);
