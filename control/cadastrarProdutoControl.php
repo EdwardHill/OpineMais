@@ -10,11 +10,6 @@ include_once ('../imports.php');
       $categoria = $_POST['categoria'];
       $marca = $_POST['marca'];
       
-      echo 'Nome do Produto: '.$nome_produto.'<br/>';
-      echo 'Descricao do Produto: '.$detalhes.'<br/>';
-      echo 'Categoria do Produto: '.$categoria.'<br/>';
-      echo 'Marca do Produto: '.$marca.'<br/>';
-      
       session_start();
       $serializado = $_SESSION['usuario'];
       $usuario = unserialize($serializado);

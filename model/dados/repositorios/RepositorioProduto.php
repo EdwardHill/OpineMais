@@ -53,16 +53,16 @@ class RepositorioProduto implements IRepositorioProduto{
     }
 
     public function editarProduto(\Produto $produto) {
-        $result = mysql_query("update produto set nome_produto='".
-        $produto->getNome_produto().
-        "', detalhes='".$produto->getDetalhes().
-        "', imagem='".$produto->getImagem().
-        "', qualificacao_positiva=".$produto->getQualificacao_positiva().
-        ", qualificacao_negativa=".$produto->getQualificacao_negativa().
-        ", nota_media=".$produto->Nota_media().
-        ", categoria='". $produto->getCategoria().
-        "', marca='". $produto->getMarca().
-        "' where id_produto=". $produto->getId_produto().")");
+        $result = mysql_query("update produto set "
+        . "nome_produto='".$produto->getNome_produto()."'"
+        .", detalhes='".$produto->getDetalhes()."'"
+        .", imagem='".$produto->getImagem()."'"
+        .", qualificacao_positiva=".$produto->getQualificacao_positiva()
+        .", qualificacao_negativa=".$produto->getQualificacao_negativa()
+        .", nota_media=".$produto->getNota_media()
+        .", categoria='". $produto->getCategoria()."'"
+        .", marca='". $produto->getMarca()."'"
+        ." where id_produto=". $produto->getId_produto());
     }
 
     public function listarProduto() {

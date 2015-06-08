@@ -22,15 +22,22 @@
 
 				<div id="content2">
 						<header class="major">
-							<h2>Adicionar Item</h2>
-							<h4><?php$mensagem?></h4>
+							<h2>Adicionar Produto</h2>
+							<h4><?php $mensagem?></h4>
+                                                        <p style="text-align: center; color: red;">
+                                                            <?php 
+                                                                if(!empty($_GET['mensagem'])){
+                                                                    echo $_GET['mensagem'];
+                                                                }
+                                                            ?>
+                                                        </p>
 						</header>
 						<!-- Formulário aqui! -->
 				      <form method="POST" id="cadp" action="control/cadastrarProdutoControl.php"enctype="multipart/form-data" >
 
 								<fieldset>
 									<legend>
-										<strong>Dados do Item</strong>
+										<strong>Dados do Produto</strong>
 									</legend>
 					                                 <p>
 										<label for="nome">Nome do Produto:</label> </br><input type="text"
