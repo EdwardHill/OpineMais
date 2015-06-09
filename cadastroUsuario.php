@@ -6,7 +6,7 @@
 		<title>Cadastre-se - Opine Mais </title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
                 <link rel="stylesheet" type="text/css" href="css/screen.css">
-                <link rel="shortcut icon" href="images/short.png" />
+               <link rel="shortcut icon" href="css/images/short.png"/>
                     
 
                     
