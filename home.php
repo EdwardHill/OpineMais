@@ -8,6 +8,7 @@
        	<script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/easySlider1.7.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <link rel="shortcut icon" href="css/images/short.png"/>
        
         <script type="text/javascript">
             $(document).ready(function() {

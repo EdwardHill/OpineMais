@@ -21,8 +21,9 @@
          	
 
 				<div id="content">
-						<header class="major">
+						<header id="header">
 							<h2>Adicionar Produto</h2>
+                                                </header>
 							<h4><?php $mensagem?></h4>
                                                         <p style="text-align: center; color: red;">
                                                             <?php 

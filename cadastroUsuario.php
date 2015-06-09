@@ -19,7 +19,7 @@
                
 
 		<div id="content">
-			<header class="major">
+			<header id="header">
 				<h2>Cadastre-se</h2>
 			</header>
 			<!-- Formulário  aqui! -->
