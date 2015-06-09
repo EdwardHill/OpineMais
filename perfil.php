@@ -11,6 +11,7 @@ and open the template in the editor.
         <title>Perfil - Opine Mais </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
        	<script type="text/javascript" src="js/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/screen.css">
         <script type="text/javascript" src="js/easySlider1.7.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -28,7 +29,7 @@ and open the template in the editor.
         <div class="main">
         <?php session_start();?>
         <?php include("header.php"); ?>
-        <?php include("leftBar.php"); ?>
+       
         <?php include_once('imports.php'); ?>
             
         <?php
@@ -43,9 +44,12 @@ and open the template in the editor.
        
 
             <!-- titulo do conteudo-->
-            <header class="major">
+            <header  id="header">
                 <h2>Perfil</h2>
             </header>
+            <br>
+            <br>
+            <br>
             <!-- Conteudo-->
 
             <fieldset>

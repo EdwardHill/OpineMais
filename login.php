@@ -16,13 +16,13 @@ and open the template in the editor.
     <body>
         <div class="main">
         <?php include ("header.php")?>
-        <?php include("leftBar.php")?>
+        
          
         <div class="content">
           <div id="login">
-                        <header class="major">
-		             <h1>Login</h1>
-                             
+                        <header id="header">
+		             <h2>Login</h2>
+                        </header> 
        		     <p style="text-align: center; color: red;">
                         <?php 
                             if(!empty($_GET['mensagem'])){

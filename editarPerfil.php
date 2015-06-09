@@ -17,7 +17,7 @@ and open the template in the editor.
          <div class="main">
         <?php session_start(); ?>     
         <?php include("header.php"); ?>
-        <?php include("leftBar.php"); ?>
+       
         <?php include_once("imports.php"); ?>
         <?php
             //session_start();
@@ -28,12 +28,16 @@ and open the template in the editor.
             header('Location:home.php');
         }
         ?>
-        <div id="content2">
+        <div id="content">
 
           <!-- titulo do conteudo-->
-         
+         <header id="header">
             <h2>Editar Perfil</h2>
-        
+         </header>
+          <br>
+          <br>
+          <br>
+          
               <!-- Conteudo-->
               <form method="POST" name="fusuario" action="control/editarPerfilControl.php">
 

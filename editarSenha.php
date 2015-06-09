@@ -19,7 +19,7 @@ and open the template in the editor.
          <div class="main">
         <?php session_start();?>     
         <?php include("header.php"); ?>
-        <?php include("leftBar.php"); ?>
+       
         <?php include_once("imports.php"); ?>
         <?php
             if(!empty($_SESSION['usuario'])){
@@ -32,9 +32,9 @@ and open the template in the editor.
         
 
           <!-- titulo do conteudo-->
-         
-            <h2>Editar Perfil</h2>
-        
+         <header id="header">
+            <h5>Editar Perfil</h5>
+         </header>
               <!-- Conteudo-->
              <form method="post" name="f1"
                    action="control/editarSenhaControl.php">

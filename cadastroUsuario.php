@@ -6,7 +6,7 @@
 		<title>Cadastre-se - Opine Mais </title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
                 <link rel="stylesheet" type="text/css" href="css/screen.css">
-		    <link rel="shortcut icon" href="images/logtop.png" />
+                <link rel="shortcut icon" href="images/logtop.png" />
                     
 
                     
@@ -15,10 +15,10 @@
             <div class="main">
        
 		<?php include("header.php")?>
-                <?php include("leftBar.php")?>
+               
                
 
-				<div id="content2">
+		<div id="content">
 			<header class="major">
 				<h2>Cadastre-se</h2>
 			</header>

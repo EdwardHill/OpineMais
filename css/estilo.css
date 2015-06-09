@@ -9,7 +9,7 @@
 .postagem{
 	
         border:solid 1px #0099cc;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: Verdana, Geneva;
 	font-size: 12px;
 	background: #E7E7E7;
 	text-align: justify;
@@ -39,7 +39,7 @@
 }
 
 .comentarios{
-	//background: #999;
+	background: #999;
 	padding: 10px;
 	margin-bottom: 10px;
 	
@@ -77,6 +77,11 @@ input{
 }
 
 .respostas{
+	background: #fff;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.comentario{
 	background: #fff;
 	padding: 10px;
 	margin-bottom: 10px;

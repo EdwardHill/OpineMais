@@ -17,10 +17,10 @@
         session_start();
         include("header.php");
 					
-         	include("leftBar.php");?>
+         	?>
          	
 
-				<div id="content2">
+				<div id="content">
 						<header class="major">
 							<h2>Adicionar Produto</h2>
 							<h4><?php $mensagem?></h4>

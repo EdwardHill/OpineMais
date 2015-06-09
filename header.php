@@ -8,7 +8,7 @@
 
             <ul class="divided">
 
-                <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, 
+               <li><img src="css/images/user.png" alt="Logo Perfil"  style="width:2.2em;" /> Olá, 
                     <?php
                     include_once ('imports.php');
 
@@ -37,14 +37,14 @@
                 <?php
                 if (!empty($_SESSION['usuario'])) {
 
-                    echo '<li><a href="perfil.php" class="button">Perfil</a></li>'
-                    . '<li><a href="cadastroProduto.php" class="button">Novo Iten</a></li>';
+                    echo '<li><a href="perfil.php">Perfil</a></li>'
+                    . '<li><a href="cadastroProduto.php">Novo Iten</a></li>';
   
-                    echo '<li ><a href="model/util/logout.php"  class="button">Sair</a></li>';
+                    echo '<li ><a href="model/util/logout.php">Sair</a></li>';
                 } else {
 
-                    echo '<li><a href="login.php" class="button">Entre</a></li>';
-                    echo '<li><a href="cadastroUsuario.php"  class="button">Cadastre-se</a></li>';
+                    echo '<li><a href="login.php">Entre</a></li>';
+                    echo '<li><a href="cadastroUsuario.php">Cadastre-se</a></li>';
                     echo '<li></li>';
                 }
                 ?>

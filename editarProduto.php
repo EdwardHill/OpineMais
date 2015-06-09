@@ -16,7 +16,7 @@
         <?php 
         session_start();
         include("header.php");
-        include("leftBar.php");
+      
         include_once('imports.php');
         
         if(!empty($_SESSION['usuario'])){
@@ -36,8 +36,9 @@
          	
 
 				
-						<header class="major">
+						<header id="header">
 							<h2>Editar Produto</h2>
+                                                </header>
 							<h4><?php$mensagem?></h4>
                                                         <p style="text-align: center; color: red;">
                                                             <?php 
