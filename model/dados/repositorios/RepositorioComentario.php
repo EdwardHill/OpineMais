@@ -44,7 +44,7 @@ class RepositorioComentario implements IRepositorioComentario{
     public function editarComentario(\Comentario $comentario) {
         $result = mysql_query("update comentario set "
                 . "mensagem = '".$comentario->getMensagem()."' "
-                . "where id_comentario = ".$entidade->getId_comentario());
+                . "where id_comentario = ".$comentario->getId_comentario());
     }
 
     public function listarComentario() {

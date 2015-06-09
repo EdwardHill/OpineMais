@@ -30,7 +30,6 @@ and open the template in the editor.
         <div class="main">
             <?php session_start(); ?>
             <?php include("header.php"); ?>
-
             <?php include_once('imports.php'); ?>
 
             <?php
@@ -40,6 +39,12 @@ and open the template in the editor.
             } else {
                 header('Location: home.php');
             }
+            $id_comentario = $_GET['id_comentario'];
+            $id_produto = $_GET['id_produto'];
+            $comentario = new Comentario($id_comentario);
+            
+            $fachada = Fachada::getInstance();
+            $comentario = $fachada->pesquisarComentario($comentario);
             ?>
 
             <!-- titulo do conteudo-->
@@ -60,10 +65,11 @@ and open the template in the editor.
             </p>
             <form method="POST" id="comen" action="control/editarComentarioControl.php">
                 <fieldset>
-
+                    <input type="hidden" name="id_produto" value="<?php echo $id_produto?>">
+                    <input type="hidden" name="id_comentario" value="<?php echo $id_comentario?>">
                     <legend>Comentário</legend>
                     <br/><textarea
-                        name="comentario"  required form="comen" id="comentario" ROWS=4 COLS=60 placeholder="editar o comentario..."></textarea>
+                        name="comentario"  required form="comen" id="comentario" ROWS=4 COLS=60 placeholder="editar o comentario..."><?php echo $comentario->getMensagem()?></textarea>
 
                 </fieldset>
 
