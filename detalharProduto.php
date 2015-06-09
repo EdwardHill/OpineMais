@@ -137,7 +137,7 @@
                                 foreach ($produto->getOpinioes() as $opiniao){
                         ?>
 
-                            <div class="comentarios" id="<?php echo $id_opiniao; ?>" style="background-color:#C7CFE9"> <!-- -->
+                            <div class="comentarios" id="<?php echo $id_opiniao; ?>" style="background-color:#C7CFE9">
                                         <strong>
                                             <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
                                             <?php 
@@ -186,34 +186,38 @@
                                                 </div>
                                     <?php 
                                             }
+                                            
                                         }else{
                                             echo '<div align="center">Nenhum comentario sobre essa opinião</div>';
                                         }
-                                        
                                         if(!empty($_SESSION['usuario'])){
                                     ?>
-
+                                        <h4>Comente a opinião:</h4>
                                         <form action="control/cadastrarComentarioControl.php" method="post" name="form_comentario" id="form_comentario" style="padding:10px;">
                                             <input type="hidden" name="id_opiniao" value="<?php echo $opiniao->getId_opiniao(); ?>" />
                                             <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto(); ?>" />
-                                            <h4>Comente a opinião:</h4>
                                             <input type="text" name="mensagem" value="Digite seu comentario sobre a opinião" class="campo" size="50"/>
 
                                              <div id="enviar"><input type="submit" value="Enviar"></div>
                                         </form>
-                                    </div><!--id comentario-->
+                                   
                         
                         <?php 
                                         }
-                                echo '</div><!--classe comentario-->';
+                        ?>
+                                    </div><!--id comentario-->
+                                </div><!--classe comentario-->
+                        <?php
                                 } //Final do foreath de opinioes
                                 
                             } else{
-                                echo '<div align="center" style="background-color:#C7CFE9">Nenhum opiniao sobre o produto</div>';
+                        ?>
+                                <div align="center" style="background-color:#C7CFE9">Nenhum opiniao sobre o produto</div>
+                        <?php
                             }
                         ?>
                             
-                        </div><!--id opiniao-->
+                       </div><!--id opiniao-->
                     </div><!--classe postagem-->
             <?php
                 include 'model/util/reg_comentario.php';
