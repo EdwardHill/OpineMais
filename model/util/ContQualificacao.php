@@ -35,7 +35,7 @@
             foreach ($opinioes as $opiniao){
                 if(Qualificacao::BOM == $opiniao->getQualificacao()){
                     $this->positivo++;
-                }else{
+                }else if(Qualificacao::RUIM == $opiniao->getQualificacao()){
                     $this->negativo++;
                 }
             }
