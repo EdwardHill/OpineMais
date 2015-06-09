@@ -42,15 +42,15 @@
 									</legend>
 					                                 <p>
 										<label for="nome">Nome do Produto:</label> </br><input type="text"
-                                                                                                                                  name="nome_produto" id="nome" size=25 maxlength="16">
+                                                                                                                                  name="nome_produto" required="nome" id="nome" size=25 maxlength="16">
 									</p>
                                                                         <p>
 										<label for="marca">Marca:</label><br/> <input type="text"
-										name="marca" id="marca" size="25">
+										name="marca" id="marca" required="marca"size="25">
 									</p>
 									<p>
 										<label for="descrição">Descrição:</label> <br/><textarea
-                                                                                    name="descricao"  form="cadp" id="descrição" ROWS=4 COLS=60 placeholder="Insira a descrição..."></textarea>
+                                                                                    name="descricao"  required="descricao"form="cadp" id="descrição" ROWS=4 COLS=60 placeholder="Insira a descrição..."></textarea>
 									</p>
 									
                                                                         
@@ -72,7 +72,7 @@
 									</p>
 <br>
 									<p>
-										<label for="arquivo">Upload de Imagem:</label> <input type="file" name="arquivo"
+										<label for="arquivo">Upload de Imagem:</label> <input type="file" required="arquivo"name="arquivo"
 											id="arquivo" size=10>
 									</p>
 								</fieldset>

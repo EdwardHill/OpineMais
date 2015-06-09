@@ -63,7 +63,7 @@ and open the template in the editor.
 
                     <legend>Comentario</legend>
                     <br/><textarea
-                        name="comentario"  form="comen" id="comentario" ROWS=4 COLS=60 placeholder="editar o comentario..."></textarea>
+                        name="comentario"  required form="comen" id="comentario" ROWS=4 COLS=60 placeholder="editar o comentario..."></textarea>
 
                 </fieldset>
 

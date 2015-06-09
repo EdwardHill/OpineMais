@@ -35,9 +35,9 @@ and open the template in the editor.
           			<fieldset >
                   <legend>Dados de Login</legend>
                   <p><label for="email">E-mail:</label><br/>
-          	      <input type="email" placeholder="Digite seu Email" name="email" id="email" size=40 required>  </p>
+          	      <input type="email" placeholder="Digite seu Email" name="email" id="email" size=40 required="email">  </p>
                   <p><label for="senha">Senha:</label><br/>
-          	      <input type="password" placeholder="Digite sua Senha" name="senha" id="senha" size=40 required>  </p>
+          	      <input type="password" placeholder="Digite sua Senha" name="senha" id="senha" size=40 required="senha">  </p>
           			</fieldset>
           			<div class="12u">
           				<ul class="actions">

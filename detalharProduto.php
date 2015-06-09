@@ -112,7 +112,7 @@
                                         <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
 
                                         <img src="images/bom.png"  id="opiniao" alt="bom" height="30" width="30"/><?php echo Qualificacao::BOM;?>
-                                        <input type="radio" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
+                                        <input type="radio" name="qualificacao" required="qualificacao"value="<?php echo Qualificacao::BOM;?>"> 
                                         <img src="images/ruim.png"  id="opiniao" alt="ruim" height="30" width="30"/><?php echo Qualificacao::RUIM;?>
                                         <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
                                         <br/>   

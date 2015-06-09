@@ -63,7 +63,7 @@ and open the template in the editor.
 
                     <legend>Opinião</legend>
                     <br/><textarea
-                        name="opiniao"  form="op" id="op" ROWS=4 COLS=60 placeholder="Editar a Opnião..."></textarea>
+                        name="opiniao"  form="op" required id="op" ROWS=4 COLS=60 placeholder="Editar a Opnião..."></textarea>
 
                 </fieldset>
 
