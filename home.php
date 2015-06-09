@@ -94,17 +94,18 @@
                                         echo " - ".$produtoDown->getMarca();
                                     ?>
                                 </h4>
-                            <h5>Categoria: <?php echo $produtoDown->getCategoria();?></h5>
+                            <h4 style="background: white; color: black">Categoria: <?php echo $produtoDown->getCategoria();?></h4>
+
                             <img src="images/bom.png"  id="opiniao" alt="bom"/>
                                 <?php 
-                                    echo Qualificacao::BOM;
                                     echo '( '.$produtoDown->getQualificacao_positiva().' )';
                                 ?> 
                             <img src="images/ruim.png"  id="opiniao" alt="ruim"/>
                                 <?php 
-                                    echo Qualificacao::RUIM;
                                     echo '( '.$produtoDown->getQualificacao_negativa().' )'; 
                                 ?>
+                            
+                            
                                        
                         </li>
         <?php 
