@@ -10,7 +10,7 @@ and open the template in the editor.
 		<title>Login- Opine Mais </title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
-		    <link rel="shortcut icon" href="images/logtop.png" />
+		     <link rel="shortcut icon" href="images/short.png" />
 
     </head>
     <body>

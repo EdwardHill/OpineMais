@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
-        <link rel="shortcut icon" href="images/logtop.png" />
+         <link rel="shortcut icon" href="images/short.png" />
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/funcao.js"></script>
         <script type="text/javascript">

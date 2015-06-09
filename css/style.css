@@ -630,7 +630,7 @@ input[type="number"] {
     background-size:		100% 410%;
 
 
-    background-image:		url('images/overlay.png'), linear-gradient( 75deg, #C1E4AB 25%,  #00A300 75%);
+    background-image:		 url('http://i.stack.imgur.com/oslRB.png');
     background-size:		128px 128px,				100% 410%,					auto;
     background-repeat:		repeat,						no-repeat,					no-repeat;
     /*gradient*/
@@ -674,7 +674,7 @@ input[type="number"] {
 {
     position: absolute;
     z-index: 1;
-    bottom: 94px;
+    bottom: 75px;
     right: 40%;
     width: 100%;
     margin-left: -7.5em;

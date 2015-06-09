@@ -4,7 +4,7 @@
           
         <div id="header2">
 
-            <h1 id="logo"><a href="home.php"><img src="css/images/opmais.png"   style="width:5.8em ;heigth:14em;"></a></h1>
+            <h1 id="logo"><a href="home.php"><img src="css/images/opinemais.png"   style="width:5.5em ;height:3.5em;"></a></h1>
 
             <ul class="divided">
 
