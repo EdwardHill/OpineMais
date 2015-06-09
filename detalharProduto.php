@@ -111,9 +111,9 @@
                                     <form action="control/cadastrarOpiniaoControl.php" method="post" name="form1" id="opiniao">
                                         <input type="hidden" name="id_produto" value="<?php echo $produto->getId_produto();?>" />
 
-                                        <img src="images/bom.png"  id="opiniao" alt="bom"/><?php echo Qualificacao::BOM;?>
+                                        <img src="images/bom.png"  id="opiniao" alt="bom" height="30" width="30"/><?php echo Qualificacao::BOM;?>
                                         <input type="radio" name="qualificacao" value="<?php echo Qualificacao::BOM;?>"> 
-                                        <img src="images/ruim.png"  id="opiniao" alt="ruim"/><?php echo Qualificacao::RUIM;?>
+                                        <img src="images/ruim.png"  id="opiniao" alt="ruim" height="30" width="30"/><?php echo Qualificacao::RUIM;?>
                                         <input type="radio" name="qualificacao" value="<?php echo Qualificacao::RUIM;?>">
                                         <br/>   
                                         <input type="text" name="mensagem" size="50" value="Digite sua opinião" class="campo"/>
@@ -122,7 +122,6 @@
                                         <div id="enviar"><input type="submit" value="Enviar"></div>
                                     </form>
 <br>
-                                <div class="comentarios" id="<?php echo $id_opiniao; ?>">
                         <?php
                                 }else{
                                     echo '<h3 align="center">Você já opinou sobre o produto</h3>';
@@ -138,7 +137,7 @@
                                 foreach ($produto->getOpinioes() as $opiniao){
                         ?>
 
-                            
+                            <div class="comentarios" id="<?php echo $id_opiniao; ?>" style="background-color:#C7CFE9"> <!-- -->
                                         <strong>
                                             <img src="css/images/user.png" alt="Foto de Usuario"  style="width:2.2em;" />
                                             <?php 
@@ -206,14 +205,14 @@
                         
                         <?php 
                                         }
-                                
+                                echo '</div><!--classe comentario-->';
                                 } //Final do foreath de opinioes
                                 
                             } else{
-                                echo '<div align="center">Nenhum opiniao sobre o produto</div>';
+                                echo '<div align="center" style="background-color:#C7CFE9">Nenhum opiniao sobre o produto</div>';
                             }
                         ?>
-                            </div><!--classe opiniao-->
+                            
                         </div><!--id opiniao-->
                     </div><!--classe postagem-->
             <?php
