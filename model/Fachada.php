@@ -118,8 +118,8 @@ class Fachada {
         $this->controladorOpiniao->adicionarOpiniao($entidade);
     }
     
-    public function editarOpiniao(\Opiniao $entidade){
-        $this->controladorOpiniao->editarOpiniao($entidade);
+    public function editarOpiniao(\Opiniao $opiniao){
+        $this->controladorOpiniao->editarOpiniao($opiniao);
     }
     
     public function removerOpiniao(\Opiniao $entidade){
@@ -144,7 +144,7 @@ class Fachada {
         
     }
     
-    public function pesquiasrOpiniao(\Opiniao $entidade){
+    public function pesquisarOpiniao(\Opiniao $entidade){
         $entidade = $this->controladorOpiniao->pesquisarOpiniao($entidade);
         if(!empty($entidade)){
             $usuario = $this->pesquisarUsuario($entidade->getUsuario());

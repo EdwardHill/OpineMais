@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
 
         <meta charset="UTF-8">
-        <title>Editar Comentario - Opine Mais </title>
+        <title>Editar Comentário - Opine Mais </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
        	<script type="text/javascript" src="js/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="css/screen.css">
@@ -44,7 +44,7 @@ and open the template in the editor.
 
             <!-- titulo do conteudo-->
             <header  id="header">
-                <h2>Editar Comentario</h2>
+                <h2>Editar Comentário</h2>
             </header>
             <br>
             <br>
@@ -58,10 +58,10 @@ and open the template in the editor.
                 }
                 ?>
             </p>
-            <form method="POST" id="comen" action="control/editarComentario.php">
+            <form method="POST" id="comen" action="control/editarComentarioControl.php">
                 <fieldset>
 
-                    <legend>Comentario</legend>
+                    <legend>Comentário</legend>
                     <br/><textarea
                         name="comentario"  required form="comen" id="comentario" ROWS=4 COLS=60 placeholder="editar o comentario..."></textarea>
 

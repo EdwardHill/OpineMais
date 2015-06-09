@@ -46,7 +46,7 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
                 . "mensagem = '".$opiniao->getMensagem()."', "
                 . "qualificacao = '".$opiniao->getQualificacao()."', "
                 . "nota = ".$opiniao->getNota()
-                . "where id_opiniao = ".$opiniao->getId_opiniao());
+                . " where id_opiniao = ".$opiniao->getId_opiniao());
     }
 
     public function listarOpiniao() {
