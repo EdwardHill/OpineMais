@@ -57,6 +57,17 @@
                         
                       <p> <strong>Fabricante: </strong><?php echo $produto->getMarca();?></p>
                       <p> <strong>Descrição: </strong><?php echo $produto->getDetalhes();?></p>
+                      
+                      <p>
+                      <img src="images/bom.png"  id="opiniao" alt="bom" height="42" width="42"/>
+                        <?php 
+                            echo '( '.$produto->getQualificacao_positiva().' )';
+                        ?> 
+                      <img src="images/ruim.png"  id="opiniao" alt="ruim" height="42" width="42"/>
+                        <?php 
+                            echo '( '.$produto->getQualificacao_negativa().' )'; 
+                        ?>
+                      <p>
             </div>
             
                   

@@ -96,11 +96,11 @@
                                 </h4>
                             <h4 style="background: white; color: black">Categoria: <?php echo $produtoDown->getCategoria();?></h4>
 
-                            <img src="images/bom.png"  id="opiniao" alt="bom"/>
+                            <img src="images/bom.png"  id="opiniao" alt="bom"height="30" width="30"/>
                                 <?php 
                                     echo '( '.$produtoDown->getQualificacao_positiva().' )';
                                 ?> 
-                            <img src="images/ruim.png"  id="opiniao" alt="ruim"/>
+                            <img src="images/ruim.png"  id="opiniao" alt="ruim"height="30" width="30"/>
                                 <?php 
                                     echo '( '.$produtoDown->getQualificacao_negativa().' )'; 
                                 ?>
