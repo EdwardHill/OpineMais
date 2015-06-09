@@ -28,7 +28,7 @@
             <ul class="btheader">
 <div style="margin-bottom:-3.7em; display:block;position:relative; 
               padding-left:29%;" >
-        <form action="buscarProdutoControl.php" method="POST" >
+        <form action="home.php" method="POST" >
             
                 <input type="search" name="busca" placeholder="Buscar..." results=5 size=60 />
                 
