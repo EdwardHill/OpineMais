@@ -29,6 +29,7 @@
     </head>
 
     <body>
+       
         <div class="main">
             <?php session_start();?>
             <?php include("header.php");
@@ -42,8 +43,9 @@
              <div id="recuo">
 
             <div id="container">
-
+                  
                 <div id="header"><h1>Produtos em Destaque</h1></div>
+                  
                 <div id="content">
                     <div id="slider">
                         <ul>	
@@ -143,7 +145,7 @@
                         <li>
                             <a href="detalharProduto.php?id_produto=<?php echo $produtoDown->getId_produto();?>" class="image">
                                
-                                <img src="images/upload/<?php echo $produtoDown->getImagem();?>" id="imabaixa"  alt="<?php echo $produtoDown->getCategoria();?>" /></a>
+                                <img src="images/upload/<?php echo $produtoDown->getImagem();?>" id="imabaixa" class="imagem"  alt="<?php echo $produtoDown->getCategoria();?>" /></a>
                                 <h4>
                                     <?php 
                                         echo $produtoDown->getNome_produto();

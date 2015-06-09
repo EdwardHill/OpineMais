@@ -497,14 +497,16 @@ input[type="reset"]:hover,
 .button3
 {
     font-weight:bolder;
-    font-size:18px;
+    font-size:12px;
+    position:relative;
     display: inline-block;
     color: inherit;
     background-color:  white;
     text-decoration: none;
     border: solid 1px #c2c7cc;
     border-radius: 0.35em;
-    padding: 0.8em 2em 0.8em 2em;
+    padding: 0;
+    margin:0;
     cursor: pointer;
     outline: 0;
     -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
@@ -1187,7 +1189,7 @@ p.info
 
 /*----------------------RESET--------------------*/
 
-.global-div{width:1150px; height:auto; padding:0 15px 15px 15px; position:absolute; float:none; left:42.7%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
+.global-div{width:1150px; height:auto; padding:10px 15px 15px 15px; position:absolute; float:none; left:42.7%;  margin:50px 0 0 -470px ; border:5px solid #fff; background:#fff; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; }
 
 h1{  text-align:center; margin: -5px -20px 20px -20px; color:#fff; padding:20px 10px; letter-spacing:-0.04em; text-shadow:0px 0px 5px #eaeaea;}
 
@@ -1229,8 +1231,78 @@ input[type=search] {
       
        padding-left: 16px;
 
-
-
-
 }
 
+
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:10em;
+  top:0;
+  width:440px;
+  height:100px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+#boxes #dialog {
+  width:395px; 
+  height:203px;
+  
+  background-color:#ffffff;
+}
+
+#boxes #dialog1 {
+  width:20px; 
+  height:603px;
+  top:1em;
+}
+
+#dialog1 .d-header {
+  background:url(login-header.png) no-repeat 0 0 transparent; 
+  width:120px; 
+  height:150px;
+}
+
+#dialog1 .d-header input {
+  position:relative;
+  top:62px;
+  right:110px;
+  border:3px solid #cccccc;
+  height:22px;
+  width:220px;
+  font-size:15px;
+  padding:5px;
+  margin-top:4px;
+}
+
+#dialog1 .d-blank {
+  float:left;
+  background:url(login-blank.png) no-repeat 0 0 transparent; 
+  width:267px; 
+  height:53px;
+}
+
+#dialog1 .d-login {
+  float:left;
+  width:108px; 
+  height:53px;
+}
+
+#boxes #dialog2 {
+  background:url(notice.png) no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+.close{display:block; text-align:right;}
