@@ -13,7 +13,7 @@ and open the template in the editor.
      
 <script src="js/script.js"></script>
         <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen" />
-        <link rel="shortcut icon" href="images/short.png" />
+        <link rel="shortcut icon" href="css/images/short.png"/>
     </head>
     <body>
          <div class="main">

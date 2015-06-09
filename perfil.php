@@ -13,7 +13,7 @@ and open the template in the editor.
        	<script type="text/javascript" src="js/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="css/screen.css">
         <script type="text/javascript" src="js/easySlider1.7.js"></script>
-          <link rel="shortcut icon" href="images/short.png" />
+          <link rel="shortcut icon" href="css/images/short.png"/>
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#slider").easySlider({
