@@ -215,13 +215,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', end
 
 ol#controls{
     position:relative;
-    margin:1em 15em 3em  37%;
+    margin:1em 18em 3em  37%;
     padding:10px;
     height:17px;	
 }
 ol#controls li{
-    margin:0 10px 0 0; 
-    padding:0;
+    margin:0 5px 0 0; 
+    padding-left:15px;
     float:left;
     list-style:none;
     height:29px;
@@ -246,6 +246,6 @@ ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
 
 #centro{
     display: block; margin: 0 auto; 
-    width:37%;
+    width:38%;
 }
 /* // Easy Slider */
