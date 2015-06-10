@@ -12,7 +12,7 @@ $id_opiniao = $_GET['id_opiniao'];
 $opiniao = new Opiniao($id_opiniao);
 
 $fachada = Fachada::getInstance();
-$opiniao = $fachada->pesquiasrOpiniao($opiniao);
+$opiniao = $fachada->pesquisarOpiniao($opiniao);
 $fachada->removerOpiniao($opiniao);
 
 header('Location: ../detalharProduto.php?id_produto='.$opiniao->getProduto()->getId_produto());
