@@ -31,32 +31,38 @@ class RepositorioUsuario implements IRepositorioUsuario{
     }
 
     public function adicionarUsuario(\Usuario $usuario) {
-      $result = mysql_query(" insert into usuario (nome, email, senha) values "
-              . "('" . $usuario->getNome() . "','" . $usuario->getEmail() . "','" . $usuario->getSenha() . "')");
+      $result = mysql_query(" insert into usuario (nome, email, senha, foto_perfil, status) values "
+              . "('" . $usuario->getNome() . "','" . $usuario->getEmail() . "','" . $usuario->getSenha() . "', "
+              . "'".$usuario->getFoto_perfil()."', '".Status::ATIVO."')");
       return mysql_insert_id();
     }
 
     public function editarUsuario(\Usuario $usuario) {
         $result = mysql_query("update usuario set nome = "
                 . "'" . $usuario->getNome() . "',email = '" . $usuario->getEmail() . "',senha = '" . $usuario->getSenha() . "' "
+                . "foto_perfil = '".$usuario->getFoto_perfil()."' "
                 . "where id_usuario = ".$usuario->getId_usuario());
     }
     public function pesquisarUsuario(\Usuario $usuario) {
         $result = mysql_query("select * from usuario where id_usuario = ".$usuario->getId_usuario());
         
-        while ($sql = mysql_fetch_array($result)) {
-            $id_usuario = $sql['id_usuario'];
-            $nome = $sql['nome'];
-            $email = $sql['email'];
-            $senha = $sql['senha'];
+        while ($row = mysql_fetch_array($result)) {
+            $id_usuario = $row['id_usuario'];
+            $nome = $row['nome'];
+            $email = $row['email'];
+            $senha = $row['senha'];
+            $foto_perfil = $row['foto_perfil'];
 
-            $usuario = new Usuario($id_usuario, $nome, $email, $senha);
+            $usuario = new Usuario($id_usuario, $nome, $email, $senha, $foto_perfil);
         }
         return $usuario;
     }
 
     public function removerUsuario(\Usuario $usuario) {
-        $result = mysql_query("delete from usuario where id_usuario = " . $usuario->getId_usuario());
+        $result = mysql_query("update usuario set nome = "
+                . "'" . $usuario->getNome() . "',email = '" . $usuario->getEmail() . "',senha = '" . $usuario->getSenha() . "', "
+                . "foto_perfil = '".$usuario->getFoto_perfil()."', status = '".Status::INATIVO."' "
+                . "where id_usuario = ".$usuario->getId_usuario());
     }
 
     public function listarUsuario() {
@@ -67,8 +73,9 @@ class RepositorioUsuario implements IRepositorioUsuario{
             $nome = $sql['nome'];
             $email = $sql['email'];
             $senha = $sql['senha'];
+            $foto_perfil = $row['foto_perfil'];
 
-            $usuario = new Usuario($id_usuario, $nome, $email, $senha);
+            $usuario = new Usuario($id_usuario, $nome, $email, $senha, $foto_perfil);
             array_push($arrayUsuario, $usuario);
         }
         return $arrayUsuario;

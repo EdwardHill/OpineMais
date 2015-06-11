@@ -37,16 +37,52 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
                 . $opiniao->getNota().","
                 . $opiniao->getUsuario()->getId_usuario().","
                 . $opiniao->getProduto()->getId_produto().")");
-//        echo $result;
-//        echo 'Cadastro de Opiniao FEITO';
+        
+        $sql=NULL;
+        if($opiniao->getQualificacao() == Qualificacao::BOM){
+            $sql = 'update produto set qualificacao_positiva=(qualificacao_positiva+1) '
+                    . 'where id_produto='.$opiniao->getProduto()->getId_produto();
+        }else if($opiniao->getQualificacao() == Qualificacao::RUIM){
+            $sql = 'update produto set qualificacao_negativa=(qualificacao_negativa+1) '
+                    . 'where id_produto='.$opiniao->getProduto()->getId_produto();
+        }
+        
+        if($result === TRUE && !empty($sql)){
+            $result = mysql_query($sql);
+        }
+        
     }
 
     public function editarOpiniao(\Opiniao $opiniao) {
+        $atual = $this->pesquisarOpiniao($opiniao);
+        
         $result = mysql_query("update opiniao set "
                 . "mensagem = '".$opiniao->getMensagem()."', "
                 . "qualificacao = '".$opiniao->getQualificacao()."', "
                 . "nota = ".$opiniao->getNota()
                 . " where id_opiniao = ".$opiniao->getId_opiniao());
+        
+        $sql=NULL;
+        if($atual->getQualificacao() == $opiniao->getQualificacao()){
+            $sql=NULL;
+        }else{
+            if($opiniao->getQualificacao() == Qualificacao::BOM && 
+                    $atual->getQualificacao() == Qualificacao::RUIM){
+                $sql = 'update produto set qualificacao_positiva=(qualificacao_positiva+1), '
+                        . 'qualificacao_negativa=(qualificacao_negativa-1) '
+                        . 'where id_produto='.$opiniao->getProduto()->getId_produto();
+            }else if($opiniao->getQualificacao() == Qualificacao::RUIM && 
+                    $atual->getQualificacao() == Qualificacao::BOM){
+                $sql = 'update produto set qualificacao_positiva=(qualificacao_positiva-1), '
+                        . 'qualificacao_negativa=(qualificacao_negativa+1) '
+                        . 'where id_produto='.$opiniao->getProduto()->getId_produto();
+            }
+        }
+        
+        if($result === TRUE && !empty($sql)){
+            $result = mysql_query($sql);
+        }
+        
     }
 
     public function listarOpiniao() {
@@ -72,7 +108,7 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
 
     public function pesquisarOpiniao(\Opiniao $opiniao) {
         $result = mysql_query('select * from opiniao where id_opiniao = '.$opiniao->getId_opiniao());
-        $opiniao=null;
+        $opiniao=NULL;
         while( $row = mysql_fetch_array($result)){
             $id_opiniao = $row['id_opiniao'];
             $mensagem = $row['mensagem'];
@@ -89,7 +125,21 @@ class RepositorioOpiniao implements IRepositorioOpiniao{
     }
 
     public function removerOpiniao(\Opiniao $opiniao) {
+        $opiniao = $this->pesquisarOpiniao($opiniao);
+        $sql = null;
+        if($opiniao->getQualificacao() == Qualificacao::BOM){
+            $sql = 'update produto set qualificacao_positiva=(qualificacao_positiva-1) '
+                    . 'where id_produto='.$opiniao->getProduto()->getId_produto();
+        }else if($opiniao->getQualificacao() == Qualificacao::RUIM){
+            $sql = 'update produto set qualificacao_negativa=(qualificacao_negativa-1) '
+                    . 'where id_produto='.$opiniao->getProduto()->getId_produto();
+        }
+        //Removendo Opinião
         $result = mysql_query('delete from opiniao where id_opiniao = '.$opiniao->getId_opiniao());
+        //Decrementando uma opinião no produto
+        if($result === TRUE && !empty($sql)){
+            $result = mysql_query($sql);
+        }
     }
 
     public function listarOpinioesPorProduto(\Produto $produto){

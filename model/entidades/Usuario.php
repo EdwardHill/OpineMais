@@ -17,12 +17,14 @@ class Usuario {
     private $nome;
     private $email;
     private $senha;
+    private $foto_perfil;
 
-    public function __construct($id_usuario = "", $nome = "", $email = "", $senha = "") {
+    public function __construct($id_usuario = "", $nome = "", $email = "", $senha = "",$foto_perfil="user.png") {
         $this->id_usuario = $id_usuario;
         $this->nome = $nome;
         $this->email = $email;
         $this->senha = $senha;
+        $this->foto_perfil = $foto_perfil;
     }
 
     public function getId_usuario() {
@@ -56,11 +58,15 @@ class Usuario {
     public function setSenha($senha) {
         $this->senha = $senha;
     }
+    
+    function getFoto_perfil() {
+        return $this->foto_perfil;
+    }
 
-//    public function autenticar($email, $senha) {
-//        $email = email;
-//        $senha = md5($senha);
-//        echo $senha;
-//    }
+    function setFoto_perfil($foto_perfil) {
+        $this->foto_perfil = $foto_perfil;
+    }
+
+
 
 }

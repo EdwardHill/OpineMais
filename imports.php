@@ -18,6 +18,7 @@ ob_start();
 //Util
 require('model/util/Qualificacao.php');
 require('model/util/ContQualificacao.php');
+require('model/util/Status.php');
 require('model/util/connection.php');
 //require 'model/util/logout.php';
 //require 'model/util/reg_comentario.php';

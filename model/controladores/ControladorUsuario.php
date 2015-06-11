@@ -48,6 +48,10 @@ class ControladorUsuario {
     }
 
     public function removerUsuario(\Usuario $usuario) {
+        $usuario = $this->pesquisarUsuario($usuario);
+        $usuario->setNome('Anônimo');
+        $usuario->setFoto_perfil('user.png');
+        
         $this->repositorioUsuario->removerUsuario($usuario);
     }
 

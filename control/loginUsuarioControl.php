@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once ('../imports.php');
 //session_start();
 
@@ -8,7 +9,7 @@ include_once ('../imports.php');
 
     $senhaCodificada = md5($senha);
 
-    $result = mysql_query("select * from usuario where email='" .$email. "' and senha='". $senhaCodificada."'");
+    $result = mysql_query("select * from usuario where email='" .$email. "' and senha='". $senhaCodificada."' and status='".Status::ATIVO."'");
     $usuario = null;
     while ($row = mysql_fetch_array($result)) {
         $id_usuario = $row['id_usuario'];
@@ -17,9 +18,7 @@ include_once ('../imports.php');
         $senha = $row['senha'];
         $usuario = new Usuario($id_usuario, $nome, $email, $senha);
     }
-    //if(empty($_SESSION)){
-        session_start();
-    //}
+
     if($usuario != null){
       if(isset($_SESSION["mensagem"])){
           unset($_SESSION["mensagem"]);
@@ -28,7 +27,7 @@ include_once ('../imports.php');
       $_SESSION['usuario'] = $serializador;
       header('Location: ../home.php');
     }else{
-      $mensagem = "Usuário ou Senha incorretos!";
+      $mensagem = "Usuário ou Senha incorretos!<br/>Se você desativou seu acesso, solicite a reativação.";
       $_GET["mensagem"] = $mensagem;
       header('Location: ../login.php?mensagem='.$mensagem);
     }

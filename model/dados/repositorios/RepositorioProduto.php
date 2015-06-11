@@ -66,7 +66,8 @@ class RepositorioProduto implements IRepositorioProduto{
     }
 
     public function listarProduto() {
-        $sql = "select * from produto order by id_produto desc";
+        //$sql = 'select * from produto order by id_produto desc';
+        $sql = 'select * from produto order by qualificacao_positiva desc, qualificacao_negativa asc';
         $result = mysql_query($sql);
         $arrayProduto = array();
 

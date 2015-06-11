@@ -11,11 +11,11 @@
  *
  * @author Edward_Hill
  */
+session_start();
  include_once('../imports.php');
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     
-   session_start();
    $serealizado = $_SESSION['usuario'];
    $usuario = unserialize($serealizado);
    
